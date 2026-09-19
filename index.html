@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#d2d9f4", "primary-fixed": "#d1e4ff", "outline": "#74777d", "secondary-fixed-dim": "#b4c5ff", "tertiary": "#07001d", "surface-tint": "#4e6077", "inverse-surface": "#283044", "on-secondary-container": "#fefcff", "primary-fixed-dim": "#b5c8e3", "on-surface": "#131b2e", "tertiary-container": "#280060", "on-secondary-fixed": "#00174b", "surface-container-high": "#e2e7ff", "on-background": "#131b2e", "on-primary": "#ffffff", "inverse-primary": "#b5c8e3", "primary-container": "#0b1f33", "on-tertiary-fixed-variant": "#5a00c6", "surface-container-highest": "#dae2fd", "error-container": "#ffdad6", "surface-container-low": "#f2f3ff", "tertiary-fixed-dim": "#d2bbff", "inverse-on-surface": "#eef0ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "surface": "#faf8ff", "on-primary-fixed": "#081d30", "on-surface-variant": "#44474c", "on-secondary-fixed-variant": "#003ea8", "secondary": "#0051d5", "secondary-fixed": "#dbe1ff", "on-tertiary-fixed": "#25005a", "on-secondary": "#ffffff", "on-primary-container": "#7587a0", "secondary-container": "#316bf3", "on-error-container": "#93000a", "on-primary-fixed-variant": "#36485e", "background": "#faf8ff", "surface-variant": "#dae2fd", "surface-container": "#eaedff", "tertiary-fixed": "#eaddff", "outline-variant": "#c4c6cd", "on-tertiary-container": "#9a67ff", "primary": "#00050e", "error": "#ba1a1a", "on-tertiary": "#ffffff", "surface-bright": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-3xl": "3rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "space-xl": "1.5rem", "margin-mobile": "1rem", "space-md": "0.75rem", "space-sm": "0.5rem", "margin": "1.5rem", "space-2xl": "2rem", "space-lg": "1rem", "space-2xs": "0.25rem", "space-xs": "0.375rem", "space-3xs": "0.125rem" }, "fontFamily": { "display-lg-mobile": ["Plus Jakarta Sans"], "body-dense": ["Inter"], "label-status": ["Inter"], "label-caps": ["Inter"], "caption-sm": ["Inter"], "body-lg": ["Inter"], "tabular-data": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "metric-kpi": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-dense": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-status": ["11px", { "lineHeight": "14px", "fontWeight": "600" }], "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "caption-sm": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "tabular-data": ["13px", { "lineHeight": "18px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-xl": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "metric-kpi": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <aside
+    class="fixed left-0 top-0 h-full w-72 bg-primary-container z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="h-16 px-space-lg flex items-center justify-between bg-primary-container shrink-0">
+        <div class="flex items-center gap-space-sm"><img alt="AutoHunt Admin Brandmark"
+            class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AEtjO1UlK2-wMXT0zytaDQdnAQZkZfILq9n0mCxUzIHUGr3BWpyRk4U8TWEKKrxOBWa5-hF71AIeXLOYAdyTB1hAk2UDWI9BdgrNMWUVIkiR-WqRg859LWnhA4w4vbMtQVEAzlASNjSF7KoInXhZfsh-BwYZDKla6L_LAsoyVm0XNqbq-Ph2rYRoWyhP_Z7aQNcSDyOeRrIbsEFdk-0eTrfI9rnTH6ELVVpJ45z_3LduLvI4prV0G-Y7phcN-T4" />
+          <div class="flex flex-col"><span
+              class="font-headline-lg text-title-md font-bold tracking-tight text-on-primary leading-none">AutoHunt</span><span
+              class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-wider mt-space-3xs">Admin
+              Core</span></div>
+        </div><span
+          class="px-space-xs py-space-3xs rounded-full bg-secondary text-on-secondary font-label-status text-label-status">v2.4</span>
+      </div>
+      <div class="px-space-md py-space-sm">
+        <div class="bg-primary rounded-lg p-space-sm flex items-center justify-between text-on-primary">
+          <div class="flex items-center gap-space-xs overflow-hidden"><span
+              class="material-symbols-outlined text-secondary-fixed-dim text-[18px]">storefront</span>
+            <div class="truncate"><span
+                class="block font-caption-sm text-caption-sm text-on-primary-container truncate">Showroom
+                Location</span><span
+                class="block font-tabular-data text-body-dense text-on-primary font-semibold truncate">Metro West
+                Flagship</span></div>
+          </div><span
+            class="material-symbols-outlined text-on-primary-container text-[18px] cursor-pointer hover:text-on-primary">unfold_more</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-xs space-y-space-md"
+        data-active-classes="bg-secondary-container text-on-secondary font-semibold shadow-sm">
+        <div class="space-y-space-3xs"><span
+            class="px-space-sm font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider block">Operations</span>
+          <div class="space-y-space-3xs"><a aria-current="page"
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg transition-colors bg-secondary-container text-on-secondary font-semibold shadow-sm"
+              data-path="dashboard" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">dashboard</span><span
+                  class="font-body-md text-body-md">Dashboard</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="vehicles" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">directions_car</span><span
+                  class="font-body-md text-body-md">Vehicles</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="orders" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">receipt_long</span><span
+                  class="font-body-md text-body-md">Orders</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="consignment" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">sell</span><span
+                  class="font-body-md text-body-md">Consignment</span></div><span
+                class="px-space-xs py-space-3xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-status text-label-status">New</span>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="customers" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">group</span><span
+                  class="font-body-md text-body-md">Customers</span></div>
+            </a></div>
+        </div>
+        <div class="space-y-space-3xs"><span
+            class="px-space-sm font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider block">Transactions
+            &amp; Finance</span>
+          <div class="space-y-space-3xs"><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="payments" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">payments</span><span
+                  class="font-body-md text-body-md">Payments</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="finance" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">account_balance</span><span
+                  class="font-body-md text-body-md">Finance</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="promotions" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">campaign</span><span
+                  class="font-body-md text-body-md">Promotions</span></div>
+            </a></div>
+        </div>
+        <div class="space-y-space-3xs"><span
+            class="px-space-sm font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider block">Intelligence
+            &amp; Support</span>
+          <div class="space-y-space-3xs"><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="reports" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">analytics</span><span
+                  class="font-body-md text-body-md">Reports</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="support" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">headset_mic</span><span
+                  class="font-body-md text-body-md">Support</span></div><span
+                class="px-space-xs py-space-3xs rounded-full bg-error text-on-error font-label-status text-label-status">3</span>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="reviews" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">star_rate</span><span
+                  class="font-body-md text-body-md">Reviews</span></div>
+            </a><a
+              class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-on-primary-container hover:bg-primary hover:text-on-primary transition-colors"
+              data-path="notifications" href="#">
+              <div class="flex items-center gap-space-sm"><span
+                  class="material-symbols-outlined text-[18px]">notifications</span><span
+                  class="font-body-md text-body-md">Notifications</span></div>
+            </a></div>
+        </div>
+      </nav>
+    </div>
+    <div class="p-space-md bg-primary shrink-0">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-space-sm overflow-hidden"><img alt="Mark J. Chandler Avatar"
+            class="w-8 h-8 rounded-full object-cover shrink-0"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO426pTz_XXHXsvlzpABTw0BeyYzYhC2ZSseSvDWQU3P099jf5diPc23HOc-05hkl123oDnduhNMVmDJ6K7Zmc1SuDaJEu6aFmhPDAT5EdfXdaEZhOGSk2QGLhRUwC-N3Sf5mWqKo1AX2WBgCBFFX-CJnz3QtREd9DtjvRBa0uPHf-gzCHEsbOf3SZnnXxJdWkHyFg8bS_yo0dSVVsy0iipA1k9bCBXdNQM3vehgPS8Kbn4TzTdTpw" />
+          <div class="flex flex-col truncate"><span
+              class="font-tabular-data text-body-dense text-on-primary font-semibold truncate">Mark J.
+              Chandler</span><span class="font-caption-sm text-caption-sm text-on-primary-container truncate">General
+              Manager</span></div>
+        </div><a class="text-on-primary-container hover:text-error transition-colors p-space-2xs" data-path="logout"
+          href="#" title="Sign Out"><span class="material-symbols-outlined text-[20px]">logout</span></a>
+      </div>
+    </div>
+  </aside>
+  <div class="pl-72">
+    <header
+      class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
+      <div class="flex items-center gap-space-md flex-1 max-w-xl">
+        <div class="relative w-full"><span
+            class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input
+            class="w-full h-9 pl-9 pr-14 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#0051d5] transition-all placeholder:text-outline"
+            placeholder="Search VIN, vehicle model, customer, or deal ID..." type="text" />
+          <div class="absolute right-space-sm top-1/2 -translate-y-1/2 flex items-center gap-space-3xs"><kbd
+              class="px-space-2xs py-space-3xs font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant rounded font-mono">⌘K</kbd>
+          </div>
+        </div>
+        <div
+          class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-lg text-on-surface-variant whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px]">calendar_today</span><span
+            class="font-caption-sm text-caption-sm">Oct 1 - Oct 31, 2024</span><span
+            class="material-symbols-outlined text-[14px]">expand_more</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <div
+          class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container rounded-full">
+          <span class="w-2 h-2 rounded-full bg-secondary"></span><span
+            class="font-label-status text-label-status text-on-surface-variant">All systems operational</span>
+        </div>
+        <div class="relative"><button aria-label="Alerts"
+            class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span
+              class="material-symbols-outlined text-[20px]">notifications</span><span
+              class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button></div>
+        <div class="relative"><button
+            class="h-9 px-space-md bg-secondary text-on-secondary rounded-lg font-tabular-data text-body-dense font-semibold flex items-center gap-space-xs hover:bg-secondary-container transition-colors shadow-sm"><span
+              class="material-symbols-outlined text-[18px]">add</span><span>Quick Add</span><span
+              class="material-symbols-outlined text-[14px]">expand_more</span></button></div>
+        <div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO426pTz_XXHXsvlzpABTw0BeyYzYhC2ZSseSvDWQU3P099jf5diPc23HOc-05hkl123oDnduhNMVmDJ6K7Zmc1SuDaJEu6aFmhPDAT5EdfXdaEZhOGSk2QGLhRUwC-N3Sf5mWqKo1AX2WBgCBFFX-CJnz3QtREd9DtjvRBa0uPHf-gzCHEsbOf3SZnnXxJdWkHyFg8bS_yo0dSVVsy0iipA1k9bCBXdNQM3vehgPS8Kbn4TzTdTpw" />
+        </div>
+      </div>
+    </header>
+    <main class="relative pt-16 bg-surface min-h-screen w-full px-space-xl py-space-lg">
+      <div class="flex flex-col w-full space-y-space-xl">
+        <!-- Page Header & Action Bar -->
+        <div
+          class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+          <div class="space-y-space-3xs">
+            <div class="flex items-center gap-space-xs">
+              <span
+                class="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-semibold">Executive
+                Cockpit</span>
+              <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+              <span class="font-caption-sm text-caption-sm text-on-surface-variant">Metro West + 3 Rooftops</span>
+            </div>
+            <h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">Dealership Operations
+              &amp; Performance</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+              Real-time overview of inventory velocity, transactional revenue, and consignment intake across all active
+              showrooms.
+            </p>
+          </div>
+          <!-- Actions & Filter Pills -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm">
+            <!-- Date Filters -->
+            <div class="flex items-center bg-surface-container-low p-space-3xs rounded-lg">
+              <button
+                class="px-space-sm py-space-3xs font-tabular-data text-body-dense text-on-surface-variant hover:text-on-surface rounded-md transition-colors"
+                type="button">Today</button>
+              <button
+                class="px-space-sm py-space-3xs font-tabular-data text-body-dense text-on-surface-variant hover:text-on-surface rounded-md transition-colors"
+                type="button">7 Days</button>
+              <button
+                class="px-space-sm py-space-3xs font-tabular-data text-body-dense bg-surface-container-lowest text-secondary font-semibold rounded-md shadow-sm transition-colors"
+                type="button">30 Days</button>
+              <button
+                class="px-space-sm py-space-3xs font-tabular-data text-body-dense text-on-surface-variant hover:text-on-surface rounded-md transition-colors"
+                type="button">3 Months</button>
+              <button
+                class="px-space-sm py-space-3xs font-tabular-data text-body-dense text-on-surface-variant hover:text-on-surface rounded-md transition-colors"
+                type="button">12 Months</button>
+              <button
+                class="px-space-xs py-space-3xs text-on-surface-variant hover:text-on-surface rounded-md transition-colors"
+                title="Custom Calendar Range" type="button">
+                <span class="material-symbols-outlined text-[16px] align-middle">date_range</span>
+              </button>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-space-xs w-full sm:w-auto">
+              <button
+                class="flex-1 sm:flex-none h-9 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface font-tabular-data text-body-dense font-semibold rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                <span>Export Report</span>
+              </button>
+              <button
+                class="flex-1 sm:flex-none h-9 px-space-md bg-secondary hover:bg-secondary-container text-on-secondary font-tabular-data text-body-dense font-semibold rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm"
+                type="button">
+                <span class="material-symbols-outlined text-[18px]">add_circle</span>
+                <span>New Vehicle Intake</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- KPI Cards Grid (6 High-Impact Executive Tiles) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-md">
+          <!-- Card 1: Total Revenue -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Gross
+                  Revenue</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                  <span class="material-symbols-outlined text-[12px]">trending_up</span>+18.4%
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">$14,892,450</div>
+              <p class="font-caption-sm text-caption-sm text-on-surface-variant leading-snug">Includes $682k consignment
+                margins</p>
+            </div>
+            <div class="pt-space-sm mt-space-xs">
+              <!-- SVG Sparkline -->
+              <svg class="w-full h-7 overflow-visible text-secondary" preserveaspectratio="none" viewbox="0 0 100 24">
+                <path d="M0 20 Q 20 18, 35 14 T 65 9 T 85 5 L 100 2" fill="none" stroke="currentColor"
+                  stroke-linecap="round" stroke-width="2.5"></path>
+                <path d="M0 20 Q 20 18, 35 14 T 65 9 T 85 5 L 100 2 L 100 24 L 0 24 Z" fill="currentColor"
+                  fill-opacity="0.08"></path>
+              </svg>
+            </div>
+          </div>
+          <!-- Card 2: Vehicles Sold -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Vehicles
+                  Sold</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                  <span class="material-symbols-outlined text-[12px]">trending_up</span>+12.6%
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">142 <span
+                  class="text-body-md font-body-md text-on-surface-variant font-normal">units</span></div>
+              <div class="space-y-space-3xs pt-space-2xs">
+                <div class="flex items-center justify-between font-caption-sm text-caption-sm text-on-surface-variant">
+                  <span>Monthly Target</span>
+                  <span class="font-tabular-data font-semibold text-on-surface">88% (160 cap)</span>
+                </div>
+                <div class="w-full h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+                  <div class="h-full bg-secondary rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pt-space-xs">
+              <span class="font-caption-sm text-caption-sm text-on-surface-variant">Avg turn: 19.4 days</span>
+            </div>
+          </div>
+          <!-- Card 3: Active Listings -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Active
+                  Stock</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-on-surface font-label-status text-label-status">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Turn: 4.8x
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">328 <span
+                  class="text-body-md font-body-md text-on-surface-variant font-normal">cars</span></div>
+              <div class="flex items-center gap-space-sm pt-space-3xs font-caption-sm text-caption-sm">
+                <div class="flex items-center gap-space-3xs">
+                  <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                  <span class="text-on-surface font-medium font-tabular-data">241 Direct</span>
+                </div>
+                <div class="flex items-center gap-space-3xs">
+                  <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                  <span class="text-on-surface font-medium font-tabular-data">87 Consigned</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-space-xs">
+              <div class="w-full bg-surface-container-low h-1.5 rounded-full flex overflow-hidden">
+                <div class="bg-primary-container h-full" style="width: 73.5%"></div>
+                <div class="bg-secondary h-full" style="width: 26.5%"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4: Pending Orders -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Pending
+                  Deals</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-on-surface font-label-status text-label-status">
+                  <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>Actionable
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">26 <span
+                  class="text-body-md font-body-md text-on-surface-variant font-normal">orders</span></div>
+              <div class="space-y-space-3xs pt-space-3xs font-caption-sm text-caption-sm text-on-surface-variant">
+                <div class="flex justify-between items-center">
+                  <span>Payment Audit</span>
+                  <span class="font-tabular-data font-semibold text-error">7 units</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span>Delivery Prep &amp; PDI</span>
+                  <span class="font-tabular-data font-semibold text-on-surface">12 units</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-space-xs font-caption-sm text-caption-sm text-on-surface-variant flex justify-between">
+              <span>Ready for Dispatch</span>
+              <span class="font-tabular-data font-semibold text-secondary">7 units</span>
+            </div>
+          </div>
+          <!-- Card 5: Total Active Customers -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Client
+                  Network</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                  <span class="material-symbols-outlined text-[12px]">add</span>340 New
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">3,840</div>
+              <p class="font-caption-sm text-caption-sm text-on-surface-variant">64% verified repeat collectors &amp;
+                HNWI</p>
+            </div>
+            <div class="pt-space-xs flex items-center gap-space-xs">
+              <div class="flex -space-x-2 overflow-hidden">
+                <span
+                  class="inline-block h-6 w-6 rounded-full bg-primary-container text-on-primary font-tabular-data text-[10px] flex items-center justify-center font-bold">EA</span>
+                <span
+                  class="inline-block h-6 w-6 rounded-full bg-secondary text-on-secondary font-tabular-data text-[10px] flex items-center justify-center font-bold">KL</span>
+                <span
+                  class="inline-block h-6 w-6 rounded-full bg-surface-dim text-on-surface font-tabular-data text-[10px] flex items-center justify-center font-bold">MC</span>
+              </div>
+              <span class="font-caption-sm text-caption-sm text-on-surface-variant font-tabular-data">+91 in
+                queue</span>
+            </div>
+          </div>
+          <!-- Card 6: Consignment Pipeline -->
+          <div
+            class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow">
+            <div class="space-y-space-2xs">
+              <div class="flex items-center justify-between">
+                <span
+                  class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Consignment</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                  Pipeline
+                </span>
+              </div>
+              <div class="font-metric-kpi text-metric-kpi text-on-surface tracking-tight font-bold">34 <span
+                  class="text-body-md font-body-md text-on-surface-variant font-normal">requests</span></div>
+              <div class="space-y-space-3xs pt-space-3xs font-caption-sm text-caption-sm text-on-surface-variant">
+                <div class="flex justify-between">
+                  <span>Under Initial Review</span>
+                  <span class="font-tabular-data font-semibold text-on-surface">9</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Approved / Prep Bay</span>
+                  <span class="font-tabular-data font-semibold text-secondary">15</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-space-xs font-caption-sm text-caption-sm text-on-surface-variant flex justify-between">
+              <span>Contract Settlement</span>
+              <span class="font-tabular-data font-semibold text-on-surface">10</span>
+            </div>
+          </div>
+        </div>
+        <!-- Charts & Analytics Row (2/3 vs 1/3) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+          <!-- Revenue & Margin Trajectory (8 cols) -->
+          <div
+            class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+              <div class="space-y-space-3xs">
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-title-md text-title-md font-bold text-on-surface">Gross Revenue &amp; Margin
+                    Trajectory</span>
+                  <span
+                    class="px-space-xs py-space-3xs rounded bg-surface-container-high text-on-surface-variant font-label-status text-label-status">LTM
+                    Performance</span>
+                </div>
+                <p class="font-caption-sm text-caption-sm text-on-surface-variant">Comparative monthly gross retail
+                  sales vs net retained dealership margin (in USD Millions).</p>
+              </div>
+              <!-- Legend Toggles -->
+              <div class="flex items-center gap-space-md">
+                <div class="flex items-center gap-space-2xs cursor-pointer">
+                  <span class="w-3 h-3 rounded bg-secondary"></span>
+                  <span class="font-caption-sm text-caption-sm text-on-surface font-medium">Monthly Gross ($1.1M -
+                    $1.6M)</span>
+                </div>
+                <div class="flex items-center gap-space-2xs cursor-pointer">
+                  <span class="w-3 h-3 rounded bg-primary-container"></span>
+                  <span class="font-caption-sm text-caption-sm text-on-surface-variant font-medium">Net Dealership
+                    Margin</span>
+                </div>
+              </div>
+            </div>
+            <!-- Area Chart SVG -->
+            <div class="relative w-full h-72 pt-space-sm">
+              <svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 700 240">
+                <defs>
+                  <lineargradient id="gradRevenue" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#0051d5" stop-opacity="0.28"></stop>
+                    <stop offset="100%" stop-color="#0051d5" stop-opacity="0.0"></stop>
+                  </lineargradient>
+                  <lineargradient id="gradMargin" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#0b1f33" stop-opacity="0.22"></stop>
+                    <stop offset="100%" stop-color="#0b1f33" stop-opacity="0.0"></stop>
+                  </lineargradient>
+                </defs>
+                <!-- Horizontal Grid Guides -->
+                <line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="690" y1="20" y2="20"></line>
+                <line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="690" y1="70" y2="70"></line>
+                <line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="690" y1="120" y2="120">
+                </line>
+                <line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="690" y1="170" y2="170">
+                </line>
+                <line stroke="#dae2fd" stroke-width="1" x1="40" x2="690" y1="210" y2="210"></line>
+                <!-- Y-Axis Labels -->
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="end" x="32" y="24">$1.8M</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="end" x="32" y="74">$1.4M</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="end" x="32" y="124">$1.0M</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="end" x="32" y="174">$500k</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="end" x="32" y="214">$0</text>
+                <!-- Revenue Area & Path -->
+                <path
+                  d="M50,140 C100,130 150,115 200,95 C250,75 300,105 350,80 C400,60 450,70 500,45 C550,55 600,30 680,25 L680,210 L50,210 Z"
+                  fill="url(#gradRevenue)"></path>
+                <path
+                  d="M50,140 C100,130 150,115 200,95 C250,75 300,105 350,80 C400,60 450,70 500,45 C550,55 600,30 680,25"
+                  fill="none" stroke="#0051d5" stroke-linecap="round" stroke-width="3"></path>
+                <!-- Margin Area & Path -->
+                <path
+                  d="M50,185 C100,180 150,175 200,165 C250,160 300,170 350,158 C400,150 450,152 500,140 C550,144 600,132 680,128 L680,210 L50,210 Z"
+                  fill="url(#gradMargin)"></path>
+                <path
+                  d="M50,185 C100,180 150,175 200,165 C250,160 300,170 350,158 C400,150 450,152 500,140 C550,144 600,132 680,128"
+                  fill="none" stroke="#0b1f33" stroke-linecap="round" stroke-width="2.5"></path>
+                <!-- Highlighting Point (Oct peak) -->
+                <circle cx="680" cy="25" fill="#0051d5" r="5" stroke="#ffffff" stroke-width="2"></circle>
+                <circle cx="680" cy="128" fill="#0b1f33" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+                <!-- Month Marks -->
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="50" y="226">Nov</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="110" y="226">Dec</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="170" y="226">Jan</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="230" y="226">Feb</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="290" y="226">Mar</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="350" y="226">Apr</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="410" y="226">May</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="470" y="226">Jun</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="530" y="226">Jul</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="590" y="226">Aug</text>
+                <text fill="#74777d" font-family="Inter" font-size="10" text-anchor="middle" x="640" y="226">Sep</text>
+                <text fill="#0051d5" font-family="Inter" font-size="10" font-weight="700" text-anchor="middle" x="680"
+                  y="226">Oct</text>
+              </svg>
+              <!-- Dynamic Peak Badge Overlay -->
+              <div
+                class="absolute right-4 top-2 bg-primary-container text-on-primary px-space-sm py-space-2xs rounded-lg shadow-md pointer-events-none hidden md:block">
+                <div class="font-label-caps text-[10px] text-secondary-fixed-dim uppercase">Current Month Run-rate</div>
+                <div class="font-tabular-data text-body-dense font-bold">$1,642,800 <span
+                    class="text-on-primary-container font-normal">($291k Margin)</span></div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-space-xs bg-surface-container-low p-space-sm rounded-lg">
+              <div class="flex items-center gap-space-xs font-caption-sm text-caption-sm text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+                <span>Reconciled through Chase Merchant Treasury &amp; Floorplan Auditing Service</span>
+              </div>
+              <button
+                class="font-tabular-data text-body-dense text-secondary hover:underline font-semibold flex items-center gap-space-3xs"
+                type="button">
+                <span>Drilldown by Rooftop</span>
+                <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <!-- Inventory Distribution Donut (4 cols) -->
+          <div
+            class="lg:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+            <div class="space-y-space-3xs">
+              <div class="flex items-center justify-between">
+                <span class="font-title-md text-title-md font-bold text-on-surface">Inventory Distribution</span>
+                <span class="material-symbols-outlined text-on-surface-variant text-[18px]">pie_chart</span>
+              </div>
+              <p class="font-caption-sm text-caption-sm text-on-surface-variant">Active units grouped by brand tier
+                &amp; velocity.</p>
+            </div>
+            <!-- Donut Visual + Center Stat -->
+            <div class="flex items-center justify-center relative my-space-xs">
+              <svg class="w-48 h-48 transform -rotate-90" viewbox="0 0 120 120">
+                <!-- Circle Background -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#eaedff" stroke-width="16"></circle>
+                <!-- Porsche: 28% -> stroke-dasharray="84.4 217.2" -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#0051d5" stroke-dasharray="84.4 217.2"
+                  stroke-dashoffset="0" stroke-width="16"></circle>
+                <!-- BMW: 24% -> stroke-dasharray="72.3 229.3" offset -84.4 -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#0b1f33" stroke-dasharray="72.3 229.3"
+                  stroke-dashoffset="-84.4" stroke-width="16"></circle>
+                <!-- Mercedes: 22% -> stroke-dasharray="66.3 235.3" offset -156.7 -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#316bf3" stroke-dasharray="66.3 235.3"
+                  stroke-dashoffset="-156.7" stroke-width="16"></circle>
+                <!-- Audi: 16% -> stroke-dasharray="48.2 253.4" offset -223.0 -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#7587a0" stroke-dasharray="48.2 253.4"
+                  stroke-dashoffset="-223.0" stroke-width="16"></circle>
+                <!-- Other Luxury: 10% -> stroke-dasharray="30.1 271.5" offset -271.2 -->
+                <circle cx="60" cy="60" fill="transparent" r="48" stroke="#d2d9f4" stroke-dasharray="30.1 271.5"
+                  stroke-dashoffset="-271.2" stroke-width="16"></circle>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+                <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Avg Turn</span>
+                <span class="font-headline-lg text-headline-lg text-on-surface font-bold">18d</span>
+                <span class="font-caption-sm text-[10px] text-secondary font-medium">Optimal Band</span>
+              </div>
+            </div>
+            <!-- Segment breakdown list -->
+            <div class="space-y-space-xs font-caption-sm text-caption-sm">
+              <div
+                class="flex items-center justify-between p-space-2xs rounded hover:bg-surface-container-low transition-colors">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2.5 h-2.5 rounded bg-secondary"></span>
+                  <span class="font-medium text-on-surface">Porsche</span>
+                </div>
+                <div class="flex items-center gap-space-md font-tabular-data">
+                  <span class="text-on-surface-variant">92 cars (28%)</span>
+                  <span class="font-semibold text-on-surface">14d on lot</span>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between p-space-2xs rounded hover:bg-surface-container-low transition-colors">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2.5 h-2.5 rounded bg-primary-container"></span>
+                  <span class="font-medium text-on-surface">BMW</span>
+                </div>
+                <div class="flex items-center gap-space-md font-tabular-data">
+                  <span class="text-on-surface-variant">79 cars (24%)</span>
+                  <span class="font-semibold text-on-surface">17d on lot</span>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between p-space-2xs rounded hover:bg-surface-container-low transition-colors">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2.5 h-2.5 rounded bg-secondary-container"></span>
+                  <span class="font-medium text-on-surface">Mercedes-Benz</span>
+                </div>
+                <div class="flex items-center gap-space-md font-tabular-data">
+                  <span class="text-on-surface-variant">72 cars (22%)</span>
+                  <span class="font-semibold text-on-surface">21d on lot</span>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between p-space-2xs rounded hover:bg-surface-container-low transition-colors">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2.5 h-2.5 rounded bg-on-primary-container"></span>
+                  <span class="font-medium text-on-surface">Audi</span>
+                </div>
+                <div class="flex items-center gap-space-md font-tabular-data">
+                  <span class="text-on-surface-variant">53 cars (16%)</span>
+                  <span class="font-semibold text-on-surface">22d on lot</span>
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between p-space-2xs rounded hover:bg-surface-container-low transition-colors">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2.5 h-2.5 rounded bg-surface-dim"></span>
+                  <span class="font-medium text-on-surface">Exotics &amp; Other</span>
+                </div>
+                <div class="flex items-center gap-space-md font-tabular-data">
+                  <span class="text-on-surface-variant">32 cars (10%)</span>
+                  <span class="font-semibold text-on-surface">29d on lot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Operational Workflows & Split Tables -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+          <!-- Left: Recent High-Ticket Orders (8 Cols) -->
+          <div
+            class="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col justify-between">
+            <div class="p-space-lg space-y-space-md">
+              <!-- Header & Segment Controls -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+                <div class="space-y-space-3xs">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="font-title-md text-title-md font-bold text-on-surface">High-Ticket Vehicle
+                      Orders</span>
+                    <span
+                      class="px-space-xs py-space-3xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-status text-label-status">26
+                      Active</span>
+                  </div>
+                  <p class="font-caption-sm text-caption-sm text-on-surface-variant">Orders exceeding $90,000 requiring
+                    dual-signature treasury authorization.</p>
+                </div>
+                <!-- Order Status Tabs -->
+                <div
+                  class="flex items-center bg-surface-container-low p-space-3xs rounded-lg text-body-dense font-tabular-data">
+                  <button
+                    class="px-space-sm py-space-3xs bg-surface-container-lowest text-secondary font-semibold rounded shadow-sm"
+                    type="button">All (26)</button>
+                  <button class="px-space-sm py-space-3xs text-on-surface-variant hover:text-on-surface rounded"
+                    type="button">Escrow (7)</button>
+                  <button class="px-space-sm py-space-3xs text-on-surface-variant hover:text-on-surface rounded"
+                    type="button">Prep (12)</button>
+                  <button class="px-space-sm py-space-3xs text-on-surface-variant hover:text-on-surface rounded"
+                    type="button">Dispatched (7)</button>
+                </div>
+              </div>
+              <!-- High-Density Operations Table -->
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr
+                      class="bg-surface-container-low font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+                      <th class="py-space-xs px-space-sm rounded-l">Order ID</th>
+                      <th class="py-space-xs px-space-sm">Client / Buyer</th>
+                      <th class="py-space-xs px-space-sm">Vehicle Identification</th>
+                      <th class="py-space-xs px-space-sm">Deal Terms</th>
+                      <th class="py-space-xs px-space-sm">Escrow Status</th>
+                      <th class="py-space-xs px-space-sm">ETA Dispatch</th>
+                      <th class="py-space-xs px-space-sm text-right rounded-r">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+                    <!-- Order 1 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                      <td
+                        class="py-space-sm px-space-sm font-tabular-data font-semibold text-secondary whitespace-nowrap">
+                        #AH-9842
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex items-center gap-space-xs">
+                          <img class="w-7 h-7 rounded-full object-cover shrink-0"
+                            data-alt="Professional studio headshot of male luxury auto buyer in business suit against subtle neutral studio backdrop"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPHMoZK0UY9rKg07Dekh0hKfEtmCQTPXj7NJDj-yFG5xcONr1NLpwXvDCc4Dzo_6VpMzmfPJisXVUFq5FR9Fuodo64CN6wDP0dAh0dV4IzWGcWKE49q6Q9keUNfdYkejZ89hTL5i9EvyD2v7d-a4tP0cfjymPC5Mr-zMkQQOr6tdFkrI9lzXgXm8KsbtbrP2CVFlyPl5A6E5n3Jtczzd8zqU7X5C1YTNeWUVUGYxRbcTpQv6jPJqqt" />
+                          <div class="flex flex-col">
+                            <span class="font-tabular-data font-semibold text-on-surface leading-snug">Harrison
+                              Vance</span>
+                            <span class="font-caption-sm text-[10px] text-on-surface-variant">Tier-1 Private
+                              Client</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm">
+                        <div class="flex items-center gap-space-xs min-w-[200px]">
+                          <img class="w-10 h-7 rounded object-cover shrink-0"
+                            data-alt="Sleek modern 2024 Porsche 911 GT3 in Shark Blue parked in showroom delivery bay with reflective floor"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj5fbNXpl0TJETBl2tuJC22YWdxIa0zl1EeVvMVdBBJcT0MVRORfUX4agHi9HxVLayVujAs-8ghxsoFzEUq3UFsPlNnvfDpUzGPNhZ-Ws--1PI4u6QLlZW5gG7F-u6MouP_NBPRjkxejZrzEEQUrSJ9ZDQBWuB72VTYPOUquUhh6k2y_ZsZdMcjN4mePswrY9xKdF8RrXUHWLx2nklqmRe5GKW-7fd_AAKxIHCkETK1n8ZjLULMmNQ" />
+                          <div class="flex flex-col min-w-0">
+                            <span class="font-tabular-data font-semibold text-on-surface truncate">2024 Porsche 911
+                              GT3</span>
+                            <span class="font-caption-sm text-[10px] text-outline truncate">WP0AB2A97RS...</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex flex-col">
+                          <span class="font-tabular-data font-bold text-on-surface">$248,500</span>
+                          <span class="font-caption-sm text-[10px] text-on-surface-variant">Cash Wire Transfer</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Paid &amp; Verified
+                        </span>
+                      </td>
+                      <td
+                        class="py-space-sm px-space-sm whitespace-nowrap font-tabular-data text-body-dense text-on-surface">
+                        Today, 4:30 PM
+                      </td>
+                      <td class="py-space-sm px-space-sm text-right whitespace-nowrap">
+                        <button
+                          class="p-space-2xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+                          title="Manage Order" type="button">
+                          <span class="material-symbols-outlined text-[18px] align-middle">more_horiz</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- Order 2 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                      <td
+                        class="py-space-sm px-space-sm font-tabular-data font-semibold text-secondary whitespace-nowrap">
+                        #AH-9841
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant font-tabular-data text-[11px] font-bold flex items-center justify-center shrink-0">SL</span>
+                          <div class="flex flex-col">
+                            <span class="font-tabular-data font-semibold text-on-surface leading-snug">Sarah Lin,
+                              MD</span>
+                            <span class="font-caption-sm text-[10px] text-on-surface-variant">First-time Buyer</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm">
+                        <div class="flex items-center gap-space-xs min-w-[200px]">
+                          <img class="w-10 h-7 rounded object-cover shrink-0"
+                            data-alt="Aggressive metallic black 2023 BMW M4 Competition Coupe parked under studio automotive spotlights"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBChwumeASOzHrB5S0_FiKjgWMQahR97Bt-yCUGrN4r3rdhPfKRfz1DefMB5o9ZU6zFwLdP6zPFV3JoBa_6RttYNYV6EbVsZDYbCvPS_aLhtzbt4bOgcTwcay4ihChKYxoAAF9kuZR-qRfxM3Csem4htKrhpRUncfc-KhtQB3luXMngC0dkbvEYR4I8RzWS-sy8vzPlq6IaSPXAovioS6FpCW1G3JZr3ZC5lN3fr6T9CPchibKZySlj" />
+                          <div class="flex flex-col min-w-0">
+                            <span class="font-tabular-data font-semibold text-on-surface truncate">2023 BMW M4
+                              Comp</span>
+                            <span class="font-caption-sm text-[10px] text-outline truncate">WBS43AZ07PC...</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex flex-col">
+                          <span class="font-tabular-data font-bold text-on-surface">$102,400</span>
+                          <span class="font-caption-sm text-[10px] text-on-surface-variant">Financed (60mo @
+                            5.4%)</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-on-surface font-label-status text-label-status">
+                          <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>Escrow Pending
+                        </span>
+                      </td>
+                      <td
+                        class="py-space-sm px-space-sm whitespace-nowrap font-tabular-data text-body-dense text-on-surface-variant">
+                        Tomorrow, 11:00 AM
+                      </td>
+                      <td class="py-space-sm px-space-sm text-right whitespace-nowrap">
+                        <button
+                          class="p-space-2xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+                          title="Manage Order" type="button">
+                          <span class="material-symbols-outlined text-[18px] align-middle">more_horiz</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- Order 3 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                      <td
+                        class="py-space-sm px-space-sm font-tabular-data font-semibold text-secondary whitespace-nowrap">
+                        #AH-9838
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex items-center gap-space-xs">
+                          <img class="w-7 h-7 rounded-full object-cover shrink-0"
+                            data-alt="Portrait of middle-aged executive collector smiling in natural light with architectural background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDyNchRD6uOm8EZ7l16A0bViRV_ZyN6ScOsoF4GlGjET58iBByn1sxWyGMVHman4_wIpDcF9aK7k47QpTYoT4XPt88lcD62vumQxEX2UCaE5Qi3Q0u-lfHToHJWqEPkc4Bd5PMUWIvbsz9OjSj05BglP8QidpZPLvSJK-wqWKcR1w_T4xtbAastVNDmXBG3a1ZbhYsesnWYOlTSefmahCTQv_VGk26vpwyYi5gh-wS31yhhktlVyeg" />
+                          <div class="flex flex-col">
+                            <span class="font-tabular-data font-semibold text-on-surface leading-snug">Marcus
+                              Thorne</span>
+                            <span class="font-caption-sm text-[10px] text-on-surface-variant">VIP Portfolio Owner</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm">
+                        <div class="flex items-center gap-space-xs min-w-[200px]">
+                          <img class="w-10 h-7 rounded object-cover shrink-0"
+                            data-alt="Matte emerald 2024 Mercedes-AMG G63 luxury SUV parked in architectural concrete showroom"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh-bupwn1aU5V8oKL0J4FNjQURVp9cMxymX3ByzK_Ipbv9AgC9erUl6Awu0EuFqhk31uX_BD02LSrHf6sj1jC7tv5Ua6ENvx3_wrdzc2yn89a5HMpnbHZQgqYhIeIIajNJ7rVEyIZ-Fl2ReWHLw1ETCntsobnSNdN2jiCcyJyEvm3rhb200cH-nzO0tlRgJUzt-LGST4EHueE3cMdm2N6-zUCgkKh4ZuzRMqDQB1NfeRDJTU4Hu6ZQ" />
+                          <div class="flex flex-col min-w-0">
+                            <span class="font-tabular-data font-semibold text-on-surface truncate">2024 AMG G63</span>
+                            <span class="font-caption-sm text-[10px] text-outline truncate">W1NYX7JJ6RF...</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex flex-col">
+                          <span class="font-tabular-data font-bold text-on-surface">$218,000</span>
+                          <span class="font-caption-sm text-[10px] text-on-surface-variant">Direct Wire Received</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-on-surface font-label-status text-label-status">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Inspection Passed
+                        </span>
+                      </td>
+                      <td
+                        class="py-space-sm px-space-sm whitespace-nowrap font-tabular-data text-body-dense text-on-surface">
+                        Oct 26, 2:00 PM
+                      </td>
+                      <td class="py-space-sm px-space-sm text-right whitespace-nowrap">
+                        <button
+                          class="p-space-2xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+                          title="Manage Order" type="button">
+                          <span class="material-symbols-outlined text-[18px] align-middle">more_horiz</span>
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- Order 4 -->
+                    <tr class="hover:bg-surface-container-low transition-colors group">
+                      <td
+                        class="py-space-sm px-space-sm font-tabular-data font-semibold text-secondary whitespace-nowrap">
+                        #AH-9835
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex items-center gap-space-xs">
+                          <span
+                            class="w-7 h-7 rounded-full bg-primary text-on-primary font-tabular-data text-[11px] font-bold flex items-center justify-center shrink-0">EK</span>
+                          <div class="flex flex-col">
+                            <span class="font-tabular-data font-semibold text-on-surface leading-snug">Elena
+                              Kostas</span>
+                            <span class="font-caption-sm text-[10px] text-on-surface-variant">Trade-in Pending</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm">
+                        <div class="flex items-center gap-space-xs min-w-[200px]">
+                          <img class="w-10 h-7 rounded object-cover shrink-0"
+                            data-alt="Nardo gray 2023 Audi RS6 Avant wagon positioned dynamically on high gloss studio floor"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf5nIpO-ywX5Pjqg2LbwD2l5RaC0JZ0_OB0TqcwaJez4kaPqK26Q2tNfe4kCkOua8ypDV1Aaan4dd-A3XlfVN4fJLYpEuD5KY2GWVeONQ_v5VlUBpFBpeS5io5rcgu7VwbpwKa1zlA6PaBvASBwxyJgGQNHKMVV2z3qRoyzijHan15u7ELqDLZK9HwaGx892Ac6sinuzRYZvOk8AkkOrzeoeP9qEEWmpsboboi7xVwXxUDrIXm9-S6" />
+                          <div class="flex flex-col min-w-0">
+                            <span class="font-tabular-data font-semibold text-on-surface truncate">2023 Audi RS6
+                              Avant</span>
+                            <span class="font-caption-sm text-[10px] text-outline truncate">WAUZZZF26PN...</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <div class="flex flex-col">
+                          <span class="font-tabular-data font-bold text-on-surface">$139,900</span>
+                          <span class="font-caption-sm text-[10px] text-on-surface-variant">Financed (48mo @
+                            4.9%)</span>
+                        </div>
+                      </td>
+                      <td class="py-space-sm px-space-sm whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary font-label-status text-label-status">
+                          <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Paid &amp; Verified
+                        </span>
+                      </td>
+                      <td
+                        class="py-space-sm px-space-sm whitespace-nowrap font-tabular-data text-body-dense text-on-surface">
+                        Oct 27, 9:30 AM
+                      </td>
+                      <td class="py-space-sm px-space-sm text-right whitespace-nowrap">
+                        <button
+                          class="p-space-2xs rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+                          title="Manage Order" type="button">
+                          <span class="material-symbols-outlined text-[18px] align-middle">more_horiz</span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Footer Table Pagination & Bulk View -->
+            <div class="bg-surface-container-low px-space-lg py-space-sm flex items-center justify-between">
+              <span class="font-caption-sm text-caption-sm text-on-surface-variant">Showing 4 of 26 pending
+                transactions</span>
+              <a class="font-tabular-data text-body-dense text-secondary hover:underline font-semibold flex items-center gap-space-3xs"
+                href="#">
+                <span>Open Full Transaction Ledger</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          <!-- Right: Dealership Live Activity & Consignment Feed (4 Cols) -->
+          <div
+            class="xl:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between space-y-space-md">
+            <div class="flex items-center justify-between">
+              <div class="space-y-space-3xs">
+                <div class="flex items-center gap-space-xs">
+                  <span class="font-title-md text-title-md font-bold text-on-surface">Live Operational Feed</span>
+                  <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                </div>
+                <p class="font-caption-sm text-caption-sm text-on-surface-variant">Multi-desk activities &amp; intake
+                  events.</p>
+              </div>
+              <button class="font-caption-sm text-caption-sm text-secondary hover:underline font-medium"
+                type="button">Filter Logs</button>
+            </div>
+            <!-- Real-time Activity Timeline -->
+            <div class="space-y-space-md relative pl-2">
+              <!-- Connecting Vertical Guide -->
+              <div class="absolute left-5 top-2 bottom-2 w-0.5 bg-surface-container"></div>
+              <!-- Event 1 -->
+              <div class="flex items-start gap-space-md relative">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">sell</span>
+                </div>
+                <div class="space-y-space-3xs flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-status text-label-status font-bold text-on-surface">New Consignment
+                      Intake</span>
+                    <span class="font-caption-sm text-[10px] text-on-surface-variant font-tabular-data">12m ago</span>
+                  </div>
+                  <p class="font-body-dense text-body-dense text-on-surface-variant leading-relaxed">
+                    <span class="font-semibold text-on-surface">2023 Porsche Taycan Turbo S</span> submitted with
+                    expected reserve of <span class="font-tabular-data font-semibold text-on-surface">$145,000</span> by
+                    Dr. Robert Evans.
+                  </p>
+                  <div class="pt-space-3xs flex items-center gap-space-xs">
+                    <span
+                      class="px-space-xs py-space-3xs rounded bg-surface-container-high text-on-surface-variant font-caption-sm text-[10px]">Appraisal
+                      Req</span>
+                    <button class="text-secondary font-caption-sm text-[11px] font-semibold hover:underline"
+                      type="button">Review Spec &gt;</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Event 2 -->
+              <div class="flex items-start gap-space-md relative">
+                <div
+                  class="w-7 h-7 rounded-full bg-surface-container-high text-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">account_balance_wallet</span>
+                </div>
+                <div class="space-y-space-3xs flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-status text-label-status font-bold text-on-surface">Wire Payment
+                      Cleared</span>
+                    <span class="font-caption-sm text-[10px] text-on-surface-variant font-tabular-data">34m ago</span>
+                  </div>
+                  <p class="font-body-dense text-body-dense text-on-surface-variant leading-relaxed">
+                    Wire settlement of <span class="font-tabular-data font-semibold text-on-surface">$189,500</span>
+                    completed for Order <span class="text-secondary font-semibold">#AH-9842</span> (2024 Porsche 911
+                    GT3).
+                  </p>
+                </div>
+              </div>
+              <!-- Event 3 -->
+              <div class="flex items-start gap-space-md relative">
+                <div
+                  class="w-7 h-7 rounded-full bg-surface-container text-on-surface flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">build_circle</span>
+                </div>
+                <div class="space-y-space-3xs flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-status text-label-status font-bold text-on-surface">PDI Inspection
+                      Passed</span>
+                    <span class="font-caption-sm text-[10px] text-on-surface-variant font-tabular-data">1h ago</span>
+                  </div>
+                  <p class="font-body-dense text-body-dense text-on-surface-variant leading-relaxed">
+                    160-point mechanical check signed off for <span class="font-semibold text-on-surface">2024 AMG
+                      G63</span> (VIN: #8821). Ready for detailing bay.
+                  </p>
+                </div>
+              </div>
+              <!-- Event 4 -->
+              <div class="flex items-start gap-space-md relative">
+                <div
+                  class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">price_change</span>
+                </div>
+                <div class="space-y-space-3xs flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-status text-label-status font-bold text-on-surface">Floor Price
+                      Adjustment</span>
+                    <span class="font-caption-sm text-[10px] text-on-surface-variant font-tabular-data">2h ago</span>
+                  </div>
+                  <p class="font-body-dense text-body-dense text-on-surface-variant leading-relaxed">
+                    Manager authorized -$3,500 markdown on <span class="font-semibold text-on-surface">2022 Aston Martin
+                      Vantage</span> to accelerate 45-day turn.
+                  </p>
+                </div>
+              </div>
+              <!-- Event 5 -->
+              <div class="flex items-start gap-space-md relative">
+                <div
+                  class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                </div>
+                <div class="space-y-space-3xs flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-status text-label-status font-bold text-on-surface">Delivery
+                      Completed</span>
+                    <span class="font-caption-sm text-[10px] text-on-surface-variant font-tabular-data">3h ago</span>
+                  </div>
+                  <p class="font-body-dense text-body-dense text-on-surface-variant leading-relaxed">
+                    Client acceptance signed for Order <span class="text-secondary font-semibold">#AH-9819</span> (BMW
+                    M8 Gran Coupe). Title transferred digitally.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Quick Action on Feed -->
+            <button
+              class="w-full h-9 bg-surface-container-low hover:bg-surface-container text-on-surface font-tabular-data text-body-dense font-semibold rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm"
+              type="button">
+              <span class="material-symbols-outlined text-[16px]">history</span>
+              <span>View Complete Audit Log</span>
+            </button>
+          </div>
+        </div>
+        <!-- Quick System Status & Logistics Alert Banner -->
+        <div
+          class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-md">
+            <div
+              class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-secondary-fixed-dim shrink-0">
+              <span class="material-symbols-outlined text-[24px]">sync_saved_locally</span>
+            </div>
+            <div class="space-y-space-3xs">
+              <div class="flex items-center gap-space-sm flex-wrap">
+                <span class="font-tabular-data text-body-dense font-bold text-on-primary">Title Transfer API
+                  Connected</span>
+                <span
+                  class="inline-flex items-center gap-space-3xs px-space-xs py-space-3xs rounded-full bg-secondary text-on-secondary font-label-status text-[10px]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>Live Sync
+                </span>
+              </div>
+              <p class="font-caption-sm text-caption-sm text-on-primary-container">
+                Escrow Gateway operational (0 failed transactions in last 72 hours). DMV digital registration batch
+                synced at 14:00 EST.
+              </p>
+            </div>
+          </div>
+          <!-- Right logistics indicator -->
+          <div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end">
+            <div class="flex flex-col text-left md:text-right">
+              <span class="font-label-caps text-[10px] uppercase text-on-primary-container">Next Carrier Dispatch</span>
+              <span class="font-tabular-data text-body-dense font-bold text-secondary-fixed">Today @ 4:30 PM EST</span>
+            </div>
+            <button
+              class="h-8 px-space-md bg-secondary text-on-secondary hover:bg-secondary-container font-tabular-data text-body-dense font-semibold rounded-lg flex items-center gap-space-2xs transition-colors shadow-sm whitespace-nowrap"
+              type="button">
+              <span>Dispatch Bay</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
