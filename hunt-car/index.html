@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#424657",
+                        "secondary-fixed-dim": "#c2c6da",
+                        "on-tertiary-fixed": "#001d31",
+                        "on-primary-container": "#eeefff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#dee2f6",
+                        "on-tertiary-container": "#e7f2ff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#595e6f",
+                        "on-surface": "#131b2e",
+                        "on-secondary-container": "#5d6273",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-container": "#0073ae",
+                        "surface-tint": "#0053db",
+                        "primary": "#004ac6",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#cce5ff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "tertiary": "#005a89",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-on-surface": "#eef0ff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "secondary-container": "#dbdff3",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004b73",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#161b2a",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-md": "1rem",
+                        "margin": "2rem",
+                        "margin-mobile": "1rem",
+                        "space-lg": "1.25rem",
+                        "gutter-dense": "0.75rem",
+                        "space-3xl": "3rem",
+                        "gutter": "1.5rem",
+                        "space-2xl": "2rem",
+                        "space-sm": "0.75rem",
+                        "space-4xl": "4rem",
+                        "space-xl": "1.5rem",
+                        "space-xs": "0.5rem",
+                        "space-2xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "tabular-numerical": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "caption": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "caption-medium": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg-medium": ["Inter"],
+                        "label-overline": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm-medium": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tabular-numerical": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "caption-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm-medium": ["14px", { "lineHeight": "21px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }</script>
+</head>
+
+<body class="bg-background font-body-sm text-body-sm text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-xs"
+                    data-path="explore" href="#"><img alt="AutoHunt Logo" class="h-8 w-auto object-contain"
+                        src="./IMG/logo.jpg" /><span
+                        class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span></a>
+            </div>
+            <nav class="hidden xl:flex items-center gap-space-xs"
+                data-active-classes="bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg">
+                <a aria-current="page"
+                    class="px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg"
+                    data-path="explore" href="#">Explore</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="buy-online" href="#">Buy Online</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="sell-your-car" href="#">Sell Your Car</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="financing" href="#">Financing</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="inspection-guarantee" href="#">Inspection Guarantee</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="reviews" href="#">Reviews</a>
+            </nav>
+            <div class="flex items-center gap-space-sm shrink-0"><button aria-label="Search Vehicles"
+                    class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><a
+                    aria-label="Saved Cars"
+                    class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    data-path="saved-cars" href="#"><span
+                        class="material-symbols-outlined text-[22px]">favorite</span><span
+                        class="absolute top-1 right-1 flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-primary font-caption text-caption text-on-primary">3</span></a>
+                <div class="h-6 w-px bg-surface-container-highest mx-space-2xs hidden sm:block"></div><a
+                    class="hidden sm:inline-flex items-center font-body-sm-medium text-body-sm-medium text-on-surface px-space-sm py-space-xs rounded-lg hover:bg-surface-container transition-colors"
+                    data-path="sign-in" href="#">Sign In / Register</a><a
+                    class="inline-flex items-center justify-center h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"
+                    data-path="sell-your-car" href="#">Sell Your Car</a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-2xs"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-background">
+        <div class="flex flex-col w-full">
+            <!-- Top Hero Visual Area with Bleed under Shell Header -->
+            <section class="relative w-full -mt-20 overflow-hidden bg-on-secondary-fixed">
+                <!-- Visual Backing: Cinematic Image from user prompt -->
+                <div class="absolute inset-0 z-0">
+                    <img alt="Curated Performance Automotive Fleet"
+                        class="w-full h-full object-cover object-center opacity-65 scale-[1.02] transform transition-transform duration-1000 ease-out"
+                        src="./IMG/black.jpg" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed via-on-secondary-fixed/40 to-on-secondary-fixed/80">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-on-secondary-fixed/90 via-on-secondary-fixed/50 to-transparent">
+                    </div>
+                </div>
+                <!-- Hero Content Container -->
+                <div
+                    class="relative z-10 max-w-[1280px] mx-auto px-gutter pt-36 pb-space-4xl flex flex-col justify-end">
+                    <!-- Tag / Metric Pill -->
+                    <div
+                        class="flex items-center gap-space-xs self-start mb-space-md px-space-sm py-space-2xs rounded-full bg-primary-container/20 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+                        <span
+                            class="font-label-overline text-label-overline text-on-primary tracking-widest uppercase">Verified
+                            Luxury Inventory • Fall 2025 Edition</span>
+                    </div>
+                    <!-- Main Typography Stack -->
+                    <div class="max-w-3xl mb-space-3xl">
+                        <h1 class="font-display text-display text-on-primary tracking-tight leading-[1.08] mb-space-md">
+                            Find Your Next Drive.
+                        </h1>
+                        <p class="font-body-lg text-body-lg text-primary-fixed/90 max-w-2xl leading-relaxed">
+                            Curated certified luxury &amp; performance vehicles, backed by 150-point surgical inspection
+                            and seamless nationwide enclosed home delivery.
+                        </p>
+                    </div>
+                    <!-- Floating Integrated Search Console -->
+                    <div class="w-full bg-surface-container-lowest rounded-xl shadow-2xl p-space-md md:p-space-xl">
+                        <!-- Search Filter Modes -->
+                        <div
+                            class="flex flex-wrap items-center gap-space-xs border-b border-surface-container pb-space-md mb-space-lg">
+                            <button
+                                class="search-tab-btn px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium shadow-sm transition-all"
+                                data-tab="all" type="button">
+                                All Cars
+                            </button>
+                            <button
+                                class="search-tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-sm-medium text-body-sm-medium transition-all"
+                                data-tab="new" type="button">
+                                New Arrivals
+                            </button>
+                            <button
+                                class="search-tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-sm-medium text-body-sm-medium transition-all"
+                                data-tab="electric" type="button">
+                                Electric &amp; Hybrid
+                            </button>
+                            <button
+                                class="search-tab-btn px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-body-sm-medium text-body-sm-medium transition-all"
+                                data-tab="cpo" type="button">
+                                Certified Pre-Owned
+                            </button>
+                            <div
+                                class="ml-auto hidden lg:flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+                                <span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+                                <span>All vehicles include AutoHunt Comprehensive Title Verification</span>
+                            </div>
+                        </div>
+                        <!-- Filter Inputs Row -->
+                        <form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md items-end"
+                            onsubmit="event.preventDefault();">
+                            <!-- Make / Brand -->
+                            <div class="flex flex-col gap-space-2xs">
+                                <label
+                                    class="font-label-overline text-label-overline uppercase text-on-surface-variant">Make
+                                    / Brand</label>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">directions_car</span>
+                                    <select
+                                        class="w-full h-10 pl-9 pr-8 bg-surface-container-low rounded-lg text-on-surface font-body-sm-medium text-body-sm-medium appearance-none focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all cursor-pointer">
+                                        <option value="all">Any Make (All Brands)</option>
+                                        <option value="porsche">Porsche</option>
+                                        <option value="bmw">BMW M-Series</option>
+                                        <option value="mercedes">Mercedes-AMG</option>
+                                        <option value="audi">Audi Sport</option>
+                                        <option value="aston">Aston Martin</option>
+                                        <option value="ferrari">Ferrari</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">unfold_more</span>
+                                </div>
+                            </div>
+                            <!-- Model -->
+                            <div class="flex flex-col gap-space-2xs">
+                                <label
+                                    class="font-label-overline text-label-overline uppercase text-on-surface-variant">Model
+                                    Series</label>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">tune</span>
+                                    <select
+                                        class="w-full h-10 pl-9 pr-8 bg-surface-container-low rounded-lg text-on-surface font-body-sm-medium text-body-sm-medium appearance-none focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all cursor-pointer">
+                                        <option value="all">All Models</option>
+                                        <option value="911">911 Series (GT3, Turbo, Carrera)</option>
+                                        <option value="m8">M8 Gran Coupe / Competition</option>
+                                        <option value="amggt">AMG GT 4-Door / Coupe</option>
+                                        <option value="rs6">RS6 Avant Quattro</option>
+                                        <option value="taycan">Taycan Turbo GT</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">unfold_more</span>
+                                </div>
+                            </div>
+                            <!-- Price Range -->
+                            <div class="flex flex-col gap-space-2xs">
+                                <label
+                                    class="font-label-overline text-label-overline uppercase text-on-surface-variant">Budget
+                                    Spectrum</label>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">payments</span>
+                                    <select
+                                        class="w-full h-10 pl-9 pr-8 bg-surface-container-low rounded-lg text-on-surface font-body-sm-medium text-body-sm-medium appearance-none focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all cursor-pointer">
+                                        <option value="any">Any Price</option>
+                                        <option value="50-100">$50,000 - $100,000</option>
+                                        <option value="100-150">$100,000 - $150,000</option>
+                                        <option value="150-250">$150,000 - $250,000</option>
+                                        <option value="250+">$250,000+ (High Exotic)</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">unfold_more</span>
+                                </div>
+                            </div>
+                            <!-- Body Style -->
+                            <div class="flex flex-col gap-space-2xs">
+                                <label
+                                    class="font-label-overline text-label-overline uppercase text-on-surface-variant">Chassis
+                                    Configuration</label>
+                                <div class="relative flex items-center">
+                                    <span
+                                        class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">commute</span>
+                                    <select
+                                        class="w-full h-10 pl-9 pr-8 bg-surface-container-low rounded-lg text-on-surface font-body-sm-medium text-body-sm-medium appearance-none focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all cursor-pointer">
+                                        <option value="all">All Body Types</option>
+                                        <option value="coupe">Coupe &amp; Gran Coupe</option>
+                                        <option value="sedan">Executive Sedan</option>
+                                        <option value="suv">High-Performance SUV</option>
+                                        <option value="convertible">Convertible / Spyder</option>
+                                        <option value="wagon">Touring &amp; Avant</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">unfold_more</span>
+                                </div>
+                            </div>
+                            <!-- Search Action -->
+                            <div>
+                                <button
+                                    class="w-full h-10 px-space-md bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.99]"
+                                    type="submit">
+                                    <span class="material-symbols-outlined text-[18px]">search</span>
+                                    <span>Search 1,842 Vehicles</span>
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Quick filter pill chips -->
+                        <div
+                            class="mt-space-md pt-space-sm border-t border-surface-container-low flex flex-wrap items-center gap-space-xs text-caption">
+                            <span class="text-on-surface-variant font-caption-medium">Instant Filters:</span>
+                            <a class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption transition-colors"
+                                href="#">Under 10,000 Miles</a>
+                            <a class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption transition-colors"
+                                href="#">1-Owner Clean Carfax</a>
+                            <a class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption transition-colors"
+                                href="#">V8 Biturbo &amp; GT3 Flat-6</a>
+                            <a class="px-space-xs py-space-2xs rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-caption transition-colors"
+                                href="#">Nationwide Free Freight</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Popular Brands Showcase Grid -->
+            <section class="w-full py-space-3xl max-w-[1280px] mx-auto px-gutter">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-xs">
+                    <div>
+                        <span
+                            class="font-label-overline text-label-overline text-primary font-bold uppercase tracking-wider">Curated
+                            Marques</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Search By Premier Brand
+                        </h2>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+                        Explore pristine vehicles verified directly with franchise networks and certified private
+                        consignments.
+                    </p>
+                </div>
+                <!-- 8 Distinctive Brand Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-space-sm">
+                    <!-- Porsche -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">P</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">Porsche</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">148 cars</span>
+                    </a>
+                    <!-- BMW M -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">M</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">BMW
+                            M</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">236 cars</span>
+                    </a>
+                    <!-- Mercedes-AMG -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">AMG</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">AMG</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">194 cars</span>
+                    </a>
+                    <!-- Audi Sport -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">RS</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">Audi
+                            Sport</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">112 cars</span>
+                    </a>
+                    <!-- Aston Martin -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">AM</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">Aston
+                            Martin</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">42 cars</span>
+                    </a>
+                    <!-- Ferrari -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">SF</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">Ferrari</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">38 cars</span>
+                    </a>
+                    <!-- McLaren -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">MC</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">McLaren</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">29 cars</span>
+                    </a>
+                    <!-- Land Rover -->
+                    <a class="group flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-[0_4px_12px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-200 text-center"
+                        href="#">
+                        <div
+                            class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-space-xs group-hover:bg-primary-container group-hover:text-on-primary text-primary transition-colors">
+                            <span class="font-headline-sm text-headline-sm font-black">LR</span>
+                        </div>
+                        <span
+                            class="font-body-sm-medium text-body-sm-medium text-on-surface group-hover:text-primary transition-colors">Land
+                            Rover</span>
+                        <span class="font-caption text-caption text-on-surface-variant mt-0.5">88 cars</span>
+                    </a>
+                </div>
+            </section>
+            <!-- Featured Vehicles Section -->
+            <section class="w-full py-space-2xl bg-surface-container-low">
+                <div class="max-w-[1280px] mx-auto px-gutter">
+                    <!-- Section Header -->
+                    <div class="flex items-center justify-between mb-space-xl">
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-space-2xs text-primary mb-1">
+                                <span class="material-symbols-outlined text-[18px]">speed</span>
+                                <span class="font-label-overline text-label-overline uppercase">High-Demand
+                                    Performance</span>
+                            </div>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+                                Featured Performance &amp; Luxury</h2>
+                        </div>
+                        <a class="inline-flex items-center gap-space-2xs font-body-sm-medium text-body-sm-medium text-primary hover:text-on-primary-fixed-variant transition-colors group"
+                            href="#">
+                            <span>View All (412)</span>
+                            <span
+                                class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- 4 High-End Vehicle Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+                        <!-- Card 1: Porsche 911 GT3 -->
+                        <div
+                            class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-xl transition-all duration-300">
+                            <div class="relative w-full aspect-[16/10] overflow-hidden bg-on-secondary-fixed">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="Dark metallic charcoal Porsche 911 GT3 992 parked in an architectural concrete studio showroom with deep moody dramatic ambient blue rim lighting and polished wet epoxy flooring reflection."
+                                    src="./IMG/car1.jpg" />
+                                <div
+                                    class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-secondary-fixed/80 backdrop-blur-md text-on-primary font-caption-medium text-caption-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>150-Pt Passed</span>
+                                </div>
+                                <button aria-label="Save to favorites"
+                                    class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                                <div
+                                    class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded bg-on-secondary-fixed/90 text-on-primary font-caption text-caption flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">location_on</span> Miami, FL
+                                </div>
+                            </div>
+                            <div class="p-space-md flex flex-col flex-1">
+                                <div
+                                    class="flex items-center justify-between gap-space-xs text-on-surface-variant font-caption text-caption mb-1">
+                                    <span>2024 Model Year</span>
+                                    <span class="font-caption-medium text-primary">Single Owner</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-tight mb-space-xs">
+                                    Porsche 911 GT3 (992)
+                                </h3>
+                                <!-- Specs Badges -->
+                                <div
+                                    class="grid grid-cols-3 gap-space-2xs py-space-xs my-space-xs bg-surface-container-low rounded-lg text-center">
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Mileage</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">3,420
+                                            mi</span>
+                                    </div>
+                                    <div class="flex flex-col border-x border-surface-container">
+                                        <span
+                                            class="font-caption text-caption text-on-surface-variant">Drivetrain</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">7-Spd
+                                            PDK</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Fuel</span>
+                                        <span class="font-tabular-numerical text-tabular-numerical text-on-surface">4.0L
+                                            Flat-6</span>
+                                    </div>
+                                </div>
+                                <!-- Pricing Stack & CTA -->
+                                <div
+                                    class="mt-auto pt-space-sm flex items-center justify-between border-t border-surface-container-low">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">$224,900</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Est. $2,850/mo
+                                            loan</span>
+                                    </div>
+                                    <a class="px-space-md py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors"
+                                        href="#">
+                                        Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2: BMW M8 Competition Gran Coupe -->
+                        <div
+                            class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-xl transition-all duration-300">
+                            <div class="relative w-full aspect-[16/10] overflow-hidden bg-on-secondary-fixed">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="Gloss frozen black metallic BMW M8 Competition Gran Coupe with carbon ceramic brakes and laser headlights parked in front of modern glass skyscraper architecture at dusk."
+                                    src="./IMG/bmw.jpg" />
+                                <div
+                                    class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-secondary-fixed/80 backdrop-blur-md text-on-primary font-caption-medium text-caption-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>150-Pt Passed</span>
+                                </div>
+                                <button aria-label="Save to favorites"
+                                    class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                                <div
+                                    class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded bg-on-secondary-fixed/90 text-on-primary font-caption text-caption flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">location_on</span> Austin, TX
+                                </div>
+                            </div>
+                            <div class="p-space-md flex flex-col flex-1">
+                                <div
+                                    class="flex items-center justify-between gap-space-xs text-on-surface-variant font-caption text-caption mb-1">
+                                    <span>2023 Model Year</span>
+                                    <span class="font-caption-medium text-primary">Executive Package</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-tight mb-space-xs">
+                                    BMW M8 Competition GC
+                                </h3>
+                                <!-- Specs Badges -->
+                                <div
+                                    class="grid grid-cols-3 gap-space-2xs py-space-xs my-space-xs bg-surface-container-low rounded-lg text-center">
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Mileage</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">8,100
+                                            mi</span>
+                                    </div>
+                                    <div class="flex flex-col border-x border-surface-container">
+                                        <span
+                                            class="font-caption text-caption text-on-surface-variant">Drivetrain</span>
+                                        <span class="font-tabular-numerical text-tabular-numerical text-on-surface">M
+                                            xDrive AWD</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Fuel</span>
+                                        <span class="font-tabular-numerical text-tabular-numerical text-on-surface">4.4L
+                                            V8 TT</span>
+                                    </div>
+                                </div>
+                                <!-- Pricing Stack & CTA -->
+                                <div
+                                    class="mt-auto pt-space-sm flex items-center justify-between border-t border-surface-container-low">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">$118,500</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Est. $1,520/mo
+                                            loan</span>
+                                    </div>
+                                    <a class="px-space-md py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors"
+                                        href="#">
+                                        Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3: Mercedes-AMG GT 63 S E Performance -->
+                        <div
+                            class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-xl transition-all duration-300">
+                            <div class="relative w-full aspect-[16/10] overflow-hidden bg-on-secondary-fixed">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="Matte selenite gray Mercedes AMG GT 63 S E Performance four-door coupe parked in modern minimalist architectural hangar with glowing strip lights."
+                                    src="./IMG/gray.jpg" />
+                                <div
+                                    class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-secondary-fixed/80 backdrop-blur-md text-on-primary font-caption-medium text-caption-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>150-Pt Passed</span>
+                                </div>
+                                <button aria-label="Save to favorites"
+                                    class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                                <div
+                                    class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded bg-on-secondary-fixed/90 text-on-primary font-caption text-caption flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">location_on</span> Los Angeles,
+                                    CA
+                                </div>
+                            </div>
+                            <div class="p-space-md flex flex-col flex-1">
+                                <div
+                                    class="flex items-center justify-between gap-space-xs text-on-surface-variant font-caption text-caption mb-1">
+                                    <span>2024 Model Year</span>
+                                    <span class="font-caption-medium text-emerald-600">843 HP Hybrid</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-tight mb-space-xs">
+                                    AMG GT 63 S E-Perf
+                                </h3>
+                                <!-- Specs Badges -->
+                                <div
+                                    class="grid grid-cols-3 gap-space-2xs py-space-xs my-space-xs bg-surface-container-low rounded-lg text-center">
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Mileage</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">1,200
+                                            mi</span>
+                                    </div>
+                                    <div class="flex flex-col border-x border-surface-container">
+                                        <span
+                                            class="font-caption text-caption text-on-surface-variant">Drivetrain</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">Speedshift
+                                            9G</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Fuel</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">Plug-in
+                                            PHEV</span>
+                                    </div>
+                                </div>
+                                <!-- Pricing Stack & CTA -->
+                                <div
+                                    class="mt-auto pt-space-sm flex items-center justify-between border-t border-surface-container-low">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">$189,000</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Est. $2,410/mo
+                                            loan</span>
+                                    </div>
+                                    <a class="px-space-md py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors"
+                                        href="#">
+                                        Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4: Audi RS6 Avant Quattro -->
+                        <div
+                            class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-xl transition-all duration-300">
+                            <div class="relative w-full aspect-[16/10] overflow-hidden bg-on-secondary-fixed">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="Nardo gray Audi RS6 Avant super wagon featuring bronze forged wheels and carbon exterior optic packages standing on clean reflective tarmac at twilight."
+                                    src="./IMG/smoke.jpg" />
+                                <div
+                                    class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-on-secondary-fixed/80 backdrop-blur-md text-on-primary font-caption-medium text-caption-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                    <span>150-Pt Passed</span>
+                                </div>
+                                <button aria-label="Save to favorites"
+                                    class="favorite-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface-variant hover:text-error flex items-center justify-center transition-colors"
+                                    type="button">
+                                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                                </button>
+                                <div
+                                    class="absolute bottom-2.5 right-3 px-2 py-0.5 rounded bg-on-secondary-fixed/90 text-on-primary font-caption text-caption flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">location_on</span> New York, NY
+                                </div>
+                            </div>
+                            <div class="p-space-md flex flex-col flex-1">
+                                <div
+                                    class="flex items-center justify-between gap-space-xs text-on-surface-variant font-caption text-caption mb-1">
+                                    <span>2023 Model Year</span>
+                                    <span class="font-caption-medium text-primary">Dynamic Ride Control</span>
+                                </div>
+                                <h3
+                                    class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors leading-tight mb-space-xs">
+                                    Audi RS6 Avant Quattro
+                                </h3>
+                                <!-- Specs Badges -->
+                                <div
+                                    class="grid grid-cols-3 gap-space-2xs py-space-xs my-space-xs bg-surface-container-low rounded-lg text-center">
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Mileage</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">6,800
+                                            mi</span>
+                                    </div>
+                                    <div class="flex flex-col border-x border-surface-container">
+                                        <span
+                                            class="font-caption text-caption text-on-surface-variant">Drivetrain</span>
+                                        <span
+                                            class="font-tabular-numerical text-tabular-numerical text-on-surface">Quattro
+                                            AWD</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-caption text-caption text-on-surface-variant">Fuel</span>
+                                        <span class="font-tabular-numerical text-tabular-numerical text-on-surface">4.0L
+                                            MHEV</span>
+                                    </div>
+                                </div>
+                                <!-- Pricing Stack & CTA -->
+                                <div
+                                    class="mt-auto pt-space-sm flex items-center justify-between border-t border-surface-container-low">
+                                    <div class="flex flex-col">
+                                        <span
+                                            class="font-headline-sm text-headline-sm text-on-surface font-bold tabular-nums">$134,000</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Est. $1,710/mo
+                                            loan</span>
+                                    </div>
+                                    <a class="px-space-md py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors"
+                                        href="#">
+                                        Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Promotional AutoHunt Direct Banner -->
+            <section class="w-full max-w-[1280px] mx-auto px-gutter py-space-2xl">
+                <div
+                    class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-on-secondary-fixed via-on-primary-fixed to-on-secondary-fixed text-on-primary p-space-2xl lg:p-space-3xl shadow-xl">
+                    <!-- Glow ambient background element -->
+                    <div
+                        class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-container/20 blur-3xl pointer-events-none">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-space-2xl">
+                        <div class="flex flex-col max-w-2xl">
+                            <div class="flex items-center gap-space-xs mb-space-xs">
+                                <span
+                                    class="material-symbols-outlined text-primary-fixed-dim text-[24px]">verified</span>
+                                <span
+                                    class="font-label-overline text-label-overline uppercase tracking-widest text-primary-fixed">The
+                                    Frictionless Standard</span>
+                            </div>
+                            <h2
+                                class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight leading-snug mb-space-sm">
+                                AutoHunt Direct: 100% Online Buying Experience
+                            </h2>
+                            <p class="font-body-lg text-body-lg text-primary-fixed/80 leading-relaxed">
+                                Acquire your dream performance vehicle with an unconditional 7-Day Money Back Guarantee,
+                                digital identity-secured escrow, and zero dealership hassle.
+                            </p>
+                            <div
+                                class="flex flex-wrap items-center gap-space-lg mt-space-lg pt-space-xs text-caption font-caption-medium">
+                                <div class="flex items-center gap-space-2xs">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+                                    <span>7 Days / 500 Miles Full Refund</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+                                    <span>No Hidden Doc or Dealer Fees</span>
+                                </div>
+                                <div class="flex items-center gap-space-2xs">
+                                    <span
+                                        class="material-symbols-outlined text-emerald-400 text-[18px]">check_circle</span>
+                                    <span>Enclosed Door-to-Door Delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-center gap-space-md shrink-0">
+                            <a class="w-full sm:w-auto h-12 px-space-xl rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-lg-medium text-body-lg-medium flex items-center justify-center gap-space-xs shadow-lg transition-all active:scale-[0.98]"
+                                href="#">
+                                <span>Start Purchasing Online</span>
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </a>
+                            <a class="w-full sm:w-auto h-12 px-space-lg rounded-lg bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 backdrop-blur-md text-on-primary font-body-lg-medium text-body-lg-medium flex items-center justify-center transition-all"
+                                href="#">
+                                <span>Learn How It Works</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Why Choose AutoHunt: 4 Trust Pillars -->
+            <section class="w-full py-space-3xl max-w-[1280px] mx-auto px-gutter">
+                <div class="text-center max-w-2xl mx-auto mb-space-3xl">
+                    <span
+                        class="font-label-overline text-label-overline uppercase text-primary font-bold tracking-wider">Uncompromising
+                        Standards</span>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">Why
+                        Automotive Enthusiasts Trust AutoHunt</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                        We replace opaque dealership haggling with precision mechanical diagnostics and transparent
+                        institutional-grade escrow.
+                    </p>
+                </div>
+                <!-- 4 Pillars Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+                    <!-- Pillar 1 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                            <span class="material-symbols-outlined text-[26px]">fact_check</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-2xs">150-Point
+                            Inspection</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+                            Exhaustive multi-stage mechanical, structural, and electronic telemetry scans conducted by
+                            certified marque specialists.
+                        </p>
+                        <div
+                            class="mt-auto flex items-center gap-1 text-primary font-caption-medium text-caption-medium">
+                            <span>Read sample report</span>
+                            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </div>
+                    </div>
+                    <!-- Pillar 2 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                            <span class="material-symbols-outlined text-[26px]">lock</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-2xs">Escrow
+                            Protection</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+                            Funds are held safely in verified third-party banking escrow until you receive, inspect, and
+                            approve your delivery.
+                        </p>
+                        <div
+                            class="mt-auto flex items-center gap-1 text-primary font-caption-medium text-caption-medium">
+                            <span>Escrow compliance</span>
+                            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </div>
+                    </div>
+                    <!-- Pillar 3 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                            <span class="material-symbols-outlined text-[26px]">local_shipping</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-2xs">Enclosed
+                            Nationwide</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+                            Climate-controlled, fully-insured enclosed transport ensures your exotic arrives in showroom
+                            condition directly at your driveway.
+                        </p>
+                        <div
+                            class="mt-auto flex items-center gap-1 text-primary font-caption-medium text-caption-medium">
+                            <span>Tracking portal</span>
+                            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </div>
+                    </div>
+                    <!-- Pillar 4 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] hover:shadow-md transition-shadow">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-space-md">
+                            <span class="material-symbols-outlined text-[26px]">published_with_changes</span>
+                        </div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-space-2xs">Guaranteed
+                            Buyback</h3>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md">
+                            Fixed-depreciation contractual repurchase agreements allow you to trade in or cash out
+                            seamlessly within 12 months.
+                        </p>
+                        <div
+                            class="mt-auto flex items-center gap-1 text-primary font-caption-medium text-caption-medium">
+                            <span>Buyback terms</span>
+                            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sell Your Car CTA Banner (Obsidian Navy with Electric Blue) -->
+            <section class="w-full bg-on-secondary-fixed py-space-3xl relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary-container/5 pointer-events-none">
+                </div>
+                <div class="max-w-[1280px] mx-auto px-gutter relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+                        <!-- Left Explainer Text -->
+                        <div class="lg:col-span-7 flex flex-col gap-space-md">
+                            <div
+                                class="inline-flex items-center gap-space-xs self-start px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/10 text-primary-fixed">
+                                <span class="material-symbols-outlined text-[18px]">monetization_on</span>
+                                <span class="font-label-overline text-label-overline uppercase">Consign or Direct
+                                    Sale</span>
+                            </div>
+                            <h2
+                                class="font-headline-lg text-headline-lg font-bold text-on-primary tracking-tight leading-tight">
+                                Looking to Sell or Consign Your Vehicle?
+                            </h2>
+                            <p class="font-body-lg text-body-lg text-surface-variant leading-relaxed">
+                                Get an authoritative algorithmic &amp; market-calibrated valuation in under 2 minutes.
+                                Benefit from a transparent 4.5% flat consignment commission and direct wire payout upon
+                                vehicle settlement.
+                            </p>
+                            <!-- Metric Comparison Mini Grid -->
+                            <div class="grid grid-cols-3 gap-space-md pt-space-xs">
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-headline-md text-headline-md text-primary-fixed font-bold tabular-nums">4.5%</span>
+                                    <span class="font-caption text-caption text-surface-container-high">Flat Fee (vs 12%
+                                        Avg)</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-headline-md text-headline-md text-primary-fixed font-bold tabular-nums">&lt;
+                                        14 Days</span>
+                                    <span class="font-caption text-caption text-surface-container-high">Average Listing
+                                        Turnaround</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="font-headline-md text-headline-md text-primary-fixed font-bold tabular-nums">Instant</span>
+                                    <span class="font-caption text-caption text-surface-container-high">Direct Federal
+                                        Wire Transfer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Quick Calculator Box -->
+                        <div class="lg:col-span-5">
+                            <div
+                                class="bg-surface-container-lowest rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md">
+                                <div
+                                    class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+                                    <span
+                                        class="font-headline-sm text-headline-sm text-on-surface font-bold">Consignment
+                                        Calculator</span>
+                                    <span
+                                        class="font-caption-medium text-caption-medium px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Guaranteed
+                                        Offer</span>
+                                </div>
+                                <!-- Interactive Value Input Form Mock -->
+                                <div class="flex flex-col gap-space-sm">
+                                    <label class="font-caption text-caption text-on-surface-variant">Estimated Vehicle
+                                        Value</label>
+                                    <div class="relative flex items-center">
+                                        <span
+                                            class="absolute left-3 text-on-surface-variant font-headline-sm text-headline-sm font-bold">$</span>
+                                        <input
+                                            class="w-full h-11 pl-8 pr-4 bg-surface-container-low rounded-lg text-on-surface font-headline-sm text-headline-sm font-bold focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container outline-none tabular-nums"
+                                            id="calcPriceInput" type="text" value="150,000" />
+                                    </div>
+                                    <!-- Output Breakdown Formulas -->
+                                    <div
+                                        class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs text-body-sm font-body-sm">
+                                        <div class="flex items-center justify-between text-on-surface-variant">
+                                            <span>AutoHunt Fee (4.5%)</span>
+                                            <span class="font-tabular-numerical text-tabular-numerical text-on-surface"
+                                                id="calcFee">-$6,750</span>
+                                        </div>
+                                        <div class="flex items-center justify-between text-on-surface-variant">
+                                            <span>Transport &amp; Pre-sale Detailing</span>
+                                            <span
+                                                class="font-caption-medium text-caption-medium text-emerald-700">Included
+                                                Free</span>
+                                        </div>
+                                        <div
+                                            class="border-t border-surface-container pt-space-xs flex items-center justify-between">
+                                            <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Net
+                                                Wire to Your Account</span>
+                                            <span
+                                                class="font-headline-sm text-headline-sm font-bold text-primary-container tabular-nums"
+                                                id="calcPayout">$143,250</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="w-full h-11 px-space-md bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg flex items-center justify-center gap-space-xs shadow transition-all active:scale-[0.99]"
+                                    href="#">
+                                    <span>Calculate Consignment Payout</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                </a>
+                                <span class="font-caption text-caption text-on-surface-variant text-center">
+                                    No obligation. Guaranteed valuation honored for 7 business days.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Customer Testimonials Section -->
+            <section class="w-full py-space-4xl max-w-[1280px] mx-auto px-gutter">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-2xl gap-space-sm">
+                    <div>
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-primary font-bold tracking-wider">Verified
+                            Purchase Stories</span>
+                        <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mt-1">What
+                            Our Drivers Say</h2>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+                        <div class="flex text-amber-500">
+                            <span class="material-symbols-outlined text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <span class="font-body-sm-medium text-body-sm-medium text-on-surface">4.9 / 5.0 Rating</span>
+                        <span>across 1,280+ transactions</span>
+                    </div>
+                </div>
+                <!-- 3 Editorial Testimonial Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] justify-between">
+                        <div class="flex flex-col gap-space-sm mb-space-md">
+                            <div class="flex text-amber-500">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                                “Acquiring my 992 GT3 through AutoHunt was surgical. The 150-point report revealed tiny
+                                paint protection defects before I wired a single dollar. Enclosed carrier arrived on
+                                time in Scottsdale.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-low">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">
+                                MC
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Marcus
+                                    Vance</span>
+                                <span class="font-caption text-caption text-on-surface-variant">Purchased 2024 Porsche
+                                    911 GT3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] justify-between">
+                        <div class="flex flex-col gap-space-sm mb-space-md">
+                            <div class="flex text-amber-500">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                                “Sold my RS6 Avant in under 9 days without dealer markdowns or endless tire-kickers. The
+                                escrow cleared cleanly, and the 4.5% commission rate left $11k more in my pocket than
+                                trade-in offers.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-low">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">
+                                EL
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Elena
+                                    Lindqvist</span>
+                                <span class="font-caption text-caption text-on-surface-variant">Consigned 2023 Audi RS6
+                                    Avant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="flex flex-col p-space-xl rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] justify-between">
+                        <div class="flex flex-col gap-space-sm mb-space-md">
+                            <div class="flex text-amber-500">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                                “Direct lending integration took 4 minutes. Paperless contract execution and digital DMV
+                                title transfer made this feel like buying software rather than a $180k German
+                                performance machine.”
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-space-sm pt-space-sm border-t border-surface-container-low">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">
+                                DK
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">David
+                                    Kelling</span>
+                                <span class="font-caption text-caption text-on-surface-variant">Purchased 2024 AMG GT 63
+                                    S</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Interactive Script for Tabs, Favorite Button, and Calculator -->
+            <script>
+                // Tab switching for hero search console
+                document.querySelectorAll('.search-tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.search-tab-btn').forEach(b => {
+                            b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+                            b.classList.add('text-on-surface-variant');
+                        });
+                        btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+                        btn.classList.remove('text-on-surface-variant');
+                    });
+                });
+
+                // Favorite heart toggle
+                document.querySelectorAll('.favorite-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const icon = btn.querySelector('.material-symbols-outlined');
+                        if (icon.style.fontVariationSettings.includes("'FILL' 1")) {
+                            icon.style.fontVariationSettings = "'FILL' 0";
+                            btn.classList.remove('text-error');
+                            btn.classList.add('text-on-surface-variant');
+                        } else {
+                            icon.style.fontVariationSettings = "'FILL' 1";
+                            btn.classList.remove('text-on-surface-variant');
+                            btn.classList.add('text-error');
+                        }
+                    });
+                });
+
+                // Dynamic Consignment Calculator
+                const calcInput = document.getElementById('calcPriceInput');
+                const calcFee = document.getElementById('calcFee');
+                const calcPayout = document.getElementById('calcPayout');
+
+                if (calcInput) {
+                    calcInput.addEventListener('input', (e) => {
+                        let rawVal = e.target.value.replace(/[^0-9]/g, '');
+                        let numVal = parseInt(rawVal, 10) || 0;
+
+                        let fee = Math.round(numVal * 0.045);
+                        let payout = numVal - fee;
+
+                        calcFee.textContent = '-$' + fee.toLocaleString('en-US');
+                        calcPayout.textContent = '$' + payout.toLocaleString('en-US');
+                    });
+                }
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-low mt-space-4xl">
+        <div class="max-w-[1280px] mx-auto px-gutter pt-space-4xl pb-space-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+                <div class="lg:col-span-2 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-xs"><img alt="AutoHunt Logo"
+                            class="h-8 w-auto object-contain" src="./IMG/logo.jpg" /><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">The premier verified
+                        automotive exchange. Combining high-end automotive prestige with surgical vehicle inspection,
+                        instantaneous digital financing, and transparent trade-in guarantees.</p>
+                    <div class="flex items-center gap-space-md pt-space-xs">
+                        <div
+                            class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                            <span class="material-symbols-outlined text-primary text-[18px]">verified</span><span
+                                class="font-caption-medium text-caption-medium text-on-surface">160-Point Guaranteed
+                                Certified</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant pt-space-2xs"><span
+                            class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+                        <div class="flex flex-col"><span
+                                class="font-caption text-caption text-on-surface-variant">Concierge Client
+                                Hotline</span><span class="font-body-sm-medium text-body-sm-medium text-on-surface">+1
+                                (800) 492-HUNT</span></div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By
+                        Brand</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Porsche</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">BMW M-Series</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Mercedes-AMG</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Audi Sport</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Land Rover</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Tesla EV</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By Body
+                        Style</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Performance Coupes</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Luxury Sedans</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Electric &amp; Hybrid</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Executive SUVs</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Convertibles</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Supercars</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Pillars &amp;
+                        Solutions</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="inspection-guarantee" href="#">Inspection Standards</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="financing" href="#">Direct Lending Calculator</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="sell-your-car" href="#">Instant Cash Offer</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="buy-online" href="#">Nationwide Enclosed Delivery</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="reviews" href="#">Customer Testimonials</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Commercial Fleet Network</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+                <div class="flex flex-wrap items-center gap-space-md">
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">USD ($)</span><span
+                            class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">language</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">United States (EN)</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-space-lg font-caption text-caption text-on-surface-variant">
+                    <span>Privacy Policy</span><span>Terms of Transaction</span><span>State
+                        Disclosures</span><span>Consumer Rights</span>
+                </div>
+                <div class="font-caption text-caption text-on-surface-variant">© 2025 AutoHunt Exchange Technologies
+                    Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
