@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#424657",
+                        "secondary-fixed-dim": "#c2c6da",
+                        "on-tertiary-fixed": "#001d31",
+                        "on-primary-container": "#eeefff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#dee2f6",
+                        "on-tertiary-container": "#e7f2ff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#595e6f",
+                        "on-surface": "#131b2e",
+                        "on-secondary-container": "#5d6273",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-container": "#0073ae",
+                        "surface-tint": "#0053db",
+                        "primary": "#004ac6",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#cce5ff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "tertiary": "#005a89",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-on-surface": "#eef0ff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "secondary-container": "#dbdff3",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004b73",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#161b2a",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-md": "1rem",
+                        "margin": "2rem",
+                        "margin-mobile": "1rem",
+                        "space-lg": "1.25rem",
+                        "gutter-dense": "0.75rem",
+                        "space-3xl": "3rem",
+                        "gutter": "1.5rem",
+                        "space-2xl": "2rem",
+                        "space-sm": "0.75rem",
+                        "space-4xl": "4rem",
+                        "space-xl": "1.5rem",
+                        "space-xs": "0.5rem",
+                        "space-2xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "tabular-numerical": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "caption": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "caption-medium": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg-medium": ["Inter"],
+                        "label-overline": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm-medium": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tabular-numerical": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "caption-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm-medium": ["14px", { "lineHeight": "21px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }</script>
+</head>
+
+<body class="bg-background font-body-sm text-body-sm text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-xs"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/index.html"><img alt="AutoHunt Logo"
+                        class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                        class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span></a>
+            </div>
+            <nav class="hidden xl:flex items-center gap-space-xs"
+                data-active-classes="bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg">
+                <a class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/index.html">Explore</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="buy-online" href="#">Buy Online</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="sell-your-car" href="#">Sell Your Car</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="garage" href="#">Garage</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="quick-payment" href="#">Quick
+                    Payment</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="review" href="#">Reviews</a>
+            </nav>
+            <div class="flex items-center gap-space-sm shrink-0"><button aria-label="Search Vehicles"
+                    class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><a
+                    aria-label="Saved Cars"
+                    class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    data-path="saved-cars" href="#"><span
+                        class="material-symbols-outlined text-[22px]">favorite</span><span
+                        class="absolute top-1 right-1 flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-primary font-caption text-caption text-on-primary">3</span></a>
+                <div class="h-6 w-px bg-surface-container-highest mx-space-2xs hidden sm:block"></div><a
+                    class="hidden sm:inline-flex items-center bg-primary-container font-body-sm-medium text-body-sm-medium text-on-surface px-space-sm py-space-xs rounded-lg hover:bg-surface-container transition-colors"
+                    data-path="login" href="#">Sign In</a><a
+                    class="inline-flex items-center justify-center h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"
+                    data-path="sell-your-car" href="#">Sell Your Car</a><a aria-label="Customer Account"
+                    class="w-8 h-8 rounded-full bg-primary hover:bg-primary/90 transition-colors flex items-center justify-center ml-space-2xs"
+                    data-path="customer-account" href="#"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-background">
+        <div class="flex flex-col w-full">
+            <div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-gutter py-space-xl lg:py-space-3xl">
+                <div
+                    class="w-full grid grid-cols-1 lg:grid-cols-12 rounded-xl overflow-hidden shadow-xl bg-surface-container-lowest">
+                    <!-- Left Column: Prestige Editorial Obsidian Panel -->
+                    <div
+                        class="lg:col-span-5 relative flex flex-col justify-between p-space-xl lg:p-space-3xl overflow-hidden bg-inverse-surface text-inverse-on-surface min-h-[480px] lg:min-h-[720px]">
+                        <!-- Background Imagery with Precision Automotive Scrim -->
+                        <div class="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-40 transition-transform duration-700 hover:scale-105"
+                            data-alt="Stunning low-angle cinematic profile of a midnight black Porsche 911 GT3 with electric blue ceramic brake calipers and ultra-fine aerodynamic carbon aero kit. Studio lighting highlighting the sculpted rear haunches and deep metallic gloss finish against an obsidian architectural garage with soft neon blue horizon glow."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBisOY6wGIC1k6IuzNmKqdAZKmjZI4wwAZRSyEZajPBRV6WoiWg-Nm3f3sy21uuUYfGb43HLkerVguOjtUk9Fazk6Zc2_gIczoWtUOqcT9SW9HClc9YwqLxLHlii4MGakJu9Zu6ALi3Nh97jKtCcfWMxVHhweLK2e8wTp7zsevnOkFyhiDVg1M-V2RaVqIqJMfcRhkIPFqk1vL98Ai_ZcJwPowNPLpEmdSL4ZpiEbRFA66jSU5PWnDw')">
+                        </div>
+                        <!-- Obsidian Gradient Overlays -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/85 to-transparent">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-inverse-surface/90 via-transparent to-transparent">
+                        </div>
+                        <!-- Ambient Blue Glow Accent -->
+                        <div
+                            class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary-container/20 blur-3xl pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -bottom-20 right-0 w-80 h-80 rounded-full bg-primary/25 blur-3xl pointer-events-none">
+                        </div>
+                        <!-- Top Branding Tagline & Live Marketplace Indicator -->
+                        <div class="relative z-10 flex items-center justify-between">
+                            <div
+                                class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/10 backdrop-blur-md shadow-sm">
+                                <span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+                                <span
+                                    class="font-label-overline text-label-overline tracking-wider text-inverse-on-surface uppercase">Private
+                                    Client Vault</span>
+                            </div>
+                            <span
+                                class="font-tabular-numerical text-tabular-numerical text-primary-fixed-dim/90 flex items-center gap-space-2xs">
+                                <span
+                                    class="material-symbols-outlined text-[16px] text-primary-fixed-dim">verified_user</span>
+                                TLS 1.3 256-Bit
+                            </span>
+                        </div>
+                        <!-- Center Micro Visual Element: Telemetry & Escrow Live Metric Card -->
+                        <div class="relative z-10 my-auto py-space-xl">
+                            <div
+                                class="p-space-lg rounded-xl bg-inverse-surface/75 backdrop-blur-xl shadow-lg flex flex-col gap-space-sm max-w-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-overline text-label-overline uppercase text-outline-variant">Telemetry
+                                        Status</span>
+                                    <span
+                                        class="px-space-xs py-space-2xs rounded-full bg-surface-container-high/20 font-caption-medium text-caption-medium text-primary-fixed">100%
+                                        Synced</span>
+                                </div>
+                                <div class="flex items-baseline justify-between pt-space-2xs">
+                                    <span class="font-headline-sm text-headline-sm text-inverse-on-surface">Porsche 911
+                                        GT3</span>
+                                    <span
+                                        class="font-tabular-numerical text-tabular-numerical text-primary-fixed-dim">9,920
+                                        RPM</span>
+                                </div>
+                                <!-- Inline SVG Sparkline for G-Force & Telemetry Flow -->
+                                <div class="w-full pt-space-xs">
+                                    <svg class="w-full h-9 text-primary-container" fill="none"
+                                        preserveaspectratio="none" viewbox="0 0 240 36">
+                                        <path d="M0,28 L30,26 L60,31 L90,14 L120,18 L150,5 L180,12 L210,3 L240,8"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2.5"></path>
+                                        <path
+                                            d="M0,28 L30,26 L60,31 L90,14 L120,18 L150,5 L180,12 L210,3 L240,8 L240,36 L0,36 Z"
+                                            fill="currentColor" fill-opacity="0.12"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between text-outline-variant pt-space-2xs">
+                                    <span class="font-caption text-caption flex items-center gap-space-2xs">
+                                        <span
+                                            class="material-symbols-outlined text-[14px] text-primary-fixed-dim">lock</span>
+                                        Escrow Secured
+                                    </span>
+                                    <span
+                                        class="font-tabular-numerical text-tabular-numerical text-inverse-on-surface">0.02s
+                                        Wire Handshake</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom VIP Collector Testimonial -->
+                        <div class="relative z-10 flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-1 text-primary-fixed-dim">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <blockquote
+                                class="font-headline-sm text-headline-sm tracking-tight text-inverse-on-surface leading-snug">
+                                “Acquiring a GT3 with full telemetry verification and wire escrow in under 10 minutes
+                                felt like the future.”
+                            </blockquote>
+                            <div class="flex items-center justify-between pt-space-xs">
+                                <div class="flex items-center gap-space-sm">
+                                    <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+                                        <img class="w-full h-full object-cover"
+                                            data-alt="Editorial portrait headshot of Marcus V., a high-net-worth automotive collector in an executive tailored minimalist charcoal shirt against modern architectural glass background."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsMsmeSgwzUunk9pmjIFXXSOmanl1r5j1ehsX3OhJ0DMFbTO-IfFNCfRSAT1TgHKs42ofl2vjXfsyrqbagD1Zusbkodryil4ScLR7_fOofG0AKEZLDuCwLel8yUK1Oeu3wIIUlTCkHy-R7rME_OfUiNjTNCaXxvTd6uSnxc7t10BWsJXp_j_PFWcbO7Z_qx3b_orSJY6JR6rn_6yGoR9w-rAuKHk1KKQ3kZxOosHETX5HfVmMor2eU" />
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="flex items-center gap-space-2xs">
+                                            <span
+                                                class="font-body-sm-medium text-body-sm-medium text-inverse-on-surface">Marcus
+                                                V.</span>
+                                            <span
+                                                class="material-symbols-outlined text-primary-fixed text-[16px]">verified</span>
+                                        </div>
+                                        <span class="font-caption text-caption text-outline-variant">Verified Collector
+                                            • Miami, FL</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="font-label-overline text-label-overline text-primary-fixed-dim uppercase tracking-widest hidden sm:inline-block">Dossier
+                                    #9842</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column: High-Precision Frictionless Authentication Desk -->
+                    <div
+                        class="lg:col-span-7 p-space-xl sm:p-space-2xl lg:p-space-3xl flex flex-col justify-between bg-[#111314]">
+                        <div class="w-full max-w-md mx-auto flex flex-col gap-space-xl">
+                            <!-- Top Switch Route -->
+                            <div class="flex items-center justify-end">
+                                <p class="font-caption text-caption text-on-surface-variant">
+                                    Don’t have an AutoHunt dossier yet?
+                                    <a class="font-body-sm-medium text-body-sm-medium text-primary hover:text-on-primary-fixed-variant transition-colors ml-space-2xs"
+                                        href="http://127.0.0.1:5500/hunt-car/html/Customer%20Registration.html">Create
+                                        an account</a>
+                                </p>
+                            </div>
+                            <!-- Form Header -->
+                            <div class="flex flex-col gap-space-xs">
+                                <div
+                                    class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container text-on-surface-variant self-start mb-space-2xs">
+                                    <span class="material-symbols-outlined text-primary text-[16px]">key</span>
+                                    <span class="font-label-overline text-label-overline uppercase">Unified
+                                        Access</span>
+                                </div>
+                                <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Welcome
+                                    Back to AutoHunt</h1>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Sign in to access your garage, saved vehicle alerts, active escrow bids, and
+                                    delivery trackers.
+                                </p>
+                            </div>
+                            <!-- Social Quick Sign-In Buttons -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                                <!-- Apple Auth -->
+                                <button
+                                    class="h-10 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-center gap-space-sm text-on-surface shadow-sm active:scale-[0.99] group"
+                                    type="button">
+                                    <svg class="w-4 h-4 text-on-surface fill-current transition-transform group-hover:scale-110"
+                                        viewbox="0 0 170 170">
+                                        <path
+                                            d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.74 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.6-7.89-11.72-14.56-6.1-9.9-10.74-20.89-13.91-32.99-3.18-12.09-4.76-23.77-4.76-35.03 0-15.34 3.7-28.18 11.1-38.52 7.4-10.34 16.94-15.65 28.61-15.93 4.58 0 9.77 1.25 15.57 3.75 5.8 2.5 9.74 3.82 11.82 3.96 1.68 0 5.83-1.4 12.45-4.21 6.62-2.81 12.09-4.08 16.4-3.82 13.59.7 24.32 5.56 32.19 14.59-11.83 7.18-17.61 17.07-17.34 29.68.27 9.87 4.1 18.06 11.48 24.57 7.39 6.52 16.03 10.32 25.93 11.41-2.12 6.64-4.69 13.3-7.73 19.98zm-29.21-105.8c0-7.39 2.65-14.18 7.95-20.37 5.3-6.19 11.8-10.15 19.5-11.88.5 2.12.76 4.1.76 5.94 0 7.39-2.82 14.44-8.45 21.15-5.64 6.72-12.38 10.87-20.24 12.45-.17-2.45-.52-4.88-1.05-7.29z">
+                                        </path>
+                                    </svg>
+                                    <span class="font-body-sm-medium text-body-sm-medium">Sign in with Apple</span>
+                                </button>
+                                <!-- Google Auth -->
+                                <button
+                                    class="h-10 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-center gap-space-sm text-on-surface shadow-sm active:scale-[0.99] group"
+                                    type="button">
+                                    <svg class="w-4 h-4 transition-transform group-hover:scale-110" viewbox="0 0 24 24">
+                                        <path
+                                            d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+                                            fill="#4285F4"></path>
+                                        <path
+                                            d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.25 21.37 7.31 24 12 24z"
+                                            fill="#34A853"></path>
+                                        <path
+                                            d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.17 0 9.99 0 12s.46 3.83 1.26 5.42l4.02-3.15z"
+                                            fill="#FBBC05"></path>
+                                        <path
+                                            d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.25 2.63 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
+                                            fill="#EA4335"></path>
+                                    </svg>
+                                    <span class="font-body-sm-medium text-body-sm-medium">Sign in with Google</span>
+                                </button>
+                            </div>
+                            <!-- OR -->
+                            <div class="flex items-center gap-[10px] my-[25px]">
+
+                                <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
+
+                                <span class="text-[11px] uppercase text-[#8a8a8a] whitespace-nowrap">
+                                    hoặc tiếp tục với
+                                </span>
+
+                                <div class="flex-1 h-[1px] bg-[#2A2D30]"></div>
+
+                            </div>
+                            <!-- TITLE -->
+                            <h1 class="text-[28px] font-bold text-[#E2E2E2] text-center uppercase">
+                                Đăng nhập
+                            </h1>
+
+                            <p class="text-[13px] text-[#8a8a8a] text-center mt-[8px] mb-[25px] leading-relaxed">
+                                Truy cập cổng thông tin đặc quyền dành cho chủ sở hữu & thành viên.
+                            </p>
+
+                            <!-- USERNAME -->
+                            <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">
+                                Email hoặc tên đăng nhập
+                            </label>
+
+                            <div
+                                class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[18px]">
+
+                                <span class="text-[#8a8a8a]">
+                                    <img src="../IMG/iconvector.png" class="w-[12px] h-[14px]">
+                                </span>
+
+                                <input id="username" type="text" placeholder="name@example.com"
+                                    class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+
+                            </div>
+
+                            <!-- PASSWORD TITLE -->
+                            <div class="flex justify-between items-center">
+
+                                <label class="text-[11px] uppercase text-[#8a8a8a] tracking-wide">
+                                    Mật khẩu
+                                </label>
+
+                                <a href="#" class="text-[12px] text-[#8a8a8a] hover:text-[#E2E2E2] transition">
+                                    Quên mật khẩu?
+                                </a>
+
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div
+                                class="flex items-center gap-[10px] bg-[#06090D] border border-[#2A2D30] rounded-[8px] px-[12px] py-[10px] mt-[8px] mb-[15px]">
+
+                                <span class="text-[#8a8a8a]">
+                                    <img src="../IMG/lockimages.png" class="w-[12px] h-[14px]">
+                                </span>
+
+                                <input id="password" type="password" placeholder="••••••••••••"
+                                    class="bg-transparent text-[14px] text-[#E2E2E2] outline-none w-full placeholder:text-[#5a5a5a]">
+
+                                <!-- EYE -->
+                                <button type="button" id="showPassword"
+                                    class="text-[#8a8a8a] cursor-pointer hover:text-[#E2E2E2]">
+
+                                    <img src="../IMG/eyeimages.jpg" class="w-[15px] h-[12px]">
+
+                                </button>
+
+                            </div>
+
+                            <!-- REMEMBER -->
+                            <div class="flex items-center gap-[8px] mb-[25px]">
+
+                                <input id="remember" type="checkbox" class="w-[14px] h-[14px] accent-[#E2E2E2]">
+
+                                <label class="text-[13px] text-[#8a8a8a]">
+                                    Ghi nhớ đăng nhập
+                                </label>
+
+                            </div>
+
+                            <!-- LOGIN BUTTON -->
+                            <button id="loginBtn" type="button"
+                                class="w-full bg-white text-black font-bold text-[15px] uppercase py-[12px] rounded-[8px] cursor-pointer hover:opacity-80 transition flex justify-center items-center gap-[8px]">
+
+                                Đăng nhập
+
+                                <span>→</span>
+
+                            </button>
+
+                            <!-- MESSAGE -->
+                            <p id="loginMessage" class="text-center text-[13px] mt-[12px] min-h-[20px]"></p>
+                        </div>
+                        <!-- Security & Compliance Certification Dock -->
+                        <div class="w-full max-w-md mx-auto pt-space-xl mt-space-lg">
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-space-xs shadow-sm">
+                                <div class="flex items-center gap-space-2xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                                    <span class="font-caption-medium text-caption-medium">SOC2 Type II</span>
+                                </div>
+                                <div class="h-4 w-px bg-surface-container-highest"></div>
+                                <div class="flex items-center gap-space-2xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">shield</span>
+                                    <span class="font-caption-medium text-caption-medium">256-Bit TLS</span>
+                                </div>
+                                <div class="h-4 w-px bg-surface-container-highest"></div>
+                                <div class="flex items-center gap-space-2xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-primary text-[18px]">security</span>
+                                    <span class="font-caption-medium text-caption-medium">MFA Protected</span>
+                                </div>
+                            </div>
+                            <div class="text-center pt-space-xs">
+                                <span class="font-caption text-caption text-outline-variant">
+                                    Authorized personnel and verified automotive collectors only.
+                                </span>
+                            </div>
+                        </div>
+                        <!-- REGISTER -->
+                        <p class="text-center text-[13px] text-[#8a8a8a] mt-[25px]">
+
+                            Chưa có tài khoản?
+
+                            <a href="http://127.0.0.1:5500/hunt-car/html/CustomerRegistration.html"
+                                class="text-[#E2E2E2] font-bold hover:underline">
+
+                                Đăng ký ngay
+
+                            </a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <button id="backToTop" onclick="scrollToTop()"
+        class="fixed bottom-[20px] right-[20px] hidden rounded-lg bg-blue-600 px-[18px] py-[12px] text-xl text-white shadow-lg transition duration-300 hover:bg-blue-800">
+        ↑
+    </button>
+    <footer class="w-full bg-surface-container-low mt-space-4xl">
+        <div class="max-w-[1280px] mx-auto px-gutter pt-space-4xl pb-space-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+                <div class="lg:col-span-2 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-xs"><img alt="AutoHunt Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">The premier verified
+                        automotive exchange. Combining high-end automotive prestige with surgical vehicle inspection,
+                        instantaneous digital financing, and transparent trade-in guarantees.</p>
+                    <div class="flex items-center gap-space-md pt-space-xs">
+                        <div
+                            class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                            <span class="material-symbols-outlined text-primary text-[18px]">verified</span><span
+                                class="font-caption-medium text-caption-medium text-on-surface">160-Point Guaranteed
+                                Certified</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant pt-space-2xs"><span
+                            class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+                        <div class="flex flex-col"><span
+                                class="font-caption text-caption text-on-surface-variant">Concierge Client
+                                Hotline</span><a
+                                class="font-body-sm-medium text-body-sm-medium text-on-surface hover:text-primary transition-colors"
+                                data-path="customer-support" href="#">+1 (800) 492-HUNT</a></div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By
+                        Brand</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Porsche</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">BMW M-Series</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Mercedes-AMG</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Audi Sport</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Land Rover</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Tesla EV</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By Body
+                        Style</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Performance Coupes</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Luxury Sedans</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Electric &amp; Hybrid</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Executive SUVs</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Convertibles</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Supercars</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Customer
+                        Services</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="customer-account" href="#">Customer Account</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="order-history" href="#">Order History</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="delivery-tracking" href="#">Enclosed Delivery Tracking</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="payment-management" href="#">Payment Management</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="promotions" href="#">Exclusive Promotions</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="vehicle-review" href="#">Vehicle Reviews</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="customer-support" href="#">Customer Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+                <div class="flex flex-wrap items-center gap-space-md">
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">USD ($)</span><span
+                            class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">language</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">United States (EN)</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-space-lg font-caption text-caption text-on-surface-variant">
+                    <span>Privacy Policy</span><span>Terms of Transaction</span><span>State
+                        Disclosures</span><span>Consumer Rights</span>
+                </div>
+                <div class="font-caption text-caption text-on-surface-variant">© 2025 AutoHunt Exchange Technologies
+                    Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //---Login---
+        const loginBtn = document.getElementById("loginBtn");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const loginMessage = document.getElementById("loginMessage");
+        const showPassword = document.getElementById("showPassword");
+        const remember = document.getElementById("remember");
+
+        // HIỆN / ẨN MẬT KHẨU
+        showPassword.addEventListener("click", function () {
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+
+        });
+
+        // ĐĂNG NHẬP
+        function login() {
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            loginMessage.textContent = "";
+
+            // KIỂM TRA RỖNG
+            if (username === "" || password === "") {
+
+                alert("Đăng nhập thất bại!\nVui lòng nhập đầy đủ tài khoản và mật khẩu.");
+
+                loginMessage.textContent =
+                    "Vui lòng nhập đầy đủ tài khoản và mật khẩu.";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-red-400";
+
+                return;
+            }
+
+            // =========================
+            // ADMIN
+            // =========================
+            if (
+                username === "admin@gmail.com" &&
+                password === "admin123"
+            ) {
+
+                localStorage.setItem("loginStatus", "true");
+                localStorage.setItem("userRole", "admin");
+                localStorage.setItem("username", "Admin");
+                localStorage.setItem("userEmail", username);
+
+                if (remember.checked) {
+                    localStorage.setItem("rememberLogin", "true");
+                } else {
+                    localStorage.removeItem("rememberLogin");
+                }
+
+                alert("Đăng nhập thành công!\nXin chào Admin.");
+
+                loginMessage.textContent =
+                    "Đăng nhập Admin thành công!";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-green-400";
+
+                setTimeout(function () {
+                    window.location.href = "http://127.0.0.1:5500/hunt-car/html/admin.html";
+                }, 500);
+
+                return;
+            }
+
+            // =========================
+            // CUSTOMER
+            // =========================
+            if (
+                username === "user@gmail.com" &&
+                password === "user123"
+            ) {
+
+                localStorage.setItem("loginStatus", "true");
+                localStorage.setItem("userRole", "customer");
+                localStorage.setItem("username", "User");
+                localStorage.setItem("userEmail", username);
+
+                if (remember.checked) {
+                    localStorage.setItem("rememberLogin", "true");
+                } else {
+                    localStorage.removeItem("rememberLogin");
+                }
+
+                alert("Đăng nhập thành công!\nChào mừng bạn đến với AutoHunt");
+
+                loginMessage.textContent =
+                    "Đăng nhập thành công!";
+
+                loginMessage.className =
+                    "text-center text-[13px] mt-[12px] min-h-[20px] text-green-400";
+
+                setTimeout(function () {
+                    window.location.href = "http://127.0.0.1:5500/hunt-car/html/User.html";
+                }, 500);
+
+                return;
+            }
+
+            // SAI TÀI KHOẢN / MẬT KHẨU
+            alert("Đăng nhập thất bại!\nTài khoản hoặc mật khẩu không chính xác.");
+
+            loginMessage.textContent =
+                "Tài khoản hoặc mật khẩu không chính xác.";
+
+            loginMessage.className =
+                "text-center text-[13px] mt-[12px] min-h-[20px] text-red-400";
+        }
+
+        // CLICK ĐĂNG NHẬP
+        loginBtn.addEventListener("click", login);
+
+        // ENTER Ở EMAIL
+        usernameInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                login();
+            }
+
+        });
+
+        // ENTER Ở PASSWORD
+        passwordInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                login();
+            }
+
+        });
+    </script>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

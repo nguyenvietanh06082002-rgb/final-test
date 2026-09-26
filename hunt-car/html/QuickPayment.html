@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>Quick Payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#424657",
+                        "secondary-fixed-dim": "#c2c6da",
+                        "on-tertiary-fixed": "#001d31",
+                        "on-primary-container": "#eeefff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#dee2f6",
+                        "on-tertiary-container": "#e7f2ff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#595e6f",
+                        "on-surface": "#131b2e",
+                        "on-secondary-container": "#5d6273",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-container": "#0073ae",
+                        "surface-tint": "#0053db",
+                        "primary": "#004ac6",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#cce5ff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "tertiary": "#005a89",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-on-surface": "#eef0ff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "secondary-container": "#dbdff3",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004b73",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#161b2a",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-md": "1rem",
+                        "margin": "2rem",
+                        "margin-mobile": "1rem",
+                        "space-lg": "1.25rem",
+                        "gutter-dense": "0.75rem",
+                        "space-3xl": "3rem",
+                        "gutter": "1.5rem",
+                        "space-2xl": "2rem",
+                        "space-sm": "0.75rem",
+                        "space-4xl": "4rem",
+                        "space-xl": "1.5rem",
+                        "space-xs": "0.5rem",
+                        "space-2xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "tabular-numerical": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "caption": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "caption-medium": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg-medium": ["Inter"],
+                        "label-overline": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm-medium": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tabular-numerical": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "caption-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm-medium": ["14px", { "lineHeight": "21px", "fontWeight": "500" }]
+                    }
+                }
+            }
+
+        }</script>
+</head>
+
+<body class="bg-background font-body-sm text-body-sm text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-xs"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/html/User.html"><img alt="AutoHunt Logo"
+                        class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                        class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span></a>
+            </div>
+            <nav class="hidden xl:flex items-center gap-space-xs"
+                data-active-classes="bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg">
+                <a aria-current="page"
+                    class="px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/html/User.html">Explore</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="buy-online" href="http://127.0.0.1:5500/hunt-car/html/BuyOnline.html">Buy Online</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="sell-your-car" href="#">Sell Your Car</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="garage" href="http://127.0.0.1:5500/hunt-car/html/Garage.html">Garage</a><a class="px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-body-sm-medium 
+                    text-body-sm-medium rounded-lg" data-path="quick-payment" href="#">QuickPayment</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="reviews" href="http://127.0.0.1:5500/hunt-car/html/Review.html">Reviews</a>
+            </nav>
+            <div class="flex items-center gap-space-sm shrink-0">
+                <button aria-label="Search Vehicles"
+                    class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    type="button">
+                    <span class="material-symbols-outlined text-[22px]">search</span>
+                </button>
+                <a aria-label="Saved Cars"
+                    class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    data-path="saved-cars" href="#">
+                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                    <span
+                        class="absolute top-1 right-1 flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-primary font-caption text-caption text-on-primary">
+                        3
+                    </span>
+                </a>
+                <a class="inline-flex items-center justify-center h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"
+                    data-path="sell-your-car" href="#">Sell Your Car
+                </a>
+            </div>
+            <div class="w-8 h-8 rounded-full flex items-center justify-center ml-space-2xs gap-[5px]">
+                <!-- USER -->
+                <div id="userArea" class="relative">
+
+                    <button onclick="toggleUserMenu()" class="flex items-center gap-[5px] cursor-pointer group">
+
+                        <!-- AVATAR -->
+                        <div id="userAvatar"
+                            class="w-[42px] h-[42px] rounded-full bg-[#1A1C1C] border border-[#333535] flex items-center justify-center text-[#E2E2E2] font-bold text-[15px] group-hover:border-[#777] transition duration-300">
+                            U
+                        </div>
+
+                        <!-- USER INFO -->
+                        <div class="text-left">
+
+                            <p id="userName" class="text-[13px] font-semibold text-[#000] group-hover:text-[#2563eb]">
+                                User
+                            </p>
+
+                            <p id="userEmail" class="text-[10px] text-[#777] max-w-[150px] truncate ">
+                                user@gmail.com
+                            </p>
+
+                        </div>
+
+                        <span class="text-[10px] text-[#888] group-hover:text-[#2563eb] transition">
+                            ▼
+                        </span>
+
+                    </button>
+
+                    <!-- DROPDOWN -->
+                    <div id="userMenu"
+                        class="hidden absolute right-0 top-[58px] w-[210px] bg-[#111314] border border-[#2A2D30] rounded-[10px] shadow-2xl overflow-hidden">
+
+                        <div class="px-[18px] py-[15px] border-b border-[#2A2D30]">
+
+                            <p class="text-[10px] tracking-[2px] text-[#777] mb-[4px]">
+                                ACCOUNT
+                            </p>
+
+                            <p id="menuUserName" class="text-[14px] font-semibold text-[#E2E2E2]">
+                                User
+                            </p>
+
+                        </div>
+
+                        <a href="User.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◉</span>
+                            MY PROFILE
+
+                        </a>
+
+                        <a href="#"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◇</span>
+                            GARAGE
+
+                        </a>
+
+                        <button onclick="logout()"
+                            class="w-full flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-red-400 hover:bg-[#1A1C1C] transition">
+
+                            <span></span>
+                            LOG OUT
+
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="mx-auto max-w-[1500px] px-4 py-8 sm:px-6 lg:px-10">
+        <!-- PAGE TITLE -->
+        <section class="mb-8">
+
+            <p class="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
+                AutoHunt Marketplace
+            </p>
+
+            <h1 class="mb-3 text-3xl font-bold text-dark sm:text-4xl">
+                Quick Payment
+            </h1>
+
+            <p class="max-w-2xl text-gray-500">
+                Chọn chiếc xe bạn yêu thích và thêm vào giỏ hàng để tiến hành thanh toán.
+            </p>
+
+        </section>
+        <!-- SHOP LAYOUT -->
+        <div class="grid grid-cols-1 items-start gap-8 xl:grid-cols-[minmax(0,1fr)_390px]">
+            <!-- PRODUCT SECTION -->
+            <section>
+                <div class="mb-5 flex items-center justify-between">
+
+                    <h2 class="text-xl font-bold text-dark">
+                        Danh sách xe
+                    </h2>
+
+                    <span id="productCount" class="text-sm text-gray-500">
+                        4 sản phẩm
+                    </span>
+
+                </div>
+                <!-- PRODUCTS WILL BE RENDERED HERE -->
+                <div id="productsGrid" class="grid grid-cols-1 gap-6 sm:grid-cols-2"></div>
+            </section>
+            <!-- SHOPPING CART -->
+            <aside class="rounded-xl bg-white p-5 shadow-sm sm:p-6 xl:sticky xl:top-6">
+                <!-- CART HEADER -->
+                <div class="mb-5 flex items-center justify-between border-b border-gray-200 pb-5">
+
+                    <h2 class="text-2xl font-bold text-dark">
+                        Giỏ hàng
+                    </h2>
+
+                    <span id="cartCount"
+                        class="inline-flex min-w-7 items-center justify-center rounded-full bg-primary px-2 py-1 text-xs font-bold text-white">
+                        0
+                    </span>
+
+                </div>
+                <!-- CART ITEMS -->
+                <div id="cartItems" class="flex max-h-[480px] flex-col gap-4 overflow-y-auto">
+
+                    <p class="py-4 text-center text-base italic text-gray-400">
+                        Giỏ hàng trống
+                    </p>
+
+                </div>
+                <!-- CART SUMMARY -->
+                <div class="mt-6 border-t border-gray-200 pt-5">
+
+                    <div class="mb-5 flex items-center justify-between gap-3">
+
+                        <span class="text-xl font-bold">
+                            Tổng:
+                        </span>
+
+                        <span id="cartTotal" class="text-right text-xl font-bold text-dark">
+                            $0
+                        </span>
+
+                    </div>
+
+                    <button id="checkoutBtn" type="button" disabled
+                        class="w-full rounded-lg bg-primary px-4 py-4 text-lg font-bold text-white transition hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-300">
+                        Thanh toán
+                    </button>
+
+                    <p class="mt-3 text-center text-xs leading-5 text-gray-400">
+                        Kiểm tra thông tin sản phẩm trước khi thanh toán.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+    <button id="backToTop" onclick="scrollToTop()"
+        class="fixed bottom-[20px] right-[20px] hidden rounded-lg bg-blue-600 px-[18px] py-[12px] text-xl text-white shadow-lg transition duration-300 hover:bg-blue-800">
+        ↑
+    </button>
+    <!-- NOTIFICATION -->
+    <div id="notification"
+        class="pointer-events-none fixed bottom-6 right-6 z-50 translate-y-4 rounded-lg bg-dark px-5 py-4 text-sm text-white opacity-0 shadow-lg transition-all duration-300"
+        role="status" aria-live="polite">
+    </div>
+
+    <footer class="w-full bg-surface-container-low mt-space-4xl">
+        <div class="max-w-[1280px] mx-auto px-gutter pt-space-4xl pb-space-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+                <div class="lg:col-span-2 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-xs"><img alt="AutoHunt Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">The premier verified
+                        automotive exchange. Combining high-end automotive prestige with surgical vehicle inspection,
+                        instantaneous digital financing, and transparent trade-in guarantees.</p>
+                    <div class="flex items-center gap-space-md pt-space-xs">
+                        <div
+                            class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                            <span class="material-symbols-outlined text-primary text-[18px]">verified</span><span
+                                class="font-caption-medium text-caption-medium text-on-surface">160-Point Guaranteed
+                                Certified</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant pt-space-2xs"><span
+                            class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+                        <div class="flex flex-col"><span
+                                class="font-caption text-caption text-on-surface-variant">Concierge Client
+                                Hotline</span><span class="font-body-sm-medium text-body-sm-medium text-on-surface">+1
+                                (800) 492-HUNT</span></div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By
+                        Brand</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Porsche</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">BMW M-Series</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Mercedes-AMG</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Audi Sport</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Land Rover</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Tesla EV</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By Body
+                        Style</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Performance Coupes</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Luxury Sedans</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Electric &amp; Hybrid</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Executive SUVs</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Convertibles</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Supercars</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Pillars &amp;
+                        Solutions</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="inspection-guarantee" href="#">Inspection Standards</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="financing" href="#">Direct Lending Calculator</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="sell-your-car" href="#">Instant Cash Offer</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="buy-online" href="#">Nationwide Enclosed Delivery</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="reviews" href="#">Customer Testimonials</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Commercial Fleet Network</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+                <div class="flex flex-wrap items-center gap-space-md">
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">USD ($)</span><span
+                            class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">language</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">United States (EN)</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-space-lg font-caption text-caption text-on-surface-variant">
+                    <span>Privacy Policy</span><span>Terms of Transaction</span><span>State
+                        Disclosures</span><span>Consumer Rights</span>
+                </div>
+                <div class="font-caption text-caption text-on-surface-variant">© 2025 AutoHunt Exchange Technologies
+                    Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //---Quick Payment---
+        document.addEventListener("DOMContentLoaded", function () {
+            // PRODUCTS
+            const products = [
+                {
+                    id: "porsche-911-gt3",
+                    name: "2024 Porsche 911 GT3",
+                    category: "PORSCHE 911 GT3 SERIES",
+                    description: "3,420 mi · 4.0L Petrol · 7-Spd PDK · Rear-Wheel Drive",
+                    price: 224900,
+                    monthly: 2850,
+                    image: "../IMG/Porsche 911 GT3 (992).jpg"
+                },
+                {
+                    id: "bmw-m-series",
+                    name: "2023 BMW M Series",
+                    category: "BMW M SERIES",
+                    description: "1,850 mi · 3.0L Twin-Turbo · 8-Spd Steptronic · RWD Track Tuned",
+                    price: 139900,
+                    monthly: 1780,
+                    image: "../IMG/BMW M8 Competition GC.jpg"
+                },
+                {
+                    id: "mercedes-amg",
+                    name: "2024 Mercedes-AMG",
+                    category: "MERCEDES-AMG",
+                    description: "4,200 mi · 4.0L Bi-Turbo V8 · 9-Spd Speedshift · AMG 4MATIC · AWD",
+                    price: 164500,
+                    monthly: 2090,
+                    image: "../IMG/AMG GT 63 S E-Perf.jpg"
+                },
+                {
+                    id: "audi-rs6-avant",
+                    name: "2025 Audi RS6 Avant",
+                    category: "AUDI SPORT",
+                    description: "5,400 mi · 4.0L Twin-Turbo · ZF 8-Spd Auto · Rear-Wheel Drive",
+                    price: 149000,
+                    monthly: 1890,
+                    image: "../IMG/Audi RS6 Avant Quattro.jpg"
+                }
+            ];
+            // ELEMENTS
+            const productsGrid =
+                document.getElementById("productsGrid");
+
+            const productCount =
+                document.getElementById("productCount");
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+            const cartTotal =
+                document.getElementById("cartTotal");
+
+            const checkoutBtn =
+                document.getElementById("checkoutBtn");
+
+            const notification =
+                document.getElementById("notification");
+            // ========================================
+            // CART DATA
+            const CART_STORAGE_KEY = "vehicleQuickPaymentCart";
+            let cart = loadCart();
+            // LOAD CART
+            function loadCart() {
+                try {
+                    const savedCart =
+                        localStorage.getItem(CART_STORAGE_KEY);
+                    if (!savedCart) {
+                        return [];
+                    }
+                    const parsedCart =
+                        JSON.parse(savedCart);
+                    if (!Array.isArray(parsedCart)) {
+                        return [];
+                    }
+                    return parsedCart.filter(function (cartItem) {
+                        const product = products.find(function (item) {
+                            return item.id === cartItem.id;
+                        });
+                        return (
+                            product &&
+                            Number.isInteger(cartItem.quantity) &&
+                            cartItem.quantity > 0
+                        );
+                    }).map(function (cartItem) {
+                        const product = products.find(function (item) {
+                            return item.id === cartItem.id;
+                        });
+                        return {
+                            id: product.id,
+                            name: product.name,
+                            price: product.price,
+                            image: product.image,
+                            quantity: cartItem.quantity
+                        };
+                    });
+                } catch (error) {
+                    console.error(
+                        "Không thể tải giỏ hàng:",
+                        error
+                    );
+                    return [];
+                }
+            }
+            // FORMAT PRICE
+            function formatPrice(price) {
+                return "$" + price.toLocaleString("en-US");
+            }
+            // SAVE CART
+            function saveCart() {
+                localStorage.setItem(
+                    CART_STORAGE_KEY,
+                    JSON.stringify(cart)
+                );
+            }
+            // SHOW NOTIFICATION
+            function showNotification(message) {
+                notification.textContent = message;
+                notification.classList.remove(
+                    "translate-y-4",
+                    "opacity-0"
+                );
+                notification.classList.add(
+                    "translate-y-0",
+                    "opacity-100"
+                );
+                setTimeout(function () {
+                    notification.classList.remove(
+                        "translate-y-0",
+                        "opacity-100"
+                    );
+                    notification.classList.add(
+                        "translate-y-4",
+                        "opacity-0"
+                    );
+                }, 2000);
+            }
+            // RENDER PRODUCTS
+            function renderProducts() {
+                productsGrid.innerHTML = "";
+                productCount.textContent =
+                    products.length + " sản phẩm";
+
+                products.forEach(function (product) {
+                    const productCard =
+                        document.createElement("article");
+
+                    productCard.className =
+                        "group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg";
+
+                    productCard.innerHTML = `
+
+                        <!-- IMAGE -->
+                        <div class="relative h-56 overflow-hidden bg-gray-100">
+                            <img
+                                src="${product.image}"
+                                alt="${product.name}"
+                                loading="lazy"
+                                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                            >
+
+                            <span
+                                class="absolute left-4 top-4 rounded-full bg-white px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm"
+                            >
+                                ✓ Certified
+                            </span>
+
+                        </div>
+                        <!-- PRODUCT INFORMATION -->
+                        <div class="flex flex-col p-5">
+
+                            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-blue-700">
+                                ${product.category}
+                            </p>
+
+                            <h3 class="mb-3 min-h-14 text-2xl font-medium leading-tight text-gray-900">
+                                ${product.name}
+                            </h3>
+
+                            <p class="mb-5 min-h-16 text-sm leading-6 text-gray-600">
+                                ${product.description}
+                            </p>
+
+                            <p class="text-2xl font-bold text-gray-900">
+                                ${formatPrice(product.price)}
+                            </p>
+
+                            <p class="mb-5 text-xl font-bold text-gray-900">
+                                Est. ${formatPrice(product.monthly)}/mo
+                            </p>
+
+                            <button
+                                type="button"
+                                data-id="${product.id}"
+                                class="add-to-cart-btn w-full rounded-lg bg-dark px-4 py-3 text-sm font-bold text-white transition hover:bg-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                            >
+                                Thêm vào giỏ
+                            </button>
+
+                        </div>
+                    `;
+
+                    productsGrid.appendChild(productCard);
+                });
+                document.querySelectorAll(".add-to-cart-btn").forEach(function (button) {
+                    button.addEventListener("click", function () {
+                        const productId =
+                            button.dataset.id;
+                        addToCart(productId);
+                    });
+                });
+            }
+            // ADD TO CART
+            function addToCart(productId) {
+                const product =
+                    products.find(function (item) {
+                        return item.id === productId;
+                    });
+                if (!product) {
+                    return;
+                }
+                const existingItem =
+                    cart.find(function (item) {
+                        return item.id === productId;
+                    });
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+
+                saveCart();
+                renderCart();
+                showNotification(
+                    product.name + " đã được thêm vào giỏ hàng."
+                );
+            }
+
+            // INCREASE QUANTITY
+            function increaseQuantity(productId) {
+                const item =
+                    cart.find(function (cartItem) {
+                        return cartItem.id === productId;
+                    });
+                if (!item) {
+                    return;
+                }
+                item.quantity += 1;
+                saveCart();
+                renderCart();
+            }
+
+            // DECREASE QUANTITY
+            function decreaseQuantity(productId) {
+                const item =
+                    cart.find(function (cartItem) {
+                        return cartItem.id === productId;
+                    });
+                if (!item) {
+                    return;
+                }
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                } else {
+                    cart = cart.filter(function (cartItem) {
+                        return cartItem.id !== productId;
+                    });
+                }
+
+                saveCart();
+                renderCart();
+            }
+
+            // REMOVE FROM CART
+            function removeFromCart(productId) {
+                cart = cart.filter(function (cartItem) {
+                    return cartItem.id !== productId;
+                });
+
+                saveCart();
+                renderCart();
+            }
+
+            // RENDER CART
+            function renderCart() {
+                cartItems.innerHTML = "";
+                let total = 0;
+                let totalQuantity = 0;
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <p class="py-4 text-center text-base italic text-gray-400">
+                            Giỏ hàng trống
+                        </p>
+
+                    `;
+                    cartTotal.textContent = "$0";
+                    cartCount.textContent = "0";
+                    checkoutBtn.disabled = true;
+                    return;
+                }
+                cart.forEach(function (item) {
+                    const itemTotal =
+                        item.price * item.quantity;
+                    total += itemTotal;
+                    totalQuantity += item.quantity;
+                    const cartItem =
+                        document.createElement("div");
+                    cartItem.className =
+                        "flex gap-3 border-b border-gray-200 pb-4";
+                    cartItem.innerHTML = `
+                        <img
+                            src="${item.image}"
+                            alt="${item.name}"
+                            class="h-20 w-20 shrink-0 rounded-md bg-gray-100 object-cover"
+                        >
+                        <div class="min-w-0 flex-1">
+                            <h3 class="mb-1 text-sm font-bold leading-5 text-gray-900">
+                                ${item.name}
+                            </h3>
+                            <p class="mb-2 text-sm font-bold text-primary">
+                                ${formatPrice(item.price)}
+                            </p>
+                            <div class="flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-2">
+                                    <button
+                                        type="button"
+                                        data-action="decrease"
+                                        data-id="${item.id}"
+                                        aria-label="Giảm số lượng"
+                                        class="flex h-7 w-7 items-center justify-center rounded-md bg-gray-100 text-base font-bold transition hover:bg-gray-200"
+                                    >
+                                        −
+                                    </button>
+                                    <span class="min-w-5 text-center text-sm font-bold">
+                                        ${item.quantity}
+                                    </span>
+                                    <button
+                                        type="button"
+                                        data-action="increase"
+                                        data-id="${item.id}"
+                                        aria-label="Tăng số lượng"
+                                        class="flex h-7 w-7 items-center justify-center rounded-md bg-gray-100 text-base font-bold transition hover:bg-gray-200"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                                <button
+                                    type="button"
+                                    data-action="remove"
+                                    data-id="${item.id}"
+                                    class="text-xs font-bold text-primary transition hover:underline"
+                                >
+                                    Xóa
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                cartTotal.textContent =
+                    formatPrice(total);
+                cartCount.textContent =
+                    totalQuantity;
+                checkoutBtn.disabled = false;
+            }
+
+            // CART EVENTS
+            cartItems.addEventListener("click", function (event) {
+                const button =
+                    event.target.closest("button");
+                if (!button) {
+                    return;
+                }
+                const productId =
+                    button.dataset.id;
+                const action =
+                    button.dataset.action;
+                if (action === "increase") {
+                    increaseQuantity(productId);
+                } else if (action === "decrease") {
+                    decreaseQuantity(productId);
+                } else if (action === "remove") {
+                    removeFromCart(productId);
+                }
+            });
+
+            // CHECKOUT
+            checkoutBtn.addEventListener("click", function () {
+                if (cart.length === 0) {
+                    return;
+                }
+                saveCart();
+                window.location.href = "Checkout.html";
+            });
+
+            // INITIALIZE
+            renderProducts();
+            renderCart();
+        });
+    </script>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>

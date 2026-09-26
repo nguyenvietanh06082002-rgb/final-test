@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "background": "#faf8ff",
+                        "surface-tint": "#0053db",
+                        "surface-container": "#eaedff",
+                        "on-surface": "#131b2e",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "on-tertiary-container": "#e7f2ff",
+                        "on-secondary-fixed-variant": "#424657",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-fixed": "#cce5ff",
+                        "on-tertiary-fixed-variant": "#004b73",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-surface": "#283044",
+                        "on-primary-container": "#eeefff",
+                        "outline": "#737686",
+                        "secondary-fixed-dim": "#c2c6da",
+                        "surface-variant": "#dae2fd",
+                        "surface-container-high": "#e2e7ff",
+                        "on-tertiary-fixed": "#001d31",
+                        "secondary-fixed": "#dee2f6",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "inverse-primary": "#b4c5ff",
+                        "secondary-container": "#dbdff3",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#0073ae",
+                        "surface": "#faf8ff",
+                        "tertiary": "#005a89",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-surface-variant": "#434655",
+                        "on-error-container": "#93000a",
+                        "primary": "#004ac6",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-secondary-fixed": "#161b2a",
+                        "on-primary-fixed": "#00174b",
+                        "on-error": "#ffffff",
+                        "secondary": "#595e6f",
+                        "surface-container-low": "#f2f3ff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5d6273"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-md": "1rem",
+                        "space-lg": "1.25rem",
+                        "space-2xl": "2rem",
+                        "space-xs": "0.5rem",
+                        "margin": "2rem",
+                        "gutter": "1.5rem",
+                        "space-4xl": "4rem",
+                        "space-xl": "1.5rem",
+                        "space-3xl": "3rem",
+                        "gutter-dense": "0.75rem",
+                        "space-2xs": "0.25rem",
+                        "space-sm": "0.75rem",
+                        "margin-mobile": "1rem"
+                    },
+                    "fontFamily": {
+                        "body-sm-medium": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "caption": ["Inter"],
+                        "caption-medium": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-overline": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "tabular-numerical": ["Inter"],
+                        "display": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg-medium": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm-medium": ["14px", { "lineHeight": "21px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "caption-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "tabular-numerical": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }</script>
+</head>
+
+<body class="bg-surface font-body-sm text-on-surface antialiased">
+    <!--sidebar-->
+    <aside id="sidebar"
+        class="fixed left-0 top-0 h-screen w-[260px] bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between overflow-y-auto transition-all duration-300">
+        <div class="flex flex-col">
+            <div class="h-16 px-space-md flex items-center justify-between border-b border-outline/20">
+                <div class="flex items-center gap-space-xs">
+                    <img alt="AutoHunt premium automotive marketplace logo with bold modern geometric wordmark 'AutoHunt' and electric blue stylized automotive apex monogram icon, clean vector graphic on dark navy background. Design context: - Primary color: #2563eb- Font: plusJakartaSans- Mode: light- Roundness: rounded-md. The logo should be visually consistent with these brand tokens."
+                        class="h-8 w-auto object-contain" src="../IMG/logo.jpg" />
+                    <span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">
+                        AutoHunt
+                    </span>
+                </div>
+                <span
+                    class="px-space-2xs py-0.5 rounded-full bg-primary text-on-primary font-label-overline text-label-overline tracking-wider uppercase">
+                    OPS
+                </span>
+            </div>
+            <div class="px-space-md pt-space-xs">
+                <span
+                    class="font-label-overline text-label-overline text-inverse-on-surface/60 uppercase tracking-widest">Main
+                    Operations
+                </span>
+            </div>
+            <nav class="flex flex-col gap-1 px-space-sm pt-space-2xs"
+                data-active-classes="bg-primary-container text-on-primary-container font-body-sm-medium rounded-lg shadow-sm">
+                <a aria-current="page"
+                    class="flex items-center gap-space-sm px-space-sm py-2 transition-colors bg-primary-container text-on-primary-container font-body-sm-medium rounded-lg shadow-sm"
+                    data-path="dashboard" href="#">
+                    <span class="material-symbols-outlined text-[20px]">
+                        grid_view
+                    </span>
+                    <span class="sidebar-text">Dashboard</span>
+                </a>
+                <div class="flex flex-col gap-0.5 pt-1">
+                    <div class="flex items-center justify-between px-space-sm py-1.5 text-inverse-on-surface/50">
+                        <span class="font-caption-medium text-caption-medium uppercase tracking-wider">Inventory
+                            Engine
+                        </span>
+                        <span class="material-symbols-outlined text-[16px]">
+                            expand_more
+                        </span>
+                    </div>
+                    <div class="pl-space-sm flex flex-col gap-1">
+                        <a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                            data-path="all-inventory" href="#">
+                            <span class="material-symbols-outlined text-[18px]">
+                                directions_car
+                            </span>
+                            <span class="sidebar-text">All Inventory</span>
+                        </a>
+                        <a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                            data-path="add-vehicle" href="#">
+                            <span class="material-symbols-outlined text-[18px]">
+                                add_circle
+                            </span>
+                            <span class="font-body-sm text-body-sm">
+                                Add Vehicle
+                            </span>
+                        </a>
+                        <a class="flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                            data-path="inspection-queue" href="#">
+                            <span class="material-symbols-outlined text-[18px]">
+                                fact_check
+                            </span>
+                            <span class="font-body-sm text-body-sm">
+                                Inspection Queue
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="orders" href="#">
+                    <span class="material-symbols-outlined text-[20px]">
+                        receipt_long
+                    </span>
+                    <span class="sidebar-text">Orders</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="customers" href="#">
+                    <span class="material-symbols-outlined text-[20px]">
+                        group
+                    </span>
+                    <span class="sidebar-text">Customers</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="payments" href="#">
+                    <span class="material-symbols-outlined text-[20px]">
+                        account_balance_wallet
+                    </span>
+                    <span class="font-body-sm-medium text-body-sm-medium">
+                        Payments</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="sell-car-on-behalf" href="#"><span
+                        class="material-symbols-outlined text-[20px]">handshake</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Sell Car on Behalf</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="financial-management" href="#"><span
+                        class="material-symbols-outlined text-[20px]">monitoring</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Financial Management</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="reports" href="#"><span
+                        class="material-symbols-outlined text-[20px]">bar_chart</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Reports</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="reviews" href="#"><span
+                        class="material-symbols-outlined text-[20px]">rate_review</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Reviews</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="promotions" href="#"><span
+                        class="material-symbols-outlined text-[20px]">campaign</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Promotions</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="notifications" href="#"><span
+                        class="material-symbols-outlined text-[20px]">notifications</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Notifications</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="support" href="#"><span
+                        class="material-symbols-outlined text-[20px]">headset_mic</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Support</span></a><a
+                    class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-inverse-on-surface/80 hover:bg-inverse-surface/60 hover:text-inverse-on-surface transition-colors"
+                    data-path="settings" href="#"><span
+                        class="material-symbols-outlined text-[20px]">settings</span><span
+                        class="font-body-sm-medium text-body-sm-medium">Settings</span></a>
+            </nav>
+        </div>
+        <div class="p-space-sm border-t border-outline/20 bg-inverse-surface/80">
+            <div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-inverse-surface">
+                <div class="flex items-center gap-space-xs overflow-hidden">
+                    <div class="relative flex-shrink-0">
+                        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span
+                                class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span
+                            class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-[#10b981] border border-inverse-surface"></span>
+                    </div>
+                    <div class="flex flex-col truncate"><span
+                            class="font-body-sm-medium text-body-sm-medium text-inverse-on-surface truncate">Marcus
+                            Vance</span><span
+                            class="font-caption text-caption text-inverse-on-surface/60 truncate">Fleet Ops
+                            Director</span></div>
+                </div><a
+                    class="p-1 rounded hover:bg-error/20 hover:text-error text-inverse-on-surface/60 transition-colors"
+                    data-path="logout" href="http://127.0.0.1:5500/hunt-car/html/CustomerLogin.html"
+                    title="Logout"><span class="material-symbols-outlined text-[18px]">logout</span></a>
+            </div>
+        </div>
+    </aside>
+    <button id="sidebarToggle" type="button" class="fixed top-[18px] left-[240px] z-[60]
+           w-9 h-9 rounded-lg
+           bg-white border border-outline-variant/40
+           shadow-md
+           flex items-center justify-center
+           text-on-surface-variant
+           hover:bg-surface-container
+           transition-all duration-300">
+
+        <span id="sidebarToggleIcon" class="material-symbols-outlined text-[20px]">
+            chevron_left
+        </span>
+
+    </button>
+    <div id="pageContent" class="pl-[260px] transition-all duration-300">
+        <header id="mainHeader"
+            class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-md z-40 border-b border-outline-variant/30 px-space-xl flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-all duration-300">
+            <div class="flex items-center gap-space-xs"><span
+                    class="font-caption-medium text-caption-medium text-on-surface-variant">Ops Console</span><span
+                    class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span
+                    class="font-caption-medium text-caption-medium text-on-surface font-semibold">AutoHunt Admin</span>
+            </div>
+            <div class="flex-1 max-w-xl mx-space-xl">
+                <div class="relative flex items-center"><span
+                        class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input
+                        class="w-full h-10 pl-9 pr-12 rounded-lg bg-surface border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container"
+                        placeholder="Search VIN, vehicle, collector ID, order #... [Cmd+K]" type="text" />
+                    <div
+                        class="absolute right-3 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-overline text-label-overline">
+                        ⌘K</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-space-md">
+                <div
+                    class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low border border-outline-variant/40">
+                    <span class="relative flex h-2 w-2"><span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75"></span><span
+                            class="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]"></span></span><span
+                        class="font-label-overline text-label-overline uppercase tracking-wider text-on-surface-variant">PROD
+                        • ESCROW ENGINE ONLINE</span>
+                </div>
+                <button
+                    class="h-9 px-space-md rounded-lg bg-primary-container text-on-primary-container font-body-sm-medium text-body-sm-medium flex items-center gap-1 hover:bg-primary transition-colors shadow-sm"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px]">add</span>
+                    <span>
+                        Quick Add
+                    </span>
+                </button>
+                <div class="relative">
+                    <button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"
+                        type="button">
+                        <span class="material-symbols-outlined text-[20px]">
+                            notifications
+                        </span>
+                    </button>
+                    <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error">
+                    </span>
+                </div>
+                <!-- ADMIN ACCOUNT -->
+                <div id="adminArea" class="relative">
+
+                    <button onclick="toggleAdminMenu()" class="flex items-center gap-[10px] cursor-pointer group">
+
+                        <!-- ADMIN AVATAR -->
+                        <div
+                            class="w-[42px] h-[42px] rounded-full bg-[#1A1C1C] border border-[#333535] flex items-center justify-center text-[#E2E2E2] font-bold text-[15px] group-hover:border-[#777] transition duration-300">
+                            A
+                        </div>
+
+                        <!-- ADMIN INFO -->
+                        <div class="text-left">
+
+                            <p class="text-[13px] font-semibold text-[#E2E2E2] group-hover:text-[#2563eb]">
+                                Admin
+                            </p>
+
+                            <p class="text-[10px] text-[#777]">
+                                admin@gmail.com
+                            </p>
+
+                        </div>
+
+                        <span class="text-[10px] text-[#888] group-hover:text-[#2563eb] transition">
+                            ▼
+                        </span>
+
+                    </button>
+
+                    <!-- ADMIN DROPDOWN -->
+                    <div id="adminMenu"
+                        class="hidden absolute right-0 top-[58px] w-[220px] bg-[#111314] border border-[#2A2D30] rounded-[10px] shadow-2xl overflow-hidden">
+
+                        <!-- ACCOUNT INFO -->
+                        <div class="px-[18px] py-[15px] border-b border-[#2A2D30]">
+
+                            <p class="text-[10px] tracking-[2px] text-[#777] mb-[4px]">
+                                ADMINISTRATOR
+                            </p>
+
+                            <p class="text-[14px] font-semibold text-[#E2E2E2]">
+                                Admin
+                            </p>
+
+                            <p class="text-[10px] text-[#777] mt-[3px]">
+                                admin@gmail.com
+                            </p>
+
+                        </div>
+
+                        <!-- DASHBOARD -->
+                        <a href="admin.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span class="material-symbols-outlined text-[17px]">
+                                dashboard
+                            </span>
+
+                            DASHBOARD
+
+                        </a>
+
+                        <!-- VEHICLES -->
+                        <a href="vehicles.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span class="material-symbols-outlined text-[17px]">
+                                directions_car
+                            </span>
+
+                            VEHICLES
+
+                        </a>
+
+                        <!-- SETTINGS -->
+                        <a href="admin-settings.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span class="material-symbols-outlined text-[17px]">
+                                settings
+                            </span>
+
+                            SETTINGS
+
+                        </a>
+
+                        <!-- LOGOUT -->
+                        <button onclick="logout()"
+                            class="w-full flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-red-400 hover:bg-[#1A1C1C] transition">
+
+                            <span class="material-symbols-outlined text-[17px]">
+                                logout
+                            </span>
+
+                            LOG OUT
+
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </header>
+    <main class="relative pt-16 bg-surface min-h-screen w-full px-space-xl py-space-xl">
+        <div class="flex flex-col w-full gap-space-xl">
+            <!-- Executive Context Bar -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-space-xs">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-primary font-bold tracking-widest">Fleet
+                            &amp; Escrow Command</span>
+                        <span class="w-1 h-1 rounded-full bg-outline"></span>
+                        <span
+                            class="font-caption-medium text-caption-medium text-on-surface-variant flex items-center gap-1">
+                            <span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Live Feed Synced (2s ago)
+                        </span>
+                    </div>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Executive
+                        Operations &amp; Inventory Overview</h1>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Live performance telemetry, escrow
+                        clearing status, and luxury fleet inventory health.</p>
+                </div>
+                <!-- Actions & Date Selector -->
+                <div class="flex flex-wrap items-center gap-space-xs">
+                    <div class="flex items-center bg-surface-container-lowest shadow-sm rounded-lg px-3 py-1.5 gap-2">
+                        <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                        <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Oct 1 - Oct 31,
+                            2024</span>
+                        <span
+                            class="font-caption text-caption text-outline bg-surface-container px-1.5 py-0.5 rounded">30D</span>
+                        <span
+                            class="material-symbols-outlined text-outline text-[16px] cursor-pointer">arrow_drop_down</span>
+                    </div>
+                    <button
+                        class="h-9 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-body-sm-medium flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors"
+                        type="button">
+                        <span class="material-symbols-outlined text-outline text-[18px]">tune</span>
+                        <span>Filter View</span>
+                    </button>
+                    <button
+                        class="h-9 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-body-sm-medium flex items-center gap-1.5 shadow-sm hover:bg-surface-container transition-colors"
+                        type="button">
+                        <span class="material-symbols-outlined text-outline text-[18px]">file_download</span>
+                        <span>Export Summary</span>
+                    </button>
+                    <button
+                        class="h-9 px-3.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm-medium text-body-sm-medium flex items-center gap-1.5 shadow-sm hover:bg-primary transition-colors"
+                        type="button">
+                        <span class="material-symbols-outlined text-[18px]">refresh</span>
+                        <span>Force Refresh</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Key Metrics Matrix (9 Cards Bento Row) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-9 gap-space-sm">
+                <!-- Card 1 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Total
+                            Fleet</span>
+                        <span class="material-symbols-outlined text-primary text-[18px]">garage_home</span>
+                    </div>
+                    <div class="my-2">
+                        <div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">184
+                        </div>
+                        <div class="flex items-center gap-1 mt-0.5">
+                            <span class="material-symbols-outlined text-primary text-[14px]">arrow_upward</span>
+                            <span class="font-caption-medium text-caption-medium text-primary">+12 this mo</span>
+                        </div>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Available</span>
+                        <span class="material-symbols-outlined text-[#005a89] text-[18px]">key</span>
+                    </div>
+                    <div class="my-2">
+                        <div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">142
+                        </div>
+                        <span class="font-caption-medium text-caption-medium text-on-surface-variant">77% dispatch
+                            ready</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-[#0073ae] h-full rounded-full" style="width: 77%"></div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Sold
+                            Units</span>
+                        <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                    </div>
+                    <div class="my-2">
+                        <div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">34
+                        </div>
+                        <div class="flex items-center gap-1 mt-0.5">
+                            <span class="material-symbols-outlined text-primary text-[14px]">trending_up</span>
+                            <span class="font-caption-medium text-caption-medium text-primary">+8 vs last mo</span>
+                        </div>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-primary-container h-full rounded-full" style="width: 62%"></div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Pending
+                            Deals</span>
+                        <span
+                            class="material-symbols-outlined text-on-secondary-container text-[18px]">hourglass_top</span>
+                    </div>
+                    <div class="my-2">
+                        <div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">8
+                        </div>
+                        <span class="font-caption-medium text-caption-medium text-outline font-tabular-numerical">$1.94M
+                            pipeline</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-secondary h-full rounded-full" style="width: 45%"></div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between xl:col-span-1">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Gross
+                            GMV</span>
+                        <span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+                    </div>
+                    <div class="my-2">
+                        <div
+                            class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-tabular-numerical leading-none">
+                            $8.42M</div>
+                        <span class="font-caption-medium text-caption-medium text-primary">+18.4% YoY</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-primary-container h-full rounded-full" style="width: 82%"></div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Fleet
+                            Expenses</span>
+                        <span class="material-symbols-outlined text-outline text-[18px]">handyman</span>
+                    </div>
+                    <div class="my-2">
+                        <div
+                            class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-tabular-numerical leading-none">
+                            $612K</div>
+                        <span class="font-caption text-caption text-on-surface-variant truncate block">Audits &amp;
+                            transport</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-outline h-full rounded-full" style="width: 38%"></div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Net
+                            Profit</span>
+                        <span class="material-symbols-outlined text-primary text-[18px]">account_balance</span>
+                    </div>
+                    <div class="my-2">
+                        <div
+                            class="font-headline-md text-headline-md text-primary font-bold tracking-tight font-tabular-numerical leading-none">
+                            $1.25M</div>
+                        <span class="font-caption-medium text-caption-medium text-on-surface-variant">14.8% net
+                            cut</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-primary h-full rounded-full" style="width: 74%"></div>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Escrow
+                            Wire</span>
+                        <span class="material-symbols-outlined text-tertiary text-[18px]">shield_with_heart</span>
+                    </div>
+                    <div class="my-2">
+                        <div
+                            class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight font-tabular-numerical leading-none">
+                            $1.48M</div>
+                        <span class="font-caption text-caption text-tertiary">4 releases queue</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-tertiary-container h-full rounded-full" style="width: 55%"></div>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold">Consign
+                            Req</span>
+                        <span class="material-symbols-outlined text-error text-[18px]">assignment_late</span>
+                    </div>
+                    <div class="my-2">
+                        <div class="font-headline-md text-headline-md text-error font-bold tracking-tight">14</div>
+                        <span class="font-caption-medium text-caption-medium text-error">6 need audits</span>
+                    </div>
+                    <div class="w-full bg-surface-container h-1 rounded-full overflow-hidden">
+                        <div class="bg-error h-full rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Primary Analytics Row -->
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-space-xl">
+                <!-- Chart 1: Revenue & Margin (2/3 width) -->
+                <div
+                    class="xl:col-span-2 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-md border-b-0">
+                        <div>
+                            <div class="flex items-center gap-space-xs">
+                                <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Revenue
+                                    &amp; Gross Margin Telemetry</h2>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-overline text-label-overline">Jan
+                                    - Oct 2024</span>
+                            </div>
+                            <p class="font-caption text-caption text-on-surface-variant mt-0.5">Total Gross
+                                Merchandise Volume against Net Commission &amp; Warranty Retainers</p>
+                        </div>
+                        <div class="flex items-center gap-space-md">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded bg-primary-container"></span>
+                                <span class="font-caption-medium text-caption-medium text-on-surface-variant">GMV
+                                    ($M)</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-1 rounded bg-[#0073ae]"></span>
+                                <span class="font-caption-medium text-caption-medium text-on-surface-variant">Escrow
+                                    Fee Rate (%)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Micro Sparkline & Bar Visualizer (SVG) -->
+                    <div class="w-full py-space-md">
+                        <div class="relative h-64 w-full flex items-end">
+                            <!-- Background Gridlines -->
+                            <div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+                                <div class="w-full h-[1px] bg-outline-variant"></div>
+                                <div class="w-full h-[1px] bg-outline-variant"></div>
+                                <div class="w-full h-[1px] bg-outline-variant"></div>
+                                <div class="w-full h-[1px] bg-outline-variant"></div>
+                                <div class="w-full h-[1px] bg-outline-variant"></div>
+                            </div>
+                            <!-- SVG Overlaid Line -->
+                            <svg class="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+                                preserveaspectratio="none" viewbox="0 0 1000 240">
+                                <path
+                                    d="M 50 180 C 150 160, 250 150, 350 130 C 450 110, 550 140, 650 90 C 750 40, 850 70, 950 50"
+                                    fill="none" stroke="#0073ae" stroke-linecap="round" stroke-width="3"></path>
+                                <!-- Peak Indicator dot -->
+                                <circle cx="750" cy="40" fill="#005a89" r="6" stroke="#ffffff" stroke-width="2">
+                                </circle>
+                            </svg>
+                            <!-- Bars Container (10 Months) -->
+                            <div class="w-full h-full flex items-end justify-between z-10 px-2">
+                                <!-- Jan -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 48%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Jan</span>
+                                </div>
+                                <!-- Feb -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 55%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Feb</span>
+                                </div>
+                                <!-- Mar -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 62%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Mar</span>
+                                </div>
+                                <!-- Apr -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 58%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Apr</span>
+                                </div>
+                                <!-- May -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 68%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">May</span>
+                                </div>
+                                <!-- Jun -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 72%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Jun</span>
+                                </div>
+                                <!-- Jul -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 65%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Jul</span>
+                                </div>
+                                <!-- Aug: Monterey Car Week Spike -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group relative">
+                                    <div
+                                        class="absolute -top-7 px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-overline text-[9px] uppercase whitespace-nowrap shadow-sm">
+                                        Monterey Peak</div>
+                                    <div class="w-7/12 max-w-[36px] bg-primary-container rounded-t shadow-md"
+                                        style="height: 94%;"></div>
+                                    <span
+                                        class="font-caption-medium text-caption-medium text-primary font-bold">Aug</span>
+                                </div>
+                                <!-- Sep -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 74%;"></div>
+                                    <span
+                                        class="font-caption text-caption text-outline group-hover:text-on-surface">Sep</span>
+                                </div>
+                                <!-- Oct -->
+                                <div class="flex flex-col items-center gap-2 flex-1 group">
+                                    <div class="w-7/12 max-w-[36px] bg-surface-container-highest group-hover:bg-primary transition-all rounded-t"
+                                        style="height: 84%;"></div>
+                                    <span
+                                        class="font-caption-medium text-caption-medium text-on-surface font-bold">Oct</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Metrics Strip inside chart -->
+                    <div
+                        class="grid grid-cols-3 gap-space-sm pt-space-sm bg-surface-container-low p-space-sm rounded-lg">
+                        <div class="flex flex-col">
+                            <span class="font-label-overline text-label-overline uppercase text-on-surface-variant">Aug
+                                Record Peak</span>
+                            <span class="font-tabular-numerical text-tabular-numerical text-on-surface">$1,420,000
+                                GMV</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-overline text-label-overline uppercase text-on-surface-variant">Average
+                                Vehicle Ticket</span>
+                            <span class="font-tabular-numerical text-tabular-numerical text-on-surface">$247,660</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-overline text-label-overline uppercase text-on-surface-variant">Escrow
+                                Fee Margin</span>
+                            <span class="font-tabular-numerical text-tabular-numerical text-primary">14.82%
+                                stabilized</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chart 2: Order Velocity & Settlement Turnaround (1/3 width) -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Fulfillment
+                                Velocity</h2>
+                            <span
+                                class="px-2 py-0.5 rounded-full bg-surface-container-low text-primary font-label-overline text-label-overline font-semibold">T+4.2d
+                                Target</span>
+                        </div>
+                        <p class="font-caption text-caption text-on-surface-variant mt-1">Average settlement from
+                            escrow deposit to enclosed logistics release.</p>
+                    </div>
+                    <!-- Settlement Velocity Display -->
+                    <div
+                        class="flex items-center justify-between my-space-md p-space-md bg-surface-container-low rounded-xl">
+                        <div class="flex flex-col">
+                            <span
+                                class="font-label-overline text-label-overline uppercase text-on-surface-variant">Current
+                                Cycle</span>
+                            <span
+                                class="font-headline-lg text-headline-lg font-bold text-primary font-tabular-numerical">4.2
+                                <span class="text-body-sm font-normal text-on-surface-variant">days</span></span>
+                            <span
+                                class="font-caption-medium text-caption-medium text-primary flex items-center gap-0.5">
+                                <span class="material-symbols-outlined text-[14px]">bolt</span> 18% faster than
+                                benchmark
+                            </span>
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-[32px]">speed</span>
+                        </div>
+                    </div>
+                    <!-- Weekly Order Batches Breakdown -->
+                    <div class="space-y-space-xs">
+                        <span
+                            class="font-label-overline text-label-overline uppercase text-on-surface-variant font-semibold block">Weekly
+                            Order Volumes</span>
+                        <div class="space-y-2">
+                            <div>
+                                <div class="flex justify-between font-caption text-caption mb-1">
+                                    <span class="text-on-surface font-medium">W42 (Current)</span>
+                                    <span class="font-tabular-numerical font-semibold text-on-surface">11 Orders •
+                                        3.8 days avg</span>
+                                </div>
+                                <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary-container h-full rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between font-caption text-caption mb-1">
+                                    <span class="text-on-surface-variant">W41</span>
+                                    <span class="font-tabular-numerical text-on-surface-variant">8 Orders • 4.1 days
+                                        avg</span>
+                                </div>
+                                <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                    <div class="bg-secondary h-full rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between font-caption text-caption mb-1">
+                                    <span class="text-on-surface-variant">W40</span>
+                                    <span class="font-tabular-numerical text-on-surface-variant">9 Orders • 4.6 days
+                                        avg</span>
+                                </div>
+                                <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                    <div class="bg-secondary h-full rounded-full" style="width: 72%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-space-sm mt-space-sm flex items-center justify-between">
+                        <span class="font-caption text-caption text-outline">Escrow Guarantee: 100% FDIC</span>
+                        <a class="font-caption-medium text-caption-medium text-primary hover:underline flex items-center gap-0.5"
+                            href="#">Audit log →</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Secondary Analytics Row (Trio of 1/3 Width Panels) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-xl">
+                <!-- Chart 3: Sales by Marque / Brand -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Volume by Marque
+                        </h2>
+                        <span class="material-symbols-outlined text-outline text-[20px]">pie_chart</span>
+                    </div>
+                    <p class="font-caption text-caption text-on-surface-variant">Share of gross transactions and
+                        average selling ticket.</p>
+                    <!-- Brand Breakdown Bars & Share -->
+                    <div class="space-y-space-sm my-space-md">
+                        <!-- Porsche -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span
+                                    class="font-body-sm-medium text-body-sm-medium text-on-surface flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Porsche
+                                </span>
+                                <span class="font-tabular-numerical text-body-sm text-on-surface">38% <span
+                                        class="text-outline text-caption">($212k avg)</span></span>
+                            </div>
+                            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                <div class="bg-primary-container h-full rounded-full" style="width: 38%"></div>
+                            </div>
+                        </div>
+                        <!-- Ferrari -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span
+                                    class="font-body-sm-medium text-body-sm-medium text-on-surface flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-error"></span> Ferrari
+                                </span>
+                                <span class="font-tabular-numerical text-body-sm text-on-surface">22% <span
+                                        class="text-outline text-caption">($385k avg)</span></span>
+                            </div>
+                            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                <div class="bg-error h-full rounded-full" style="width: 22%"></div>
+                            </div>
+                        </div>
+                        <!-- BMW M -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span
+                                    class="font-body-sm-medium text-body-sm-medium text-on-surface flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> BMW M
+                                </span>
+                                <span class="font-tabular-numerical text-body-sm text-on-surface">18% <span
+                                        class="text-outline text-caption">($135k avg)</span></span>
+                            </div>
+                            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                <div class="bg-tertiary h-full rounded-full" style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <!-- Mercedes-AMG -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span
+                                    class="font-body-sm-medium text-body-sm-medium text-on-surface flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Mercedes-AMG
+                                </span>
+                                <span class="font-tabular-numerical text-body-sm text-on-surface">12% <span
+                                        class="text-outline text-caption">($168k avg)</span></span>
+                            </div>
+                            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                <div class="bg-secondary h-full rounded-full" style="width: 12%"></div>
+                            </div>
+                        </div>
+                        <!-- Others -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span
+                                    class="font-body-sm-medium text-body-sm-medium text-on-surface flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-outline"></span> Aston &amp; Others
+                                </span>
+                                <span class="font-tabular-numerical text-body-sm text-on-surface">10% <span
+                                        class="text-outline text-caption">($295k avg)</span></span>
+                            </div>
+                            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+                                <div class="bg-outline h-full rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between">
+                        <span class="font-caption text-caption text-on-surface-variant">Top Model Velocity</span>
+                        <span class="font-caption-medium text-caption-medium text-on-surface font-semibold">Porsche
+                            911 GT3 RS (992)</span>
+                    </div>
+                </div>
+                <!-- Chart 4: Inventory Health & Pipeline Stages -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Inventory Pipeline
+                        </h2>
+                        <span class="material-symbols-outlined text-outline text-[20px]">inventory_2</span>
+                    </div>
+                    <p class="font-caption text-caption text-on-surface-variant">Surgical distribution of fleet
+                        units in current processing stages.</p>
+                    <!-- Pipeline Distribution Breakdown -->
+                    <div class="space-y-space-xs my-space-md">
+                        <!-- Stage 1 -->
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Active Floor
+                                    &amp; Showroom</span>
+                            </div>
+                            <span class="font-tabular-numerical text-body-sm font-bold text-on-surface">142
+                                units</span>
+                        </div>
+                        <!-- Stage 2 -->
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#0073ae]"></span>
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Enclosed
+                                    Transit to Hub</span>
+                            </div>
+                            <span class="font-tabular-numerical text-body-sm font-bold text-on-surface">16
+                                units</span>
+                        </div>
+                        <!-- Stage 3 -->
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Under
+                                    160-Point Audit</span>
+                            </div>
+                            <span class="font-tabular-numerical text-body-sm font-bold text-on-surface">14
+                                units</span>
+                        </div>
+                        <!-- Stage 4 -->
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Active Escrow
+                                    Negotiation</span>
+                            </div>
+                            <span class="font-tabular-numerical text-body-sm font-bold text-on-surface">8
+                                units</span>
+                        </div>
+                        <!-- Stage 5 -->
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-inverse-surface"></span>
+                                <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Sold /
+                                    Awaiting Transport</span>
+                            </div>
+                            <span class="font-tabular-numerical text-body-sm font-bold text-on-surface">4
+                                units</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-1">
+                        <span class="font-caption text-caption text-outline">Health Score: 98.4% Optimal</span>
+                        <span
+                            class="font-caption-medium text-caption-medium text-primary cursor-pointer hover:underline">Batch
+                            inspect →</span>
+                    </div>
+                </div>
+                <!-- Chart 5: Payment & Escrow Clearing Status -->
+                <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div class="flex items-center justify-between">
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Escrow Clearing
+                            Health</h2>
+                        <span class="material-symbols-outlined text-outline text-[20px]">account_balance</span>
+                    </div>
+                    <p class="font-caption text-caption text-on-surface-variant">Capital protection protocols under
+                        FDIC-insured escrow engine.</p>
+                    <!-- Escrow Ring & Segment Representation -->
+                    <div class="my-space-sm flex flex-col items-center">
+                        <div class="relative w-36 h-36 flex items-center justify-center">
+                            <svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+                                <!-- Background circle -->
+                                <path class="text-surface-container"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none" stroke="currentColor" stroke-width="3.5"></path>
+                                <!-- Cleared (68%) -->
+                                <path class="text-primary-container"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none" stroke="currentColor" stroke-dasharray="68, 100" stroke-linecap="round"
+                                    stroke-width="3.5"></path>
+                                <!-- Pending (22%) -->
+                                <path class="text-[#0073ae]"
+                                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none" stroke="currentColor" stroke-dasharray="22, 100" stroke-dashoffset="-68"
+                                    stroke-linecap="round" stroke-width="3.5"></path>
+                            </svg>
+                            <div class="absolute flex flex-col items-center">
+                                <span
+                                    class="font-headline-sm text-headline-sm font-bold text-on-surface font-tabular-numerical">68%</span>
+                                <span class="font-label-overline text-[9px] uppercase text-outline">Cleared</span>
+                            </div>
+                        </div>
+                        <div class="w-full grid grid-cols-3 gap-1 mt-space-sm text-center">
+                            <div class="p-1.5 rounded bg-surface-container-low">
+                                <span
+                                    class="font-label-overline text-[10px] uppercase text-on-surface-variant block">Settled</span>
+                                <span class="font-tabular-numerical font-bold text-caption text-primary">68%
+                                    ($5.7M)</span>
+                            </div>
+                            <div class="p-1.5 rounded bg-surface-container-low">
+                                <span
+                                    class="font-label-overline text-[10px] uppercase text-on-surface-variant block">Pending</span>
+                                <span class="font-tabular-numerical font-bold text-caption text-tertiary">22%
+                                    ($1.8M)</span>
+                            </div>
+                            <div class="p-1.5 rounded bg-surface-container-low">
+                                <span
+                                    class="font-label-overline text-[10px] uppercase text-on-surface-variant block">Contingency</span>
+                                <span class="font-tabular-numerical font-bold text-caption text-outline">10%
+                                    ($840K)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-surface-container-high flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-primary text-[16px]">lock</span>
+                            <span class="font-caption-medium text-caption-medium text-on-surface">Auto-Escrow Vault
+                                Protected</span>
+                        </div>
+                        <span
+                            class="font-label-overline text-label-overline text-primary font-bold uppercase">Active</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Operational Action Queues & Activity Logs (Split 2-Column Section) -->
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl">
+                <!-- Left Column: High-Priority Action Items (7 Cols) -->
+                <div class="xl:col-span-7 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col">
+                    <div class="flex items-center justify-between pb-space-md">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+                                    High-Priority Action Items</h2>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-caption-medium text-caption-medium font-bold">4
+                                    Pending</span>
+                            </div>
+                            <p class="font-caption text-caption text-on-surface-variant">Critical transactions
+                                requiring Director signature or wire clearance</p>
+                        </div>
+                        <button class="text-caption-medium font-caption-medium text-primary hover:underline"
+                            type="button">Batch Process</button>
+                    </div>
+                    <!-- Action Items List -->
+                    <div class="flex flex-col gap-space-sm">
+                        <!-- Item 1: Commission Sign-Off -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+                            <div class="flex items-start gap-space-md">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[22px]">signature</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Ferrari
+                                            812 Competizione</span>
+                                        <span
+                                            class="font-label-overline text-label-overline px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">REQ-FER-296</span>
+                                        <span
+                                            class="font-caption-medium text-caption-medium text-error font-semibold">Director
+                                            Sign-off Required</span>
+                                    </div>
+                                    <p class="font-caption text-caption text-on-surface-variant mt-0.5">Consignment
+                                        terms agreed at 6.5% commission ($48,750 net cut). Seller waiting on formal
+                                        escrow agreement execution.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-caption text-outline">
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">person</span> Julian
+                                            Sterling (Private Collector)</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">attach_money</span>
+                                            $750,000 List</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container-high transition-colors"
+                                    type="button">Review Terms</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm-medium text-caption-medium hover:bg-primary transition-colors"
+                                    type="button">Authorize Sign</button>
+                            </div>
+                        </div>
+                        <!-- Item 2: Wire Release Authorization -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+                            <div class="flex items-start gap-space-md">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[22px]">payments</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Wire
+                                            Release ($324,500)</span>
+                                        <span
+                                            class="font-label-overline text-label-overline px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">AH-911-84029</span>
+                                        <span
+                                            class="font-caption-medium text-caption-medium text-[#0073ae] font-semibold">Pre-Funded
+                                            in Escrow</span>
+                                    </div>
+                                    <p class="font-caption text-caption text-on-surface-variant mt-0.5">Porsche 911
+                                        GT3 RS delivered to Miami collector. Handover protocol signed &amp; accepted
+                                        by purchaser.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-caption text-outline">
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">pin_drop</span> Miami
+                                            Private Vault</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">verified_user</span>
+                                            160-Pt Audit Cleared</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container-high transition-colors"
+                                    type="button">Inspect POD</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-sm-medium text-caption-medium hover:bg-primary-container transition-colors"
+                                    type="button">Release Wire</button>
+                            </div>
+                        </div>
+                        <!-- Item 3: Logistics Enroute -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+                            <div class="flex items-start gap-space-md">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[22px]">local_shipping</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Enclosed
+                                            Transport Intercept</span>
+                                        <span
+                                            class="font-label-overline text-label-overline px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">LOG-8819</span>
+                                        <span
+                                            class="font-caption-medium text-caption-medium text-on-surface-variant font-semibold">ETA:
+                                            45 mins</span>
+                                    </div>
+                                    <p class="font-caption text-caption text-on-surface-variant mt-0.5">2023
+                                        Mercedes-AMG GT Black Series arriving at North Hub for intake &amp; paint
+                                        gauge scan.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-caption text-outline">
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">schedule</span> Intake
+                                            Bay #4</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">badge</span> Carrier:
+                                            Reliable Carriers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container-high transition-colors"
+                                    type="button">Assign Tech</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-body-sm-medium text-caption-medium hover:bg-inverse-surface transition-colors"
+                                    type="button">Track GPS</button>
+                            </div>
+                        </div>
+                        <!-- Item 4: Audit Flag -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+                            <div class="flex items-start gap-space-md">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">160-Point
+                                            Audit Flag</span>
+                                        <span
+                                            class="font-label-overline text-label-overline px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">AUD-BMW-110</span>
+                                        <span
+                                            class="font-caption-medium text-caption-medium text-error font-semibold">Paint
+                                            Meter Anomaly</span>
+                                    </div>
+                                    <p class="font-caption text-caption text-on-surface-variant mt-0.5">BMW M4 CSL
+                                        rear quarter panel shows 9.2 mils vs factory 4.8 mils. Awaiting paint meter
+                                        verification.</p>
+                                    <div class="flex items-center gap-3 mt-2 text-caption text-outline">
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">engineering</span>
+                                            Tech: D. Reyes</span>
+                                        <span>•</span>
+                                        <span class="flex items-center gap-1"><span
+                                                class="material-symbols-outlined text-[14px]">flag</span> Condition
+                                            Grade Revoked</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container-high transition-colors"
+                                    type="button">Contact Consignor</button>
+                                <button
+                                    class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm-medium text-caption-medium hover:bg-primary transition-colors"
+                                    type="button">Order Rescan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Recent Activity & Ledger Audit Log (5 Cols) -->
+                <div
+                    class="xl:col-span-5 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-space-md">
+                            <div class="flex items-center gap-2">
+                                <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Operational
+                                    Audit Log</h2>
+                                <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                            </div>
+                            <span class="font-caption text-caption text-outline font-tabular-numerical">SHA-256
+                                Ledger</span>
+                        </div>
+                        <p class="font-caption text-caption text-on-surface-variant mb-space-md">Real-time
+                            cryptographic audit trail of intake, valuations, and escrow deposits.</p>
+                        <!-- Timeline Log Items -->
+                        <div
+                            class="relative pl-6 space-y-space-md before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container">
+                            <!-- Log 1 -->
+                            <div class="relative flex flex-col">
+                                <span
+                                    class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-primary border-2 border-surface-container-lowest"></span>
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Escrow
+                                        Deposit Confirmed</span>
+                                    <span class="font-caption text-caption text-outline">12m ago</span>
+                                </div>
+                                <p class="font-caption text-caption text-on-surface-variant mt-0.5">FDIC Wire of
+                                    $485,000 received for 2022 Aston Martin DBS Superleggera from J.P. Morgan
+                                    Private Bank.</p>
+                                <span
+                                    class="font-caption text-[11px] font-tabular-numerical text-outline mt-1 font-mono">HASH:
+                                    0x9a8f...d3e1 [VERIFIED]</span>
+                            </div>
+                            <!-- Log 2 -->
+                            <div class="relative flex flex-col">
+                                <span
+                                    class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-[#10b981] border-2 border-surface-container-lowest"></span>
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Digital
+                                        Title Transferred</span>
+                                    <span class="font-caption text-caption text-outline">34m ago</span>
+                                </div>
+                                <p class="font-caption text-caption text-on-surface-variant mt-0.5">California DMV
+                                    electronic lien release signed for Ferrari F8 Tributo (VIN ending #4928).</p>
+                                <span
+                                    class="font-caption text-[11px] font-tabular-numerical text-outline mt-1 font-mono">HASH:
+                                    0x47c2...18be [RECORDED]</span>
+                            </div>
+                            <!-- Log 3 -->
+                            <div class="relative flex flex-col">
+                                <span
+                                    class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-[#0073ae] border-2 border-surface-container-lowest"></span>
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">CARFAX
+                                        Verification Passed</span>
+                                    <span class="font-caption text-caption text-outline">1h 14m ago</span>
+                                </div>
+                                <p class="font-caption text-caption text-on-surface-variant mt-0.5">Clean 1-owner
+                                    history with zero structural claim entries verified on Porsche 992 GT3 Touring.
+                                </p>
+                                <span
+                                    class="font-caption text-[11px] font-tabular-numerical text-outline mt-1 font-mono">HASH:
+                                    0xfe29...a002 [CARFAX API]</span>
+                            </div>
+                            <!-- Log 4 -->
+                            <div class="relative flex flex-col">
+                                <span
+                                    class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-secondary border-2 border-surface-container-lowest"></span>
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-body-sm-medium text-body-sm-medium font-bold text-on-surface">Consignment
+                                        Intake Created</span>
+                                    <span class="font-caption text-caption text-outline">2h 40m ago</span>
+                                </div>
+                                <p class="font-caption text-caption text-on-surface-variant mt-0.5">Lamborghini
+                                    Huracán STO ingested via portal. High-res imagery package queued for studio
+                                    processing.</p>
+                                <span
+                                    class="font-caption text-[11px] font-tabular-numerical text-outline mt-1 font-mono">HASH:
+                                    0x81dc...69e5 [PENDING AUDIT]</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Platform Live System Banner -->
+                    <div class="mt-space-md p-3 rounded-xl bg-surface-container flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                            <span class="font-caption-medium text-caption-medium text-on-surface">AutoHunt Escrow
+                                Contract v4.2.1 Online</span>
+                        </div>
+                        <a class="font-caption-medium text-caption-medium text-primary hover:underline" href="#">View
+                            Ledger</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Real-time Fleet Intake Carousel & Visual Media Strip -->
+            <div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-md">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Recently Ingested
+                            Inventory Showcase</h2>
+                        <p class="font-caption text-caption text-on-surface-variant">Pristine mechanical condition
+                            units undergoing final cataloging and escrow staging.</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors"
+                            type="button">
+                            <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors"
+                            type="button">
+                            <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- 3 Featured Vehicle Intake Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
+                    <!-- Car Card 1 -->
+                    <div
+                        class="rounded-xl overflow-hidden bg-surface-container-low flex flex-col group hover:shadow-md transition-shadow">
+                        <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Stunning 2023 Porsche 911 GT3 RS in Shark Blue with Weissach Package carbon fiber accents, parked inside a modern architectural glass and concrete showroom with soft blue ambient studio lighting."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDj2fEI65un7JxzctyFghFzWJJjziVF4oR3cXlebK-m8rNsJhH36s_7reBpGN0YE62xUOu_-2JuEKbI9fyjQaW9VtaR7iMR8PvgrvOPQ2IpnfkMLhAjp4rwLGFIb7txyVzsam3Pv2CklhEWZ9vnchEeWppvnQH1I2RUEGCGGL3fdVSIRzthRrRnFM-lH3nVBzLaoVYFI_RMzdfl1hAQ8pOq639Jv-MhzNVdfrurzNmyfc1q2QTIIWm" />
+                            <div
+                                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-overline text-label-overline uppercase">
+                                Available Now
+                            </div>
+                            <div
+                                class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-tabular-numerical font-bold text-body-sm text-on-surface shadow-sm">
+                                $348,500
+                            </div>
+                        </div>
+                        <div class="p-space-md flex flex-col justify-between flex-1">
+                            <div>
+                                <span
+                                    class="font-label-overline text-label-overline text-primary font-bold uppercase tracking-wider">992
+                                    Generation • Weissach</span>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">2023
+                                    Porsche 911 GT3 RS</h3>
+                                <p class="font-caption text-caption text-on-surface-variant mt-1">1,240 mi • PDK
+                                    Transmission • Front Axle Lift • Ceramic Composite Brakes (PCCB)</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-md mt-space-sm border-t-0">
+                                <span
+                                    class="font-caption-medium text-caption-medium text-[#10b981] flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px]">check_circle</span> 160-Pt
+                                    Verified
+                                </span>
+                                <button
+                                    class="h-8 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container transition-colors shadow-sm"
+                                    type="button">Inspect Dossier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car Card 2 -->
+                    <div
+                        class="rounded-xl overflow-hidden bg-surface-container-low flex flex-col group hover:shadow-md transition-shadow">
+                        <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Aggressive 2022 Ferrari SF90 Stradale in Rosso Corsa finish with black roof, parked dramatically under directional LED spotlighting in an obsidian navy luxury automotive vault."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB012-bsoYpGT--SAimiajK3gqEoazEVZJZWXyXO1KJykGbDfMu78eD6GEHrVk-9uxGFFU0LwjQ7tNF_bbNZqmQT57SQVsgjeG85dkkvWdwlqZWeJ87yHsC01W6hlVIrnzjj3rSAWu7F-XxptUwxMQbF1PiX-5RURjem37vkZKyPNa07FBv1SB1MY0e-qb1iPMj9B_TNEjiX6yn-y8M0PgNnkrm-C3uExygTwsZ7T6rDBLdALIvW4pE" />
+                            <div
+                                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-tertiary-container/90 backdrop-blur-md text-on-tertiary-container font-label-overline text-label-overline uppercase">
+                                In Escrow Review
+                            </div>
+                            <div
+                                class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-tabular-numerical font-bold text-body-sm text-on-surface shadow-sm">
+                                $589,000
+                            </div>
+                        </div>
+                        <div class="p-space-md flex flex-col justify-between flex-1">
+                            <div>
+                                <span
+                                    class="font-label-overline text-label-overline text-error font-bold uppercase tracking-wider">Assetto
+                                    Fiorano Pack</span>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">2022
+                                    Ferrari SF90 Stradale</h3>
+                                <p class="font-caption text-caption text-on-surface-variant mt-1">980 mi • Hybrid
+                                    AWD • Carbon Wheels • Extended Factory Maintenance</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-md mt-space-sm border-t-0">
+                                <span
+                                    class="font-caption-medium text-caption-medium text-[#0073ae] flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px]">lock_clock</span> Wire Hold
+                                    Pending
+                                </span>
+                                <button
+                                    class="h-8 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container transition-colors shadow-sm"
+                                    type="button">Inspect Dossier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Car Card 3 -->
+                    <div
+                        class="rounded-xl overflow-hidden bg-surface-container-low flex flex-col group hover:shadow-md transition-shadow">
+                        <div class="relative h-48 w-full bg-surface-container overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Modern 2024 BMW M4 CSL in Frozen Brooklyn Grey Metallic with exposed carbon fiber hood accents and yellow racing daytime running lights, positioned cleanly on concrete flooring."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWAmF8eWWQciZMixz7xxfhHBl03BqvZXxmetDlh208KcPihV7UMd7Tcf6UmSgYa5PseqSOfleowwcSbOI7HKRtxFpitaezujzKiczR8KV4CEriGKtHjhiLmf50hL0UeD_FUuOOwZ2r6cTJbtxYOJCN_sgX4kfoJ2NIrqACxq1ZlaP0iiixMwkMN_n8I9r9YfOuFjobx4XPhxfCNJhsRRJO248anaWxpE126nZM95hu61e9Rb-x6k3y" />
+                            <div
+                                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-overline text-label-overline uppercase">
+                                Audit Flagged
+                            </div>
+                            <div
+                                class="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-surface-container-lowest/90 font-tabular-numerical font-bold text-body-sm text-on-surface shadow-sm">
+                                $142,000
+                            </div>
+                        </div>
+                        <div class="p-space-md flex flex-col justify-between flex-1">
+                            <div>
+                                <span
+                                    class="font-label-overline text-label-overline text-outline font-bold uppercase tracking-wider">1
+                                    of 1,000 Produced</span>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">2023
+                                    BMW M4 CSL</h3>
+                                <p class="font-caption text-caption text-on-surface-variant mt-1">450 mi • Carbon
+                                    Full Buckets • Michelin Pilot Sport Cup 2 R • Titanium Exhaust</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-space-md mt-space-sm border-t-0">
+                                <span
+                                    class="font-caption-medium text-caption-medium text-error flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px]">warning</span> Paint Meter
+                                    Rescan
+                                </span>
+                                <button
+                                    class="h-8 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm-medium text-caption-medium hover:bg-surface-container transition-colors shadow-sm"
+                                    type="button">Audit Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <button id="backToTop" onclick="scrollToTop()"
+        class="fixed bottom-[20px] right-[20px] hidden rounded-lg bg-blue-600 px-[18px] py-[12px] text-xl text-white shadow-lg transition duration-300 hover:bg-blue-800">
+        ↑
+    </button>
+    </div>
+    <script>
+        //---group sidebar admin---
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const sidebar = document.getElementById("sidebar");
+            const pageContent = document.getElementById("pageContent");
+            const mainHeader = document.getElementById("mainHeader");
+
+            const toggleBtn = document.getElementById("sidebarToggle");
+            const toggleIcon = document.getElementById("sidebarToggleIcon");
+
+            const sidebarTexts = document.querySelectorAll(".sidebar-text");
+
+            let sidebarClosed = false;
+
+            toggleBtn.addEventListener("click", function () {
+
+                sidebarClosed = !sidebarClosed;
+
+                if (sidebarClosed) {
+
+                    // Sidebar: 260px -> 72px
+                    sidebar.classList.remove("w-[260px]");
+                    sidebar.classList.add("w-[72px]");
+
+                    // Nội dung chính
+                    pageContent.classList.remove("pl-[260px]");
+                    pageContent.classList.add("pl-[72px]");
+
+                    // Header
+                    mainHeader.classList.remove("left-[260px]");
+                    mainHeader.classList.add("left-[72px]");
+
+                    // Ẩn chữ
+                    sidebarTexts.forEach(function (text) {
+                        text.classList.add("hidden");
+                    });
+
+                    // Căn giữa icon
+                    sidebar.querySelectorAll("a, button").forEach(function (item) {
+                        item.classList.add("justify-center");
+                    });
+
+                    // Nút toggle
+                    toggleBtn.classList.remove("left-[240px]");
+                    toggleBtn.classList.add("left-[52px]");
+
+                    toggleIcon.textContent = "chevron_right";
+
+                } else {
+
+                    // Sidebar: 72px -> 260px
+                    sidebar.classList.remove("w-[72px]");
+                    sidebar.classList.add("w-[260px]");
+
+                    // Nội dung chính
+                    pageContent.classList.remove("pl-[72px]");
+                    pageContent.classList.add("pl-[260px]");
+
+                    // Header
+                    mainHeader.classList.remove("left-[72px]");
+                    mainHeader.classList.add("left-[260px]");
+
+                    // Hiện chữ
+                    sidebarTexts.forEach(function (text) {
+                        text.classList.remove("hidden");
+                    });
+
+                    // Trả lại alignment
+                    sidebar.querySelectorAll("a, button").forEach(function (item) {
+                        item.classList.remove("justify-center");
+                    });
+
+                    // Nút toggle
+                    toggleBtn.classList.remove("left-[52px]");
+                    toggleBtn.classList.add("left-[240px]");
+
+                    toggleIcon.textContent = "chevron_left";
+                }
+            });
+
+        });
+    </script>
+
+    <script src="../JS/script.js"></script>
+
+</body>
+
+</html>

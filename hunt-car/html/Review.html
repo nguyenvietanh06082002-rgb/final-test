@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-fixed-variant": "#424657",
+                        "secondary-fixed-dim": "#c2c6da",
+                        "on-tertiary-fixed": "#001d31",
+                        "on-primary-container": "#eeefff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#dee2f6",
+                        "on-tertiary-container": "#e7f2ff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#595e6f",
+                        "on-surface": "#131b2e",
+                        "on-secondary-container": "#5d6273",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-surface": "#283044",
+                        "surface-container-highest": "#dae2fd",
+                        "tertiary-container": "#0073ae",
+                        "surface-tint": "#0053db",
+                        "primary": "#004ac6",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c6d7",
+                        "tertiary-fixed": "#cce5ff",
+                        "surface-container-low": "#f2f3ff",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#dae2fd",
+                        "primary-container": "#2563eb",
+                        "tertiary": "#005a89",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-on-surface": "#eef0ff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "outline": "#737686",
+                        "secondary-container": "#dbdff3",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004b73",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#161b2a",
+                        "surface-bright": "#faf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-md": "1rem",
+                        "margin": "2rem",
+                        "margin-mobile": "1rem",
+                        "space-lg": "1.25rem",
+                        "gutter-dense": "0.75rem",
+                        "space-3xl": "3rem",
+                        "gutter": "1.5rem",
+                        "space-2xl": "2rem",
+                        "space-sm": "0.75rem",
+                        "space-4xl": "4rem",
+                        "space-xl": "1.5rem",
+                        "space-xs": "0.5rem",
+                        "space-2xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "tabular-numerical": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "caption": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "caption-medium": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg-medium": ["Inter"],
+                        "label-overline": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm-medium": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tabular-numerical": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "21px", "fontWeight": "400" }],
+                        "caption-medium": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+                        "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-overline": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm-medium": ["14px", { "lineHeight": "21px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }</script>
+</head>
+
+<body class="bg-background font-body-sm text-body-sm text-on-surface antialiased">
+    <header
+        class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-xs"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/html/User.html"><img alt="AutoHunt Logo"
+                        class="h-8 w-auto object-contain"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                        class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span></a>
+            </div>
+            <nav class="hidden xl:flex items-center gap-space-xs"
+                data-active-classes="bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg">
+                <a class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="explore" href="http://127.0.0.1:5500/hunt-car/html/User.html">Explore</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="buy-online" href="http://127.0.0.1:5500/hunt-car/html/BuyOnline.html">Buy Online</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="sell-your-car" href="#">Sell Your Car</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="garage" href="http://127.0.0.1:5500/hunt-car/html/Garage.html">Garage</a><a
+                    class="px-space-sm py-space-xs rounded-lg font-body-sm-medium text-body-sm-medium text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"
+                    data-path="quick-payment" href="http://127.0.0.1:5500/hunt-car/html/QuickPayment.html">Quick
+                    Payment</a><a aria-current="page"
+                    class="px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium rounded-lg"
+                    data-path="vehicle-review" href="#">Reviews</a>
+            </nav>
+            <div class="flex items-center gap-space-sm shrink-0">
+                <button aria-label="Search Vehicles"
+                    class="p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    type="button">
+                    <span class="material-symbols-outlined text-[22px]">search</span>
+                </button>
+                <a aria-label="Saved Cars"
+                    class="relative p-space-xs rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center"
+                    data-path="saved-cars" href="#">
+                    <span class="material-symbols-outlined text-[22px]">favorite</span>
+                    <span
+                        class="absolute top-1 right-1 flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-primary font-caption text-caption text-on-primary">
+                        3
+                    </span>
+                </a>
+                <a class="inline-flex items-center justify-center h-10 px-space-md rounded-lg bg-primary-container hover:bg-primary text-on-primary font-body-sm-medium text-body-sm-medium transition-colors shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"
+                    data-path="sell-your-car" href="#">Sell Your Car
+                </a>
+            </div>
+            <div class="w-8 h-8 rounded-full flex items-center justify-center ml-space-2xs gap-[5px]">
+                <!-- USER -->
+                <div id="userArea" class="relative">
+
+                    <button onclick="toggleUserMenu()" class="flex items-center gap-[5px] cursor-pointer group">
+
+                        <!-- AVATAR -->
+                        <div id="userAvatar"
+                            class="w-[42px] h-[42px] rounded-full bg-[#1A1C1C] border border-[#333535] flex items-center justify-center text-[#E2E2E2] font-bold text-[15px] group-hover:border-[#777] transition duration-300">
+                            U
+                        </div>
+
+                        <!-- USER INFO -->
+                        <div class="text-left">
+
+                            <p id="userName" class="text-[13px] font-semibold text-[#000] group-hover:text-[#2563eb]">
+                                User
+                            </p>
+
+                            <p id="userEmail" class="text-[10px] text-[#777] max-w-[150px] truncate ">
+                                user@gmail.com
+                            </p>
+
+                        </div>
+
+                        <span class="text-[10px] text-[#888] group-hover:text-[#2563eb] transition">
+                            ▼
+                        </span>
+
+                    </button>
+
+                    <!-- DROPDOWN -->
+                    <div id="userMenu"
+                        class="hidden absolute right-0 top-[58px] w-[210px] bg-[#111314] border border-[#2A2D30] rounded-[10px] shadow-2xl overflow-hidden">
+
+                        <div class="px-[18px] py-[15px] border-b border-[#2A2D30]">
+
+                            <p class="text-[10px] tracking-[2px] text-[#777] mb-[4px]">
+                                ACCOUNT
+                            </p>
+
+                            <p id="menuUserName" class="text-[14px] font-semibold text-[#E2E2E2]">
+                                User
+                            </p>
+
+                        </div>
+
+                        <a href="User.html"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◉</span>
+                            MY PROFILE
+
+                        </a>
+
+                        <a href="#"
+                            class="flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-[#C8C6C5] hover:bg-[#1A1C1C] hover:text-white transition">
+
+                            <span>◇</span>
+                            GARAGE
+
+                        </a>
+
+                        <button onclick="logout()"
+                            class="w-full flex items-center gap-[10px] px-[18px] py-[13px] text-[12px] text-red-400 hover:bg-[#1A1C1C] transition">
+
+                            <span></span>
+                            LOG OUT
+
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-background">
+        <div class="flex flex-col w-full">
+            <section class="max-w-[1280px] mx-auto w-full px-gutter pt-space-xl pb-space-4xl">
+                <!-- Breadcrumbs -->
+                <nav
+                    class="flex items-center gap-space-xs mb-space-lg text-on-surface-variant font-caption text-caption">
+                    <a class="hover:text-primary transition-colors" data-path="explore" href="#">Home</a>
+                    <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                    <a class="hover:text-primary transition-colors" data-path="customer-account" href="#">My Garage</a>
+                    <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                    <a class="hover:text-primary transition-colors" data-path="vehicle-review" href="#">Reviews</a>
+                    <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+                    <span class="font-caption-medium text-caption-medium text-on-surface">2023 BMW M4 CSL</span>
+                </nav>
+                <!-- Header Block -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-2xl">
+                    <div class="space-y-space-2xs max-w-2xl">
+                        <div
+                            class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-primary font-label-overline text-label-overline uppercase tracking-wider mb-space-2xs">
+                            <span class="material-symbols-outlined text-[14px]"
+                                style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                            Authentication Dossier #AH-9921
+                        </div>
+                        <h1 class="font-display text-display text-on-surface tracking-tight">Owner Verification &amp;
+                            Vehicle Review</h1>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">Share your verified ownership
+                            experience with the AutoHunt collector community.</p>
+                    </div>
+                    <!-- Verified Purchase Badge -->
+                    <div
+                        class="flex items-center gap-space-sm p-space-sm px-space-md rounded-xl bg-surface-container-high text-on-surface shadow-sm shrink-0">
+                        <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-primary text-[20px]"
+                                style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                        </div>
+                        <div class="flex flex-col font-caption text-caption">
+                            <span
+                                class="font-caption-medium text-caption-medium text-on-surface flex items-center gap-1">
+                                Verified Buyer
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+                                Delivered Aug 14, 2024
+                            </span>
+                            <span class="font-tabular-numerical text-tabular-numerical text-on-surface-variant">VIN:
+                                WBS43AZ00PCL98112</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Grid Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+                    <!-- Left Column: Vehicle Summary Card -->
+                    <div class="lg:col-span-5 flex flex-col gap-space-lg lg:sticky lg:top-24">
+                        <!-- Summary Card -->
+                        <div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-md space-y-space-lg">
+                            <!-- Vehicle Image with Badges -->
+                            <div class="relative rounded-lg overflow-hidden aspect-[16/10] bg-surface-container">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="2023 BMW M4 CSL in Frozen Brooklyn Grey matte paint finish, high-contrast studio automotive photography, carbon fiber ducktail spoiler, bronze metallic calipers, yellow motorsport DRL headlights, sleek dark reflections"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI1CM55KpIg2n1U3hGTvrPxJN-7HYdvaGn3uQdMzdNjeUQ-41KpRNJqeykJhGs3EjU63rOpcK5psvfqFgK-H6NpNXaNKSzb8Tj-CnbZqFyn0aX7zzfrDsfogEkHxXptVUqGpc3rruOxheWgj9j8TYCPjHkaWTLzs2FSKXrZAyZeOy6jYy24q8b-SXrTwqRJUSqymNSobyVnR-UVos_xfK1Lz_IAlxFsjWecXzKt1jw7L2K7COiekXO" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent">
+                                </div>
+                                <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                                    <div>
+                                        <span
+                                            class="px-2 py-0.5 rounded-full bg-inverse-surface/90 text-inverse-on-surface font-label-overline text-label-overline uppercase tracking-wider backdrop-blur-sm">Limited
+                                            Track Edition</span>
+                                        <p class="font-headline-sm text-headline-sm text-on-primary font-bold mt-1">2023
+                                            BMW M4 CSL</p>
+                                        <p class="font-caption text-caption text-on-primary-container">Frozen Brooklyn
+                                            Grey Metallic • Chassis #042/1000</p>
+                                    </div>
+                                </div>
+                                <div class="absolute top-3 right-3">
+                                    <span
+                                        class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 text-on-surface font-caption-medium text-caption-medium shadow-sm backdrop-blur-sm">
+                                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                        Archived Asset
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Key Metrics / Specs Bento -->
+                            <div class="grid grid-cols-2 gap-space-sm">
+                                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                                    <span class="font-caption text-caption text-on-surface-variant">Powertrain</span>
+                                    <span class="font-body-sm-medium text-body-sm-medium text-on-surface mt-0.5">3.0L
+                                        Twin-Turbo I-6</span>
+                                    <span class="font-caption text-caption text-on-surface-variant">543 HP • 479
+                                        lb-ft</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                                    <span class="font-caption text-caption text-on-surface-variant">Drivetrain</span>
+                                    <span
+                                        class="font-body-sm-medium text-body-sm-medium text-on-surface mt-0.5">Rear-Wheel
+                                        Drive</span>
+                                    <span class="font-caption text-caption text-on-surface-variant">Track Tuned
+                                        Differential</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                                    <span class="font-caption text-caption text-on-surface-variant">Purchase Date</span>
+                                    <span class="font-body-sm-medium text-body-sm-medium text-on-surface mt-0.5">Aug 14,
+                                        2024</span>
+                                    <span class="font-caption text-caption text-on-surface-variant">Enclosed
+                                        Transport</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                                    <span class="font-caption text-caption text-on-surface-variant">Transaction
+                                        Price</span>
+                                    <span
+                                        class="font-tabular-numerical text-tabular-numerical text-primary mt-0.5">$142,500</span>
+                                    <span class="font-caption text-caption text-on-surface-variant">Escrow
+                                        Settled</span>
+                                </div>
+                            </div>
+                            <!-- Inspection Guarantee Stamp Banner -->
+                            <div
+                                class="p-space-md rounded-lg bg-surface-container flex items-center justify-between gap-space-md">
+                                <div class="flex items-center gap-space-sm min-w-0">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+                                        <span class="material-symbols-outlined text-[22px]"
+                                            style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    </div>
+                                    <div class="truncate">
+                                        <p class="font-body-sm-medium text-body-sm-medium text-on-surface">AutoHunt
+                                            160-Point Guaranteed</p>
+                                        <p class="font-caption text-caption text-on-surface-variant truncate">Master
+                                            Technician Certified • Zero Discrepancy</p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="shrink-0 px-2.5 py-1 text-primary font-caption-medium text-caption-medium hover:underline flex items-center gap-1"
+                                    type="button">
+                                    Dossier
+                                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                                </button>
+                            </div>
+                            <!-- Verification Micro-chart / Confidence Gauge -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-12 h-12 -rotate-90" viewbox="0 0 36 36">
+                                        <circle class="text-surface-container-high" cx="18" cy="18" fill="none"
+                                            r="15.915" stroke="currentColor" stroke-width="3.5"></circle>
+                                        <circle class="text-primary" cx="18" cy="18" fill="none" r="15.915"
+                                            stroke="currentColor" stroke-dasharray="98, 100" stroke-linecap="round"
+                                            stroke-width="3.5"></circle>
+                                    </svg>
+                                    <div>
+                                        <p class="font-tabular-numerical text-tabular-numerical text-on-surface">98.8%
+                                            Match Score</p>
+                                        <p class="font-caption text-caption text-on-surface-variant">Actual condition vs
+                                            digital intake audit</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">Tier
+                                    1</span>
+                            </div>
+                        </div>
+                        <!-- Private Community Guidelines Note -->
+                        <div class="p-space-md rounded-xl bg-surface-container-low text-on-surface-variant space-y-1">
+                            <div
+                                class="flex items-center gap-1.5 text-on-surface font-body-sm-medium text-body-sm-medium">
+                                <span class="material-symbols-outlined text-primary text-[18px]">gavel</span>
+                                Strict Collector Standard
+                            </div>
+                            <p class="font-caption text-caption">AutoHunt reviews are authenticated by title transfer
+                                records and physical dispatch data. Your insights directly adjust vehicle algorithmic
+                                valuation metrics.</p>
+                        </div>
+                    </div>
+                    <!-- Right Column: Review Submission & Form -->
+                    <div class="lg:col-span-7 flex flex-col gap-space-xl">
+                        <form
+                            class="rounded-xl bg-surface-container-lowest p-space-xl shadow-md flex flex-col gap-space-xl"
+                            onsubmit="event.preventDefault(); alert('Review published to AutoHunt network.');">
+                            <!-- Overall Rating -->
+                            <div class="p-space-lg rounded-xl bg-surface-container-low space-y-space-sm">
+                                <div class="flex items-center justify-between">
+                                    <span
+                                        class="font-label-overline text-label-overline uppercase text-on-surface-variant tracking-wider">Overall
+                                        Valuation</span>
+                                    <span class="font-body-sm-medium text-body-sm-medium text-primary"
+                                        id="overall-label">5.0 - Exceptional Experience</span>
+                                </div>
+                                <div class="flex items-center gap-2" id="star-container">
+                                    <button
+                                        class="star-btn text-primary hover:scale-110 transition-transform focus:outline-none"
+                                        data-val="1" type="button">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                    </button>
+                                    <button
+                                        class="star-btn text-primary hover:scale-110 transition-transform focus:outline-none"
+                                        data-val="2" type="button">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                    </button>
+                                    <button
+                                        class="star-btn text-primary hover:scale-110 transition-transform focus:outline-none"
+                                        data-val="3" type="button">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                    </button>
+                                    <button
+                                        class="star-btn text-primary hover:scale-110 transition-transform focus:outline-none"
+                                        data-val="4" type="button">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                    </button>
+                                    <button
+                                        class="star-btn text-primary hover:scale-110 transition-transform focus:outline-none"
+                                        data-val="5" type="button">
+                                        <span class="material-symbols-outlined text-[36px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                    </button>
+                                </div>
+                                <p class="font-caption text-caption text-on-surface-variant">Click or tap to modify your
+                                    aggregate rating benchmark.</p>
+                            </div>
+                            <!-- Category Ratings Grid -->
+                            <div class="space-y-space-md">
+                                <div class="flex items-center justify-between pb-space-xs">
+                                    <h3 class="font-headline-sm text-headline-sm text-on-surface">Dimensional Audits
+                                    </h3>
+                                    <span class="font-caption text-caption text-on-surface-variant">Mandatory
+                                        Verification Vectors</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                                    <!-- Cat 1 -->
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between gap-space-xs">
+                                        <div>
+                                            <span
+                                                class="font-body-sm-medium text-body-sm-medium text-on-surface block">Mechanical
+                                                Condition</span>
+                                            <span class="font-caption text-caption text-on-surface-variant">Accuracy vs
+                                                160-pt intake report</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-primary pt-space-xs">
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span
+                                                class="font-tabular-numerical text-tabular-numerical ml-auto text-on-surface">5.0</span>
+                                        </div>
+                                    </div>
+                                    <!-- Cat 2 -->
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between gap-space-xs">
+                                        <div>
+                                            <span
+                                                class="font-body-sm-medium text-body-sm-medium text-on-surface block">Exterior
+                                                / Paint Uniformity</span>
+                                            <span class="font-caption text-caption text-on-surface-variant">Micron depth
+                                                &amp; carbon weave check</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-primary pt-space-xs">
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span
+                                                class="font-tabular-numerical text-tabular-numerical ml-auto text-on-surface">5.0</span>
+                                        </div>
+                                    </div>
+                                    <!-- Cat 3 -->
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between gap-space-xs">
+                                        <div>
+                                            <span
+                                                class="font-body-sm-medium text-body-sm-medium text-on-surface block">Enclosed
+                                                Delivery &amp; Handoff</span>
+                                            <span class="font-caption text-caption text-on-surface-variant">Hydraulic
+                                                liftgate white-glove transit</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-primary pt-space-xs">
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span
+                                                class="font-tabular-numerical text-tabular-numerical ml-auto text-on-surface">5.0</span>
+                                        </div>
+                                    </div>
+                                    <!-- Cat 4 -->
+                                    <div
+                                        class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between gap-space-xs">
+                                        <div>
+                                            <span
+                                                class="font-body-sm-medium text-body-sm-medium text-on-surface block">Escrow
+                                                &amp; Paperwork Speed</span>
+                                            <span class="font-caption text-caption text-on-surface-variant">Digital
+                                                title reassignment turnaround</span>
+                                        </div>
+                                        <div class="flex items-center gap-1 text-primary pt-space-xs">
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span
+                                                class="font-tabular-numerical text-tabular-numerical ml-auto text-on-surface">5.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Form Inputs -->
+                            <div class="space-y-space-md">
+                                <!-- Review Headline -->
+                                <div class="flex flex-col gap-space-2xs">
+                                    <label class="font-body-sm-medium text-body-sm-medium text-on-surface"
+                                        for="headline">Review Headline</label>
+                                    <input
+                                        class="w-full h-10 px-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all"
+                                        id="headline" placeholder="Summarize your ownership consensus..." type="text"
+                                        value="Unrivaled precision from inspection report to driveway delivery" />
+                                </div>
+                                <!-- Detailed Review Textarea -->
+                                <div class="flex flex-col gap-space-2xs">
+                                    <div class="flex items-center justify-between">
+                                        <label class="font-body-sm-medium text-body-sm-medium text-on-surface"
+                                            for="detailed-review">Detailed Ownership Review</label>
+                                        <span class="font-caption text-caption text-on-surface-variant">Minimum 80
+                                            characters</span>
+                                    </div>
+                                    <textarea
+                                        class="w-full p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all"
+                                        id="detailed-review"
+                                        placeholder="Describe performance, accuracy of 150-point inspection, handover experience, and daily driving impressions..."
+                                        rows="5">The Frozen Brooklyn Grey paint matched the intake micron scanner logs with zero discrepancy. The carbon bucket seats and track-tuned suspension perform exactly as specified. The enclosed transport driver delivered 2 hours ahead of schedule with all original keys, documentation folio, and battery maintainer sealed in factory packaging.</textarea>
+                                </div>
+                                <!-- Photo & Video Uploader -->
+                                <div class="flex flex-col gap-space-2xs">
+                                    <span class="font-body-sm-medium text-body-sm-medium text-on-surface">Upload
+                                        Delivery &amp; Garage Photos</span>
+                                    <div
+                                        class="relative p-space-xl rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer group hover:bg-surface-container transition-colors">
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center mb-space-xs shadow-sm group-hover:scale-105 transition-transform">
+                                            <span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+                                        </div>
+                                        <p class="font-body-sm-medium text-body-sm-medium text-on-surface">Drag &amp;
+                                            drop high-resolution photos or raw telemetry clips</p>
+                                        <p class="font-caption text-caption text-on-surface-variant mt-1">Accepts RAW,
+                                            JPG, PNG, MP4 up to 100MB • Auto-redacts personal license plates</p>
+                                        <div class="flex items-center gap-space-sm mt-space-md">
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-caption-medium text-caption-medium">DSC_0411_CSL.RAW
+                                                (24MB)</span>
+                                            <span
+                                                class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-caption-medium text-caption-medium">Odometer_Verified.JPG
+                                                (4.1MB)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Anonymous Option Toggle -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+                                    <div class="flex items-center gap-space-sm">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-caption-medium text-caption-medium">
+                                            MV
+                                        </div>
+                                        <div>
+                                            <p class="font-body-sm-medium text-body-sm-medium text-on-surface">Display
+                                                my name as Marcus V. (Verified Collector)</p>
+                                            <p class="font-caption text-caption text-on-surface-variant">Hides complete
+                                                surname while retaining Verified Owner credential checkmark</p>
+                                        </div>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input checked="" class="sr-only peer" type="checkbox" />
+                                        <div
+                                            class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:rounded-full after:h-5 after:w-5 after:transition-all">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Submit Button & Disclaimer -->
+                            <div
+                                class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+                                <div
+                                    class="flex items-center gap-space-2xs text-on-surface-variant font-caption text-caption">
+                                    <span class="material-symbols-outlined text-[16px] text-primary">security</span>
+                                    <span>Encrypted transmission to AutoHunt registry</span>
+                                </div>
+                                <button
+                                    class="w-full sm:w-auto h-12 px-space-xl rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm-medium text-body-sm-medium transition-all shadow-md flex items-center justify-center gap-space-xs active:scale-[0.98]"
+                                    type="submit">
+                                    <span>Publish Verified Review to AutoHunt</span>
+                                    <span class="material-symbols-outlined text-[18px]">send</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Community Reviews Section -->
+                <div class="mt-space-4xl pt-space-2xl space-y-space-xl">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div>
+                            <span
+                                class="font-label-overline text-label-overline uppercase text-primary tracking-wider">Historical
+                                Community Records</span>
+                            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Verified
+                                M4 CSL Owner Consensus</h2>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Aggregated from verified title
+                                holders who completed exchange transactions on AutoHunt.</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-space-md bg-surface-container-lowest p-space-sm px-space-md rounded-xl shadow-sm shrink-0">
+                            <div class="text-right">
+                                <span class="font-headline-sm text-headline-sm text-on-surface font-bold">4.96</span>
+                                <span class="font-caption text-caption text-on-surface-variant block">out of 5.0 (14
+                                    reviews)</span>
+                            </div>
+                            <div class="flex text-primary">
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-[20px]"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Reviews 3-Column Mosaic -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+                        <!-- Review Card 1 -->
+                        <div
+                            class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md">
+                            <div class="space-y-space-sm">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-1 text-primary">
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                        </div>
+                                        <h4
+                                            class="font-body-lg-medium text-body-lg-medium text-on-surface mt-space-2xs">
+                                            The purest track modern BMW has built</h4>
+                                    </div>
+                                    <span
+                                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">1
+                                        mo ago</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4">
+                                    Transferred from a GT4 RS to the M4 CSL via AutoHunt escrow. The Michelin Cup 2 R
+                                    grip combined with the stiffened anti-roll mounts makes this an absolute precision
+                                    scalpel at Laguna Seca. Delivered spotless with protective ceramic coating fully
+                                    cured.
+                                </p>
+                                <div class="aspect-video rounded-lg overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Close up photography of BMW M4 CSL carbon fiber hood ventilation ducts and aerodynamic body lines in bright sunny paddock setting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-XkU21rn8ZNKrXrxoGp8aqZx1FE9eb079KuKui5haQZkyHLh1ggoeGZ69v70mAk40K8-4XNpJjQVgaycCxOW8CKcyuuqqGm_xyJn5Zqg3K5cnR7VAR63Q9T0f_K8Zp7Tfar82noZUH8PoBvZJub4BF0dZMtLx7bscmGjxDzg6Fud0758qq8YFcSlsMqqlxJLOcLcxQnhRGPfIWDyZMmL_3J84OsjT3U8KeniCQjOkXGdnYj4B8AMA" />
+                                </div>
+                            </div>
+                            <div class="pt-space-xs flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-caption-medium text-caption-medium text-on-surface">
+                                        DL
+                                    </div>
+                                    <div>
+                                        <span class="font-body-sm-medium text-body-sm-medium text-on-surface block">Dr.
+                                            Lawrence K.</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">NorCal Porsche
+                                            Club</span>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-primary text-[18px]"
+                                    title="Verified Owner">verified</span>
+                            </div>
+                        </div>
+                        <!-- Review Card 2 -->
+                        <div
+                            class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md">
+                            <div class="space-y-space-sm">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-1 text-primary">
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                        </div>
+                                        <h4
+                                            class="font-body-lg-medium text-body-lg-medium text-on-surface mt-space-2xs">
+                                            Inspection matched paint gauge to 0.1 mil</h4>
+                                    </div>
+                                    <span
+                                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">2
+                                        mo ago</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4">
+                                    I had severe reservations buying a Frozen finish car unseen. AutoHunt's digital
+                                    intaking report provided 48 paint depth measurements across all composite and
+                                    aluminum panels. Upon delivery in Dallas, my private detailer verified every single
+                                    number. Outstanding accountability.
+                                </p>
+                                <div class="aspect-video rounded-lg overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Detailed studio macro view of yellow laser motorsport headlight on BMW M4 CSL with red radiator grille accents and carbon fiber front splitter"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjoa0YlVR_PbEtQpRRGpSf4VyZE053AWkuuFanB3QLJmbVmpkRQKh7TGL3qSbRSv0_BS3wDZrsh_sp03rHlovJxicb7IYyUAjtRJHWOT-F0VuFLfQyc3qEVqmj_qhGsQFY4oeMnENw05azQjS5qxuMsU29YyMxnUkLdxs3gTQ5ZWzbjKF-t3Irtofa3o0I5PBzMvfEkYX9ATo8ylOuiqSR1QFdN_dzbYEtOToaCXxYXrVhYfuexppd" />
+                                </div>
+                            </div>
+                            <div class="pt-space-xs flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-caption-medium text-caption-medium text-on-surface">
+                                        RH
+                                    </div>
+                                    <div>
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium text-on-surface block">Robert
+                                            H.</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Dallas Apex
+                                            Syndicate</span>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-primary text-[18px]"
+                                    title="Verified Owner">verified</span>
+                            </div>
+                        </div>
+                        <!-- Review Card 3 -->
+                        <div
+                            class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md">
+                            <div class="space-y-space-sm">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-1 text-primary">
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="material-symbols-outlined text-[16px]"
+                                                style="font-variation-settings: 'FILL' 1;">star_half</span>
+                                        </div>
+                                        <h4
+                                            class="font-body-lg-medium text-body-lg-medium text-on-surface mt-space-2xs">
+                                            Flawless vehicle, slight transit delay</h4>
+                                    </div>
+                                    <span
+                                        class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">3
+                                        mo ago</span>
+                                </div>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-4">
+                                    Enclosed trailer dispatch encountered mountain weather in Colorado, resulting in a
+                                    24-hour reschedule. Concierge support kept me updated with GPS live beacon
+                                    coordinates every 30 minutes. The vehicle arrived in immaculate sterile condition.
+                                    Titanium exhaust sound is extraordinary.
+                                </p>
+                                <div class="aspect-video rounded-lg overflow-hidden bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Rear 3/4 angle photo of 2023 BMW M4 CSL showing ducktail spoiler and glowing quad exhaust tips inside a modern luxury architectural garage"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxtNuKlfHhxk8y8gVTaHpDZLA2W4VksSnsS4EuQnt9klz1XHdwP-ry2Sy89_sR3IgwTEkxolKMC4NjDaIwW6RSFbRDIdpiU9pri9fR2NlYu2q0hejGMoOhcQFi_UIJIbov0X4n58rLpLsIZOLDwwWizdqT-ac9Poncx-eg71ggshXrvsr_ugIvrPpLDVK3lTLYGDEi5cdKn30yKPbFrPxXUHS1gZdILLfZSDAdkzcWZGc3Yhuk2Wag" />
+                                </div>
+                            </div>
+                            <div class="pt-space-xs flex items-center justify-between">
+                                <div class="flex items-center gap-space-xs">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-caption-medium text-caption-medium text-on-surface">
+                                        EG
+                                    </div>
+                                    <div>
+                                        <span
+                                            class="font-body-sm-medium text-body-sm-medium text-on-surface block">Elias
+                                            G.</span>
+                                        <span class="font-caption text-caption text-on-surface-variant">Denver Private
+                                            Collection</span>
+                                    </div>
+                                </div>
+                                <span class="material-symbols-outlined text-primary text-[18px]"
+                                    title="Verified Owner">verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Comment -->
+    <form id="commentForm" class="mb-8 px-8">
+
+        <label for="commentInput" class="mb-2 block text-sm font-medium text-gray-700">
+            Write your comment
+        </label>
+
+        <textarea id="commentInput" rows="4" placeholder="Enter a comment..." required minlength="2"
+            class="mb-3 w-full resize-none rounded-lg border border-gray-300 p-3 text-gray-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200"></textarea>
+
+        <button type="submit"
+            class="rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300">
+            Post comment
+        </button>
+
+    </form>
+    <button id="backToTop" onclick="scrollToTop()"
+        class="fixed bottom-[20px] right-[20px] hidden rounded-lg bg-blue-600 px-[18px] py-[12px] text-xl text-white shadow-lg transition duration-300 hover:bg-blue-800">
+        ↑
+    </button>
+    <footer class="w-full bg-surface-container-low mt-space-4xl">
+        <div class="max-w-[1280px] mx-auto px-gutter pt-space-4xl pb-space-3xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-2xl mb-space-3xl">
+                <div class="lg:col-span-2 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-xs"><img alt="AutoHunt Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtoaXenOBcLCfF8E5_rufjCzMWXjbM5wJQaW6ZBTwKuVaMB17wGyZBES_fQ53K7RCxOAOodl7ESfwPF3w_rj0_nXIcSr1x2Q5jA8HaNpgK-7F4N2b1jdaxfYwGF_CQz3yQjKIeznpib2mtIo9cZ9Y2_pcsI39ocOzBLWy9OEtUQxo4_fHxKxMhLGx_QNW4eOy0BTTynHlVpHLT8-_AHZ3-HLVHlaoZrz03Z9eUR82akPbsRZmI-bV" /><span
+                            class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AutoHunt</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">The premier verified
+                        automotive exchange. Combining high-end automotive prestige with surgical vehicle inspection,
+                        instantaneous digital financing, and transparent trade-in guarantees.</p>
+                    <div class="flex items-center gap-space-md pt-space-xs">
+                        <div
+                            class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                            <span class="material-symbols-outlined text-primary text-[18px]">verified</span><span
+                                class="font-caption-medium text-caption-medium text-on-surface">160-Point Guaranteed
+                                Certified</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant pt-space-2xs"><span
+                            class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+                        <div class="flex flex-col"><span
+                                class="font-caption text-caption text-on-surface-variant">Concierge Client
+                                Hotline</span><a
+                                class="font-body-sm-medium text-body-sm-medium text-on-surface hover:text-primary transition-colors"
+                                data-path="customer-support" href="#">+1 (800) 492-HUNT</a></div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By
+                        Brand</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Porsche</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">BMW M-Series</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Mercedes-AMG</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Audi Sport</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Land Rover</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Tesla EV</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Shop By Body
+                        Style</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Performance Coupes</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Luxury Sedans</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Electric &amp; Hybrid</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Executive SUVs</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Convertibles</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="explore" href="#">Supercars</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-space-sm"><span
+                        class="font-label-overline text-label-overline uppercase text-on-surface-variant">Customer
+                        Services</span>
+                    <ul class="flex flex-col gap-space-xs">
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="customer-account" href="#">Customer Account</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="order-history" href="#">Order History</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="delivery-tracking" href="#">Enclosed Delivery Tracking</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="payment-management" href="#">Payment Management</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="promotions" href="#">Exclusive Promotions</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="vehicle-review" href="#">Vehicle Reviews</a>
+                        </li>
+                        <li
+                            class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+                            <a data-path="customer-support" href="#">Customer Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+                <div class="flex flex-wrap items-center gap-space-md">
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">payments</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">USD ($)</span><span
+                            class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-lg bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[18px]">language</span><span
+                            class="font-caption-medium text-caption-medium text-on-surface">United States (EN)</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-space-lg font-caption text-caption text-on-surface-variant">
+                    <span>Privacy Policy</span><span>Terms of Transaction</span><span>State
+                        Disclosures</span><span>Consumer Rights</span>
+                </div>
+                <div class="font-caption text-caption text-on-surface-variant">© 2025 AutoHunt Exchange Technologies
+                    Inc. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
